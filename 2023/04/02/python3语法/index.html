@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="isyang_">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Python3 基础语法1. 编码默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。 2. 标识符 第一个字符必须是字母表中字母或下划线 _ 。 标识符的其他的部分由字母、数字和下划线组成。 标识符对大小写敏感。 在Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。  3. 注释 Python中单行注释以 # 开头，实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python3语法">
+<meta property="og:url" content="http://example.com/2023/04/02/python3%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="isyang_&#39;s blog">
+<meta property="og:description" content="Python3 基础语法1. 编码默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。 2. 标识符 第一个字符必须是字母表中字母或下划线 _ 。 标识符的其他的部分由字母、数字和下划线组成。 标识符对大小写敏感。 在Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。  3. 注释 Python中单行注释以 # 开头，实">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-02T14:47:01.000Z">
+<meta property="article:modified_time" content="2023-04-10T13:15:53.395Z">
+<meta property="article:author" content="isyang_">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>python3语法 - isyang_&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>isyang_&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="python3语法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-02 22:47" pubdate>
+          April 2, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.5k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          29 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python3语法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="Python3-基础语法"><a href="#Python3-基础语法" class="headerlink" title="Python3 基础语法"></a>Python3 基础语法</h3><h2 id="1-编码"><a href="#1-编码" class="headerlink" title="1. 编码"></a>1. 编码</h2><p>默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。</p>
+<h2 id="2-标识符"><a href="#2-标识符" class="headerlink" title="2. 标识符"></a>2. 标识符</h2><ol>
+<li>第一个字符必须是字母表中字母或下划线 _ 。</li>
+<li>标识符的其他的部分由字母、数字和下划线组成。</li>
+<li>标识符对大小写敏感。</li>
+<li>在Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。</li>
+</ol>
+<h2 id="3-注释"><a href="#3-注释" class="headerlink" title="3. 注释"></a>3. 注释</h2><ol>
+<li>Python中单行注释以 # 开头，实例如下：</li>
+</ol>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-meta"># 第一个注释</span><br><span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;Hello, Python!&quot;</span>) <span class="hljs-meta"># 第二个注释</span><br></code></pre></td></tr></table></figure>
+<p>执行以上代码，输出结果为：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><span class="hljs-built_in">Hello,</span> Python!<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>多行注释可以用多个 # 号，还有 ‘’’ 和 “””：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 第一个注释</span><br><span class="hljs-comment"># 第二个注释</span><br> <br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">第三注释</span><br><span class="hljs-string">第四注释</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br> <br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">第五注释</span><br><span class="hljs-string">第六注释</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Hello, Python!&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>执行以上代码，输出结果为：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><span class="hljs-built_in">Hello,</span> Python!<br></code></pre></td></tr></table></figure>
+<h2 id="4-行与缩进"><a href="#4-行与缩进" class="headerlink" title="4. 行与缩进"></a>4. 行与缩进</h2><p>python最具特色的就是使用缩进来表示代码块，不需要使用大括号 {} 。<br><br>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。实例如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:<br>    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Answer&quot;</span>)<br>    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;True&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Answer&quot;</span>)<br>  <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;False&quot;</span>)    # 缩进不一致，会导致运行错误<br></code></pre></td></tr></table></figure>
+<p>以上程序由于缩进不一致，执行后会出现类似以下错误：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"> File <span class="hljs-string">&quot;test.py&quot;</span>, line <span class="hljs-number">6</span><br>    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;False&quot;</span>)    <span class="hljs-comment"># 缩进不一致，会导致运行错误</span><br>                                      ^<br>IndentationError: unindent does <span class="hljs-keyword">not</span> <span class="hljs-keyword">match</span> <span class="hljs-built_in">any</span> outer indentation leve<br></code></pre></td></tr></table></figure>
+<h2 id="5-多行语句"><a href="#5-多行语句" class="headerlink" title="5. 多行语句"></a>5. 多行语句</h2><p>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠 \ 来实现多行语句，例如：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livescript">total = item_one + <span class="hljs-string">\</span><br>        item_two + <span class="hljs-string">\</span><br>        item_three<br></code></pre></td></tr></table></figure>
+<p>在 [], {}, 或 () 中的多行语句，不需要使用反斜杠 \，例如：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">total</span> = [<span class="hljs-string">&#x27;item_one&#x27;</span>, <span class="hljs-string">&#x27;item_two&#x27;</span>, <span class="hljs-string">&#x27;item_three&#x27;</span>,<br>        <span class="hljs-string">&#x27;item_four&#x27;</span>, <span class="hljs-string">&#x27;item_five&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<h2 id="6-数字-NUMBER-类型"><a href="#6-数字-NUMBER-类型" class="headerlink" title="6. 数字(NUMBER)类型"></a>6. 数字(NUMBER)类型</h2><p>python中数字有四种类型：整数、布尔型、浮点数和复数。<br><br></p>
+<ul>
+<li>int (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。<br></li>
+<li>bool (布尔), 如 True。<br></li>
+<li>float (浮点数), 如 1.23、3E-2<br></li>
+<li>complex (复数), 如 1 + 2j、 1.1 + 2.2j</li>
+</ul>
+<h2 id="7-字符串-String"><a href="#7-字符串-String" class="headerlink" title="7. 字符串(String)"></a>7. 字符串(String)</h2><h3 id="1-Python-中单引号-‘-和双引号-“-使用完全相同。"><a href="#1-Python-中单引号-‘-和双引号-“-使用完全相同。" class="headerlink" title="1.Python 中单引号 ‘ 和双引号 “ 使用完全相同。"></a>1.Python 中单引号 ‘ 和双引号 “ 使用完全相同。</h3><h3 id="2-使用三引号-‘’’-或-“””-可以指定一个多行字符串。"><a href="#2-使用三引号-‘’’-或-“””-可以指定一个多行字符串。" class="headerlink" title="2.使用三引号(‘’’ 或 “””)可以指定一个多行字符串。"></a>2.使用三引号(‘’’ 或 “””)可以指定一个多行字符串。</h3><br>
+实例：
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">word = <span class="hljs-string">&#x27;字符串&#x27;</span><br>sentence = <span class="hljs-string">&quot;这是一个句子。&quot;</span><br>paragraph = <span class="hljs-string">&quot;&quot;&quot;这是一个段落，</span><br><span class="hljs-string">可以由</span><br><span class="hljs-string">多行组成&quot;&quot;&quot;</span><br><span class="hljs-built_in">print</span>(word)<br><span class="hljs-built_in">print</span>(sentence)<br><span class="hljs-built_in">print</span>(paragraph)<br></code></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs">字符串<br>这是一个句子。<br>这是一个段落，<br>可以由<br>多行组成<br><br></code></pre></td></tr></table></figure>
+<h3 id="3-转义符-。"><a href="#3-转义符-。" class="headerlink" title="3. 转义符 \。"></a>3. 转义符 \。</h3><h3 id="4-反斜杠可以用来转义，使用-r-可以让反斜杠不发生转义。-如-r”this-is-a-line-with-n”-则-n-会显示，并不是换行。"><a href="#4-反斜杠可以用来转义，使用-r-可以让反斜杠不发生转义。-如-r”this-is-a-line-with-n”-则-n-会显示，并不是换行。" class="headerlink" title="4. 反斜杠可以用来转义，使用 r 可以让反斜杠不发生转义。 如 r”this is a line with \n” 则 \n 会显示，并不是换行。"></a>4. 反斜杠可以用来转义，使用 r 可以让反斜杠不发生转义。 如 r”this is a line with \n” 则 \n 会显示，并不是换行。</h3><h3 id="5-按字面意义级联字符串，如-“this-“-“is-“-“string”-会被自动转换为-this-is-string。"><a href="#5-按字面意义级联字符串，如-“this-“-“is-“-“string”-会被自动转换为-this-is-string。" class="headerlink" title="5.按字面意义级联字符串，如 “this “ “is “ “string” 会被自动转换为 this is string。"></a>5.按字面意义级联字符串，如 “this “ “is “ “string” 会被自动转换为 this is string。</h3><h3 id="6-字符串可以用-运算符连接在一起，用-运算符重复。"><a href="#6-字符串可以用-运算符连接在一起，用-运算符重复。" class="headerlink" title="6.字符串可以用 + 运算符连接在一起，用 * 运算符重复。"></a>6.字符串可以用 + 运算符连接在一起，用 * 运算符重复。</h3><h3 id="7-Python-中的字符串有两种索引方式，从左往右以-0-开始，从右往左以-1-开始。"><a href="#7-Python-中的字符串有两种索引方式，从左往右以-0-开始，从右往左以-1-开始。" class="headerlink" title="7.Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。"></a>7.Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</h3><h3 id="8-Python-中的字符串不能改变。"><a href="#8-Python-中的字符串不能改变。" class="headerlink" title="8.Python 中的字符串不能改变。"></a>8.Python 中的字符串不能改变。</h3><h3 id="9-Python-没有单独的字符类型，一个字符就是长度为-1-的字符串。"><a href="#9-Python-没有单独的字符类型，一个字符就是长度为-1-的字符串。" class="headerlink" title="9.Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。"></a>9.Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</h3><h3 id="10-字符串的截取的语法格式如下：变量-头下标-尾下标-步长"><a href="#10-字符串的截取的语法格式如下：变量-头下标-尾下标-步长" class="headerlink" title="10.字符串的截取的语法格式如下：变量[头下标:尾下标:步长]"></a>10.字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</h3><p>实例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;123456789&#x27;</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>)  <span class="hljs-comment"># 输出字符串</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">0</span>:-<span class="hljs-number">1</span>])  <span class="hljs-comment"># 输出第一个到倒数第二个的所有字符</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>])  <span class="hljs-comment"># 输出第一个到第五个的所有字符（不包括第五个）</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">3</span>:])   <span class="hljs-comment"># 如果后者不填默认为最后一个</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[-<span class="hljs-number">3</span>:-<span class="hljs-number">4</span>])  <span class="hljs-comment"># 如果前者大于等于后者，输出空</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 输出字符串第一个字符</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">1</span>:<span class="hljs-number">7</span>:<span class="hljs-number">2</span>])  <span class="hljs-comment"># 输出从第二个开始到第八个且每隔一个的字符（步长为2）</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">1</span>:<span class="hljs-number">7</span>:])  <span class="hljs-comment"># 如果步长不填，默认为1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>[<span class="hljs-number">1</span>:<span class="hljs-number">7</span>:<span class="hljs-number">100</span>])  <span class="hljs-comment"># 如果步长超出字符串长度，默认输出第一个</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span> * <span class="hljs-number">2</span>)  <span class="hljs-comment"># 输出字符串两次</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span> + <span class="hljs-string">&#x27;你好&#x27;</span>)  <span class="hljs-comment"># 连接字符串</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;------------------------------&#x27;</span>)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello\nrunoob&#x27;</span>)  <span class="hljs-comment"># 使用反斜杠(\)+n转义特殊字符</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">r&#x27;hello\nrunoob&#x27;</span>)  <span class="hljs-comment"># 在字符串前面添加一个 r，表示原始字符串，不会发生转义不会发生转义</span><br></code></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">123456789<br>12345678<br>1234<br>456789<br><br>1<br>246<br>234567<br>2<br>123456789123456789<br><span class="hljs-section">123456789你好</span><br><span class="hljs-section">------------------------------</span><br>hello<br>runoob<br>hello\nrunoob<br><br></code></pre></td></tr></table></figure>
+<h2 id="8-输入和输出"><a href="#8-输入和输出" class="headerlink" title="8. 输入和输出"></a>8. 输入和输出</h2><h3 id="1-输出"><a href="#1-输出" class="headerlink" title="1.输出"></a>1.输出</h3><p>在python中使用print()函数进行输出。<br><br><br>输出字符串时可用单引号或双引号括起来。<br><br><br>输出变量时，可不加引号。<br><br><br>变量与字符串同时输出或多个变量同时输出时，需用“,”隔开各项。</p>
+<h3 id="2-输入"><a href="#2-输入" class="headerlink" title="2.输入"></a>2.输入</h3><p>Python提供了input()函数用于获取用户键盘输入的字符。<br><br><br>input()函数让程序暂停运行，等待用户输入数据，当获取用户输入后，Python将以<strong>字符串</strong>的形式存储在一个变量中，方便后面使用。<br><br><br>例如:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">a</span> = <span class="hljs-selector-tag">input</span>(<span class="hljs-string">&quot;请输入第一个整数:&quot;</span>) #输入变量a的值<br><span class="hljs-selector-tag">b</span> = <span class="hljs-selector-tag">input</span>(<span class="hljs-string">&quot;请输入第二个整数:&quot;</span>) #输入变量b的值<br><span class="hljs-selector-tag">a</span> = <span class="hljs-built_in">int</span>(a)               #将变量a转换为整数型<br><span class="hljs-selector-tag">b</span> = <span class="hljs-built_in">int</span>(b)               #将变量b转换为整数型<br>c = <span class="hljs-selector-tag">a</span> + <span class="hljs-selector-tag">b</span>                #两数相加赋给c<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">&quot;两数之和为:&quot;</span>,c)</span></span>    #输出c的值<br></code></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">请输入第一个整数:2</span><br><span class="hljs-section">请输入第二个整数:3</span><br><span class="hljs-section">两数之和为: 5</span><br></code></pre></td></tr></table></figure>
+<p>如果去掉上述第3，4行代码，也就是不用int()函数转换变量类型，那么变量c就是变量a和b的简单拼接。<br><br><br>例如:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-tag">a</span> = <span class="hljs-selector-tag">input</span>(<span class="hljs-string">&quot;请输入第一个整数:&quot;</span>) #输入变量a的值<br><span class="hljs-selector-tag">b</span> = <span class="hljs-selector-tag">input</span>(<span class="hljs-string">&quot;请输入第二个整数:&quot;</span>) #输入变量b的值<br>c = <span class="hljs-selector-tag">a</span> + <span class="hljs-selector-tag">b</span>                #两数相加赋给c<br><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">&quot;两数之和为:&quot;</span>,c)</span></span>    #输出c的值<br></code></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">请输入第一个整数:2</span><br><span class="hljs-section">请输入第二个整数:3</span><br><span class="hljs-section">两数之和为: 23</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="9-判断语句"><a href="#9-判断语句" class="headerlink" title="9.判断语句"></a>9.判断语句</h2><p>构造1:</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">if 判断条件</span><span class="hljs-punctuation">:</span><br>    语句块<br></code></pre></td></tr></table></figure>
+<p>构造2:</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">if 判断条件1</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">语句块1</span><br><span class="hljs-attribute">else</span><span class="hljs-punctuation">:</span><br>    语句块2<br></code></pre></td></tr></table></figure>
+<p>构造3:</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">if 判断条件1</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">语句块1</span><br><span class="hljs-attribute">elif 判断条件2</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">语句块2</span><br><span class="hljs-attribute">...</span><br><span class="hljs-attribute">elif 判断条件n</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">语句块n</span><br><span class="hljs-attribute">else</span><span class="hljs-punctuation">:</span><br>    语句块n+1<br></code></pre></td></tr></table></figure>
+<h2 id="10-循环语句"><a href="#10-循环语句" class="headerlink" title="10.循环语句"></a>10.循环语句</h2><h3 id="1-while语句"><a href="#1-while语句" class="headerlink" title="(1).while语句"></a>(1).while语句</h3><p>构造:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-keyword">while</span> 判断条件:<br>    语句块<br></code></pre></td></tr></table></figure>
+<h3 id="2-for语句"><a href="#2-for语句" class="headerlink" title="(2).for语句"></a>(2).for语句</h3><p>构造:</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">for 变量 in 序列</span><span class="hljs-punctuation">:</span><br>    语句块<br></code></pre></td></tr></table></figure>
+<p>for循环语句经常与range()函数一起使用，range()函数是Python的内置函数，可创建一个整数列表。<br><br><br>range()函数的语法是:<br><br><br>range([start,]stop[,step])<br><br><br>start:计数从start开始，默认是从0开始。例如，range(5)等价于range(0,5)<br><br><br>stop:计数到stop结束，但不包括stop。例如，range(0,5)是[0,1,2,3,4]<br><br><br>step:步长，默认为1。例如，range(0,5)等价于range(0,5,1)<br><br></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>python3语法</div>
+      <div>http://example.com/2023/04/02/python3语法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>isyang_</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 2, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/04/05/%E9%93%BE%E8%A1%A8/" title="链表">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">链表</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" title="顺序表">
+                        <span class="hidden-mobile">顺序表</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
