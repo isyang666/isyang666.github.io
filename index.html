@@ -1,671 +1,1236 @@
-
-
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
-
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="isyang_">
-  <meta name="keywords" content="">
-  
-    <meta property="og:type" content="website">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="isyang_" />
+
+
+    
+    
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="isyang_&#39;s blog">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="isyang_&#39;s blog">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="isyang_">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>isyang_&#39;s blog</title>
+<meta name="twitter:card" content="summary">
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
+
+    <link rel="alternate" href="/atom.xml" title="isyang_&#39;s blog" type="application/atom+xml">
 
 
 
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
 
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>isyang_&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+</script>
 
 
-  
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
-
-
 <body>
-  
-
-  <header>
-    
-
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>isyang_&#39;s blog</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="Welcome isyang_&#39;s blog"></span>
-          
-        </div>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
 
         
-      </div>
 
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
-    </div>
-  </div>
-</div>
+        
 
-</div>
 
-  </header>
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
                 
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/17/CSS/" target="_self">
-          CSS
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/17/CSS/" target="_self">
-        <div>
-          CSS1.CSS介绍CSS （Cascading Style Sheets，层叠样式表），是一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言，CSS 文件扩展名为 .css。 2.CSS语法（1）.CSS 规则CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明:选择器通常是您需要改变样式的 HTML 元素。每条声明由一个属性和一个值组成
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-17 20:22" pubdate>
-              2023-05-17
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/10/HTML/" target="_self">
-          HTML
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/10/HTML/" target="_self">
-        <div>
-          HTML1.HTML 基本文档123456789&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;文档标题&lt;/title&gt;&lt;/head&gt;&lt;body&gt;可见文本...&lt;/body&gt;&lt;/html&gt; 2.基本标签（Basic Tags）1234567891011&lt;h1&gt;
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-10 19:23" pubdate>
-              2023-05-10
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/10/%E9%98%9F%E5%88%97/" target="_self">
-          队列
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/10/%E9%98%9F%E5%88%97/" target="_self">
-        <div>
-          队列队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（head）进行删除操作，而在表的后端（tail）进行插入操作，和栈一样，队列是一种操作受限制的线性表。进行插入操作的端称为队尾，进行删除操作的端称为队头。 1.队列结构定义123456789101112131415typedef int QDataType;//节点定义typedef struct QueueNode&#123;		QDa
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-10 18:42" pubdate>
-              2023-05-10
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/01/%E9%93%BE%E6%A0%88/" target="_self">
-          链栈
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/01/%E9%93%BE%E6%A0%88/" target="_self">
-        <div>
-          链栈1.链栈结构定义123456typedef int LSTDataType;typedef struct StackNode &#123;    LSTDataType data;               // 数据域    struct StackNode *next;         // 指针域&#125; StackNode, *LinkStackPtr; 2.链栈初始化(即创建一
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-01 13:42" pubdate>
-              2023-05-01
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/" target="_self">
-          顺序栈
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/" target="_self">
-        <div>
-          顺序栈1. 顺序栈定义栈（Stack）：是只允许在一端进行插入或删除的线性表。首先栈是一种线性表，但限定这种线性表只能在某一端进行插入和删除操作。栈又称为后进先出（Last In First Out）的线性表。  123456typedef struct Stack&#123;  STDataType* a;  int top;          //有效数据个数（栈顶位置）  int capac
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-04-20 12:47" pubdate>
-              2023-04-20
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/" target="_self">
-          双链表
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/" target="_self">
-        <div>
-          双向链表1. 双向链表的定义双向带头循环链表 123456typedef struct ListNode&#123;   	LTDataType data;	struct ListNode *prev;	struct ListNode *next;&#125;LTNode; 2. 链表初始化12345678LTNode* ListInit()&#123;   LTNode* phead = (LT
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-04-16 20:34" pubdate>
-              2023-04-16
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/04/05/%E9%93%BE%E8%A1%A8/" target="_self">
-          链表
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/05/%E9%93%BE%E8%A1%A8/" target="_self">
-        <div>
-          链表1. 链表的定义1234567typedef int SLTDateType;   //数据类型别名定义typedef struct SListNode&#123;  SLTDateType data;        //data用来储存数据  struct SListNode* next;  //定义next指针用来链接&#125;SLTNode; 2. 创建节点12345678910111
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-04-05 17:47" pubdate>
-              2023-04-05
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/" target="_self">
-          python3语法
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/" target="_self">
-        <div>
-          Python3 基础语法1. 编码默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。 2. 标识符 第一个字符必须是字母表中字母或下划线 _ 。 标识符的其他的部分由字母、数字和下划线组成。 标识符对大小写敏感。 在Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。  3. 注释 Python中单行注释以 # 开头，实
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-04-02 22:47" pubdate>
-              2023-04-02
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" target="_self">
-          顺序表
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" target="_self">
-        <div>
-          顺序表（数据从第一个位置开始放，且连续存储）一. 接口实现头文件（.h）写定义   源文件（.c） 写具体实现二. 顺序表的结构12345678typedef int SLDataType; //这里使用别名是为了方便修改数据表储存数据的类型typedef struct SeqList&#123;	SLDataType *a;//指向动态开辟的数组	int size;     //目前有效存储数据
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-24 23:59" pubdate>
-              2023-03-24
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/03/21/helloworld/" target="_self">
-          hello
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/21/helloworld/" target="_self">
-        <div>
-          hello world！Welcome to isyang_’s blog !
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-03-21 01:23" pubdate>
-              2023-03-21
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
             </div>
-          </div>
         </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+    </header>                
+</div>
     </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/05/17/CSS/" class="article-date">
+      <time datetime="2023-05-17T12:22:00.000Z" itemprop="datePublished">2023-05-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/05/17/CSS/">CSS</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="1-CSS介绍"><a href="#1-CSS介绍" class="headerlink" title="1.CSS介绍"></a>1.CSS介绍</h2><p>CSS （Cascading Style Sheets，层叠样式表），是一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言，CSS 文件扩展名为 .css。</p>
+<h2 id="2-CSS语法"><a href="#2-CSS语法" class="headerlink" title="2.CSS语法"></a>2.CSS语法</h2><h3 id="（1）-CSS-规则"><a href="#（1）-CSS-规则" class="headerlink" title="（1）.CSS 规则"></a>（1）.CSS 规则</h3><p>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明:<br><img src="/2023/05/17/CSS/myblog/source/img/CSS规则图.jpg" alt="title"><br>选择器通常是您需要改变样式的 HTML 元素。<br><br><br>每条声明由一个属性和一个值组成。<br><br><br>属性（property）是您希望设置的样式属性（style attribute）。每个属性有一个值。属性和值被冒号分开。<br><br><br>CSS声明总是以分号 ; 结束，声明总以大括号 {} 括起来:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123;color:red;text-align:center;&#125;</span><br></pre></td></tr></table></figure>
+<p>一般为了让CSS可读性更强，每行只描述一个属性:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p</span><br><span class="line">&#123;</span><br><span class="line">    color:red;</span><br><span class="line">    text-align:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）-CSS-注释"><a href="#（2）-CSS-注释" class="headerlink" title="（2）.CSS 注释"></a>（2）.CSS 注释</h3><p>注释是用来解释你的代码，并且可以随意编辑它，浏览器会忽略它。<br><br><br>CSS注释以 &#x2F;* 开始, 以 *&#x2F; 结束, 实例如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*这是个注释*/</span><br><span class="line">p</span><br><span class="line">&#123;</span><br><span class="line">    text-align:center;</span><br><span class="line">    /*这是另一个注释*/</span><br><span class="line">    color:black;</span><br><span class="line">    font-family:arial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-CSS-id和-class"><a href="#3-CSS-id和-class" class="headerlink" title="(3).CSS id和 class"></a>(3).CSS id和 class</h3><p>id 和 class 选择器<br>如果你要在HTML元素中设置CSS样式，你需要在元素中设置”id” 和 “class”选择器。</p>
+<h4 id="id-选择器"><a href="#id-选择器" class="headerlink" title="id 选择器"></a><strong>id 选择器</strong></h4><p>id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。</p>
+<p>HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 “#” 来定义。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;! 定义&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#para1</span><br><span class="line">&#123;</span><br><span class="line">    text-align:center;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;! 应用&gt;</span><br><span class="line">&lt;p id=&quot;para1&quot;&gt;Hello World!&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a><strong>class选择器</strong></h4><p>class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用。</p>
+<p>class 选择器在 HTML 中以 class 属性表示, 在 CSS 中，类选择器以一个点 . 号显示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!定义:拥有 center 类的 HTML 元素均为居中&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.center</span><br><span class="line">&#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;! 应用&gt;</span><br><span class="line">&lt;h1 class=&quot;center&quot;&gt;标题居中&lt;/h1&gt;</span><br><span class="line">&lt;p class=&quot;center&quot;&gt;段落居中。&lt;/p&gt; </span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>也可以指定html元素使用class</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!定义:拥有 center 类的 HTML 元素均为居中&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">p.center </span><br><span class="line">&#123;</span><br><span class="line">    text-align:center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;! 应用&gt;</span><br><span class="line">&lt;h1 class=&quot;center&quot;&gt;这个标题不受影响&lt;/h1&gt;</span><br><span class="line">&lt;p class=&quot;center&quot;&gt;这个段落居中对齐。&lt;/p&gt; </span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>多个 class 选择器可以使用空格分开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;！定义&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.center &#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">&#125;</span><br><span class="line">.color &#123;</span><br><span class="line">	color:#ff0000;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;! 应用&gt;</span><br><span class="line">&lt;h1 class=&quot;center&quot;&gt;标题居中&lt;/h1&gt;</span><br><span class="line">&lt;p class=&quot;center color&quot;&gt;段落居中，颜色为红色。&lt;/p&gt; </span><br></pre></td></tr></table></figure>
+<h2 id="3-CSS-创建"><a href="#3-CSS-创建" class="headerlink" title="3.CSS 创建"></a>3.CSS 创建</h2><p>当读到一个样式表时，浏览器会根据它来格式化 HTML 文档。</p>
+<h3 id="如何插入样式表"><a href="#如何插入样式表" class="headerlink" title="如何插入样式表"></a>如何插入样式表</h3><p>插入样式表的方法有三种:</p>
+<ul>
+<li>外部样式表(External style sheet)</li>
+<li>内部样式表(Internal style sheet)</li>
+<li>内联样式(Inline style)</li>
+</ul>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>当样式需要应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，你可以通过改变一个文件来改变整个站点的外观。每个页面使用 link 标签链接到样式表。 link 标签在（文档的）头部：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<p>浏览器会从文件 mystyle.css 中读到样式声明，并根据它来格式文档。</p>
+<p>外部样式表可以在任何文本编辑器中进行编辑。文件不能包含任何的 html 标签。样式表应该以 .css 扩展名进行保存。下面是一个样式表文件的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hr &#123;color:sienna;&#125;</span><br><span class="line">p &#123;margin-left:20px;&#125;</span><br><span class="line">body &#123;background-image:url(&quot;/images/back40.gif&quot;);&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 style 标签在文档头部定义内部样式表，就像这样:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">hr &#123;color:sienna;&#125;</span><br><span class="line">p &#123;margin-left:20px;&#125;</span><br><span class="line">body &#123;background-image:url(&quot;images/back40.gif&quot;);&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h3><p>由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。请慎用这种方法，例如当样式仅需要在一个元素上应用一次时。</p>
+<p>要使用内联样式，你需要在相关的标签内使用样式（style）属性。Style 属性可以包含任何 CSS 属性。本例展示如何改变段落的颜色和左外边距：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="多重样式"><a href="#多重样式" class="headerlink" title="多重样式"></a>多重样式</h3><p>如果某些属性在不同的样式表中被同样的选择器定义，那么属性值将从更具体的样式表中被继承过来。 </p>
+<p>例如，外部样式表拥有针对 h3 选择器的三个属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h3</span><br><span class="line">&#123;</span><br><span class="line">    color:red;</span><br><span class="line">    text-align:left;</span><br><span class="line">    font-size:8pt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而内部样式表拥有针对 h3 选择器的两个属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h3</span><br><span class="line">&#123;</span><br><span class="line">    text-align:right;</span><br><span class="line">    font-size:20pt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假如拥有内部样式表的这个页面同时与外部样式表链接，那么 h3 得到的样式是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">color:red;</span><br><span class="line">text-align:right;</span><br><span class="line">font-size:20pt;</span><br></pre></td></tr></table></figure>
+<p>即颜色属性将被继承于外部样式表，而文字排列（text-alignment）和字体尺寸（font-size）会被内部样式表中的规则取代。</p>
+<h3 id="多重样式优先级"><a href="#多重样式优先级" class="headerlink" title="多重样式优先级"></a>多重样式优先级</h3><p>样式表允许以多种方式规定样式信息。样式可以规定在单个的 HTML 元素中，在 HTML 页的头元素中，或在一个外部的 CSS 文件中。甚至可以在同一个 HTML 文档内部引用多个外部样式表。</p>
+<p>一般情况下，优先级如下：</p>
+<p>（内联样式）Inline style &gt; （内部样式）Internal style sheet &gt;（外部样式）External style sheet &gt; 浏览器默认样式</p>
+<p>style.css 文件样式代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h3 &#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 外部样式 style.css --&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;/&gt;</span><br><span class="line">    &lt;!-- 设置：h3&#123;color:blue;&#125; --&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">      /* 内部样式 */</span><br><span class="line">      h3&#123;color:green;&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;显示绿色，是内部样式&lt;/h3&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。</p>
+<p>实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 设置：h3&#123;color:blue;&#125; --&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">      /* 内部样式 */</span><br><span class="line">      h3&#123;color:green;&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;!-- 外部样式 style.css --&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;/&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;显示蓝色，是外部样式&lt;/h3&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
   
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-HTML" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/05/10/HTML/" class="article-date">
+      <time datetime="2023-05-10T11:23:30.000Z" itemprop="datePublished">2023-05-10</time>
+</a>
+
+
     </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/05/10/HTML/">HTML</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="1-HTML-基本文档"><a href="#1-HTML-基本文档" class="headerlink" title="1.HTML 基本文档"></a>1.HTML 基本文档</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;文档标题&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">可见文本...</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-基本标签（Basic-Tags）"><a href="#2-基本标签（Basic-Tags）" class="headerlink" title="2.基本标签（Basic Tags）"></a>2.基本标签（Basic Tags）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;最大的标题&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt; . . . &lt;/h2&gt;</span><br><span class="line">&lt;h3&gt; . . . &lt;/h3&gt;</span><br><span class="line">&lt;h4&gt; . . . &lt;/h4&gt;</span><br><span class="line">&lt;h5&gt; . . . &lt;/h5&gt;</span><br><span class="line">&lt;h6&gt;最小的标题&lt;/h6&gt;</span><br><span class="line"> </span><br><span class="line">&lt;p&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;br&gt; （换行）</span><br><span class="line">&lt;hr&gt; （水平线）</span><br><span class="line">&lt;!-- 这是注释 --&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-文本格式化（Formatting）"><a href="#3-文本格式化（Formatting）" class="headerlink" title="3.文本格式化（Formatting）"></a>3.文本格式化（Formatting）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;粗体文本&lt;/b&gt;</span><br><span class="line">&lt;code&gt;计算机代码&lt;/code&gt;</span><br><span class="line">&lt;em&gt;强调文本&lt;/em&gt;</span><br><span class="line">&lt;i&gt;斜体文本&lt;/i&gt;</span><br><span class="line">&lt;kbd&gt;键盘输入&lt;/kbd&gt; </span><br><span class="line">&lt;pre&gt;预格式化文本&lt;/pre&gt;</span><br><span class="line">&lt;small&gt;更小的文本&lt;/small&gt;</span><br><span class="line">&lt;strong&gt;重要的文本&lt;/strong&gt;</span><br><span class="line"> </span><br><span class="line">&lt;abbr&gt; （缩写）</span><br><span class="line">&lt;address&gt; （联系信息）</span><br><span class="line">&lt;bdo&gt; （文字方向）</span><br><span class="line">&lt;blockquote&gt; （从另一个源引用的部分）</span><br><span class="line">&lt;cite&gt; （工作的名称）</span><br><span class="line">&lt;del&gt; （删除的文本）</span><br><span class="line">&lt;ins&gt; （插入的文本）</span><br><span class="line">&lt;sub&gt; （下标文本）</span><br><span class="line">&lt;sup&gt; （上标文本）</span><br></pre></td></tr></table></figure>
+<h2 id="4-链接（Links）"><a href="#4-链接（Links）" class="headerlink" title="4.链接（Links）"></a>4.链接（Links）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">普通的链接：&lt;a href=&quot;http://www.example.com/&quot;&gt;链接文本&lt;/a&gt;</span><br><span class="line">图像链接： &lt;a href=&quot;http://www.example.com/&quot;&gt;&lt;img decoding=&quot;async&quot; src=&quot;URL&quot; alt=&quot;替换文本&quot;&gt;&lt;/a&gt;</span><br><span class="line">邮件链接： &lt;a href=&quot;mailto:webmaster@example.com&quot;&gt;发送e-mail&lt;/a&gt;</span><br><span class="line">书签：</span><br><span class="line">&lt;a id=&quot;tips&quot;&gt;提示部分&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;#tips&quot;&gt;跳到提示部分&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="5-图片（Images）"><a href="#5-图片（Images）" class="headerlink" title="5.图片（Images）"></a>5.图片（Images）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;img decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;URL&quot; alt=&quot;替换文本&quot; height=&quot;42&quot; width=&quot;42&quot;&gt;</span><br><span class="line">样式/区块（Styles/Sections）</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">h1 &#123;color:red;&#125;</span><br><span class="line">p &#123;color:blue;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div&gt;文档中的块级元素&lt;/div&gt;</span><br><span class="line">&lt;span&gt;文档中的内联元素&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="6-无序列表"><a href="#6-无序列表" class="headerlink" title="6.无序列表"></a>6.无序列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;项目&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;项目&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="7-有序列表"><a href="#7-有序列表" class="headerlink" title="7.有序列表"></a>7.有序列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">    &lt;li&gt;第一项&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;第二项&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="8-定义列表"><a href="#8-定义列表" class="headerlink" title="8.定义列表"></a>8.定义列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">  &lt;dt&gt;项目 1&lt;/dt&gt;</span><br><span class="line">    &lt;dd&gt;描述项目 1&lt;/dd&gt;</span><br><span class="line">  &lt;dt&gt;项目 2&lt;/dt&gt;</span><br><span class="line">    &lt;dd&gt;描述项目 2&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="9-表格（Tables）"><a href="#9-表格（Tables）" class="headerlink" title="9.表格（Tables）"></a>9.表格（Tables）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;表格标题&lt;/th&gt;</span><br><span class="line">    &lt;th&gt;表格标题&lt;/th&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;表格数据&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;表格数据&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="10-框架（Iframe）"><a href="#10-框架（Iframe）" class="headerlink" title="10.框架（Iframe）"></a>10.框架（Iframe）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;demo_iframe.htm&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">表单（Forms）</span><br><span class="line">&lt;form action=&quot;demo_form.php&quot; method=&quot;post/get&quot;&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; name=&quot;email&quot; size=&quot;40&quot; maxlength=&quot;50&quot;&gt;</span><br><span class="line">&lt;input type=&quot;password&quot;&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; checked=&quot;checked&quot;&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;</span><br><span class="line">&lt;input type=&quot;reset&quot;&gt;</span><br><span class="line">&lt;input type=&quot;hidden&quot;&gt;</span><br><span class="line">&lt;select&gt;</span><br><span class="line">&lt;option&gt;苹果&lt;/option&gt;</span><br><span class="line">&lt;option selected=&quot;selected&quot;&gt;香蕉&lt;/option&gt;</span><br><span class="line">&lt;option&gt;樱桃&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;textarea name=&quot;comment&quot; rows=&quot;60&quot; cols=&quot;20&quot;&gt;&lt;/textarea&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-实体（Entities）"><a href="#11-实体（Entities）" class="headerlink" title="11.实体（Entities）"></a>11.实体（Entities）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt; 等同于 &lt;</span><br><span class="line">&amp;gt; 等同于 &gt;</span><br><span class="line">&amp;#169; 等同于 ©</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-队列" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/05/10/%E9%98%9F%E5%88%97/" class="article-date">
+      <time datetime="2023-05-10T10:42:00.000Z" itemprop="datePublished">2023-05-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（head）进行删除操作，而在表的后端（tail）进行插入操作，和栈一样，队列是一种操作受限制的线性表。进行插入操作的端称为队尾，进行删除操作的端称为队头。</p>
+<h2 id="1-队列结构定义"><a href="#1-队列结构定义" class="headerlink" title="1.队列结构定义"></a>1.队列结构定义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">typedef int QDataType;</span><br><span class="line"></span><br><span class="line">//节点定义</span><br><span class="line">typedef struct QueueNode</span><br><span class="line">&#123;	</span><br><span class="line">	QDataType data;				//数据域</span><br><span class="line">	struct QueueNode* next;		//指针域</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">typedef struct Queue</span><br><span class="line">&#123;	</span><br><span class="line">	QueueNode* head;			//队列头指针</span><br><span class="line">	QueueNode* tail;			//队列尾指针</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-队列初始化"><a href="#2-队列初始化" class="headerlink" title="2.队列初始化"></a>2.队列初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void QueueInit(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	pq-&gt;head = NULL;</span><br><span class="line">	pq-&gt;tail = NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-队列的销毁"><a href="#3-队列的销毁" class="headerlink" title="3.队列的销毁"></a>3.队列的销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void QueueDestroy(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	struct QueueNode* cur;</span><br><span class="line">	cur = pq-&gt;head;</span><br><span class="line">	while(cur != NULL)          //遍历节点</span><br><span class="line">	&#123;</span><br><span class="line">		QueueNode* next = cur-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line">	pq-&gt;head = NULL;</span><br><span class="line">	pq-&gt;tail = NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-入队（尾节点后插入）"><a href="#4-入队（尾节点后插入）" class="headerlink" title="4.入队（尾节点后插入）"></a>4.入队（尾节点后插入）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void QueuePush(Queue* pq, QDataType x)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line"></span><br><span class="line">	QueueNode* newnode = (QueueNode*)malloc(sizeof(QueueNode));</span><br><span class="line">	if(newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;malloc fault!&quot;);</span><br><span class="line">		exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line">	if(pq-&gt;tail == NULL)							//判断是否为空队列</span><br><span class="line">	&#123;</span><br><span class="line">		assert(pq-&gt;head == NULL);</span><br><span class="line">		pq-&gt;head = newnode;</span><br><span class="line">		pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		pq-&gt;tail-&gt;next = newnode;	</span><br><span class="line">		pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="5-出队（删除头结点）"><a href="#5-出队（删除头结点）" class="headerlink" title="5.出队（删除头结点）"></a>5.出队（删除头结点）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void QueuePop(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	assert(pq-&gt;head != NULL &amp;&amp; pq-&gt;tail != NULL);</span><br><span class="line"></span><br><span class="line">	if(pq-&gt;head-&gt;next == NULL)						//如果队列就一个元素</span><br><span class="line">	&#123;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = NULL;</span><br><span class="line">		pq-&gt;tail = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		QueueNode* next = pq-&gt;head-&gt;next;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="6-取出队首元素"><a href="#6-取出队首元素" class="headerlink" title="6.取出队首元素"></a>6.取出队首元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">QDataType QueueGetFront(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	assert(pq-&gt;head != NULL &amp;&amp; pq-&gt;tail != NULL);  //防止队列为空队列</span><br><span class="line"></span><br><span class="line">	return pq-&gt;head-&gt;data;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="7-判断队是否为空-如果为空返回1，不为空返回0"><a href="#7-判断队是否为空-如果为空返回1，不为空返回0" class="headerlink" title="7.判断队是否为空,如果为空返回1，不为空返回0"></a>7.判断队是否为空,如果为空返回1，不为空返回0</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int QueueIsempty(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line"></span><br><span class="line">	return pq-&gt;head == NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="8-求队列的长度"><a href="#8-求队列的长度" class="headerlink" title="8.求队列的长度"></a>8.求队列的长度</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int QueueGetCount(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	int count = 0;</span><br><span class="line">	QueueNode* cur = pq-&gt;head;</span><br><span class="line">	while(cur != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	return count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-链栈" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/05/01/%E9%93%BE%E6%A0%88/" class="article-date">
+      <time datetime="2023-05-01T05:42:11.000Z" itemprop="datePublished">2023-05-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/05/01/%E9%93%BE%E6%A0%88/">链栈</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h1><h2 id="1-链栈结构定义"><a href="#1-链栈结构定义" class="headerlink" title="1.链栈结构定义"></a>1.链栈结构定义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef int LSTDataType;</span><br><span class="line"></span><br><span class="line">typedef struct StackNode &#123;</span><br><span class="line">    LSTDataType data;               // 数据域</span><br><span class="line">    struct StackNode *next;         // 指针域</span><br><span class="line">&#125; StackNode, *LinkStackPtr;</span><br></pre></td></tr></table></figure>
+<h2 id="2-链栈初始化-即创建一个空栈"><a href="#2-链栈初始化-即创建一个空栈" class="headerlink" title="2.链栈初始化(即创建一个空栈)"></a>2.链栈初始化(即创建一个空栈)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void InitStack(LinkStackPtr *top) &#123;</span><br><span class="line">    *top = NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-判断栈是否为空-若为空则返回-1，否则返回-0"><a href="#3-判断栈是否为空-若为空则返回-1，否则返回-0" class="headerlink" title="3.判断栈是否为空(若为空则返回 1，否则返回 0)"></a>3.判断栈是否为空(若为空则返回 1，否则返回 0)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int IsEmpty(LinkStackPtr top) &#123;</span><br><span class="line">    return top == NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-进栈-将元素-x-压入栈顶"><a href="#4-进栈-将元素-x-压入栈顶" class="headerlink" title="4.进栈(将元素 x 压入栈顶)"></a>4.进栈(将元素 x 压入栈顶)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void Push(LinkStackPtr *top, int x) &#123;</span><br><span class="line">    LinkStackPtr p = (LinkStackPtr)malloc(sizeof(StackNode));    // 为新元素分配内存空间</span><br><span class="line">    p-&gt;data = x;        // 将元素 x 压入栈顶</span><br><span class="line">    p-&gt;next = *top;     // 将新元素插入链表的头部</span><br><span class="line">    *top = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-出栈-删除栈顶元素并返回其值"><a href="#5-出栈-删除栈顶元素并返回其值" class="headerlink" title="5.出栈(删除栈顶元素并返回其值)"></a>5.出栈(删除栈顶元素并返回其值)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int Pop(LinkStackPtr *top) &#123;</span><br><span class="line">    if (IsEmpty(*top)) &#123;    // 栈空，返回空值</span><br><span class="line">        printf(&quot;Stack is empty!\n&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        LinkStackPtr p = *top;      // 备份栈顶指针</span><br><span class="line">        int x = p-&gt;data;            // 取出栈顶元素</span><br><span class="line">        *top = p-&gt;next;             // 删除栈顶结点</span><br><span class="line">        free(p);                    // 释放栈顶结点的存储空间</span><br><span class="line">        return x;                   // 返回栈顶元素的值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-获取栈顶元素"><a href="#6-获取栈顶元素" class="headerlink" title="6.获取栈顶元素"></a>6.获取栈顶元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int GetTop(LinkStackPtr top) &#123;</span><br><span class="line">    if (IsEmpty(top)) &#123;             // 栈空，返回空值</span><br><span class="line">        printf(&quot;Stack is empty!\n&quot;);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return top-&gt;data;           // 返回栈顶元素的值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-输出链栈中的元素"><a href="#7-输出链栈中的元素" class="headerlink" title="7.输出链栈中的元素"></a>7.输出链栈中的元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void PrintStack(LinkStackPtr top) &#123;</span><br><span class="line">    if (IsEmpty(top)) &#123;             // 栈空，返回空值</span><br><span class="line">        printf(&quot;Stack is empty!\n&quot;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        printf(&quot;Stack elements: &quot;);</span><br><span class="line">        while (top != NULL) &#123;</span><br><span class="line">            printf(&quot;%d &quot;, top-&gt;data);</span><br><span class="line">            top = top-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-顺序栈" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/" class="article-date">
+      <time datetime="2023-04-20T04:47:01.000Z" itemprop="datePublished">2023-04-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/">顺序栈</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h1><h2 id="1-顺序栈定义"><a href="#1-顺序栈定义" class="headerlink" title="1. 顺序栈定义"></a>1. 顺序栈定义</h2><p>栈（Stack）：是只允许在一端进行插入或删除的线性表。首先栈是一种线性表，但限定这种线性表只能在某一端进行插入和删除操作。<br><br><br>栈又称为后进先出（Last In First Out）的线性表。</p>
+<p><img src="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/%E6%A0%88%E7%BB%93%E6%9E%84.png" alt="title"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef struct Stack</span><br><span class="line">&#123;</span><br><span class="line">  STDataType* a;</span><br><span class="line">  int top;          //有效数据个数（栈顶位置）</span><br><span class="line">  int capacity;     //容量</span><br><span class="line">&#125;ST;</span><br></pre></td></tr></table></figure>
+<h2 id="2-顺序栈初始化"><a href="#2-顺序栈初始化" class="headerlink" title="2. 顺序栈初始化"></a>2. 顺序栈初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void StackInit(ST* ps)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	ps-&gt;a = NULL;</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">	ps-&gt;top = 0;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-顺序栈销毁"><a href="#3-顺序栈销毁" class="headerlink" title="3. 顺序栈销毁"></a>3. 顺序栈销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void StackDestroy(ST* ps)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	free(ps-&gt;a);</span><br><span class="line">	ps-&gt;a = NULL;</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">	ps-&gt;top = 0;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-顺序栈插入-压栈"><a href="#4-顺序栈插入-压栈" class="headerlink" title="4. 顺序栈插入(压栈)"></a>4. 顺序栈插入(压栈)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void StackPush(ST* ps,STDataType x)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	if(ps-&gt;capacity == ps-&gt;top)&#123;      //判断容量是否足够，如果不够则增容</span><br><span class="line">		int newcapacity = ps-&gt;capacity ==0?4:(ps-&gt;capacity)*2; </span><br><span class="line">		STDataType* temp = (STDataType*)realloc(ps-&gt;a,sizeof(STDataType)*newcapacity);//扩容</span><br><span class="line">		if(temp == NULL)&#123;</span><br><span class="line">			printf(&quot;realloc fault&quot;);	</span><br><span class="line">			exit(-1);		</span><br><span class="line">		&#125;</span><br><span class="line">		ps-&gt;a = temp;				 //把扩容地址传给a</span><br><span class="line">		ps-&gt;capacity = newcapacity;	 </span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;a[ps-&gt;top] = x;				 //插入元素x</span><br><span class="line">	ps-&gt;top++;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="5-顺序栈删除-出栈"><a href="#5-顺序栈删除-出栈" class="headerlink" title="5. 顺序栈删除(出栈)"></a>5. 顺序栈删除(出栈)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void StackPop(ST* ps)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	assert(StackEmpty(ps) != 1);</span><br><span class="line">	ps-&gt;top--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="6-栈顶元素查看"><a href="#6-栈顶元素查看" class="headerlink" title="6. 栈顶元素查看"></a>6. 栈顶元素查看</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">STDataType StackTop(ST* ps)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	assert(StackEmpty(ps) != 1);</span><br><span class="line"></span><br><span class="line">	return ps-&gt;a[ps-&gt;top-1];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="7-查看栈的元素个数"><a href="#7-查看栈的元素个数" class="headerlink" title="7. 查看栈的元素个数"></a>7. 查看栈的元素个数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int StackSize(ST* ps)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">     </span><br><span class="line">	return ps-&gt;top;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="8-判断栈是否为空-为空返回1"><a href="#8-判断栈是否为空-为空返回1" class="headerlink" title="8.判断栈是否为空 为空返回1"></a>8.判断栈是否为空 为空返回1</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int StackEmpty(ST* ps)&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	if(ps-&gt;top == 0)&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">		return 0;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-双链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/" class="article-date">
+      <time datetime="2023-04-16T12:34:48.000Z" itemprop="datePublished">2023-04-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h1><h2 id="1-双向链表的定义"><a href="#1-双向链表的定义" class="headerlink" title="1. 双向链表的定义"></a>1. 双向链表的定义</h2><p>双向带头循环链表<br><img src="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/List.png" alt="title"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef struct ListNode</span><br><span class="line">&#123;   </span><br><span class="line">	LTDataType data;</span><br><span class="line">	struct ListNode *prev;</span><br><span class="line">	struct ListNode *next;</span><br><span class="line">&#125;LTNode;</span><br></pre></td></tr></table></figure>
+<h2 id="2-链表初始化"><a href="#2-链表初始化" class="headerlink" title="2. 链表初始化"></a>2. 链表初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LTNode* ListInit()</span><br><span class="line">&#123;</span><br><span class="line">   LTNode* phead = (LTNode*)malloc(sizeof(LTNode));</span><br><span class="line">   phead-&gt;next = phead;</span><br><span class="line">   phead-&gt;prev = phead;</span><br><span class="line"></span><br><span class="line">   return phead;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-创建新的节点"><a href="#3-创建新的节点" class="headerlink" title="3. 创建新的节点"></a>3. 创建新的节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LTNode* BuyListNode(LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	LTNode* newnode = (LTNode*)malloc(sizeof(LTNode));</span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line">	newnode-&gt;prev = NULL;</span><br><span class="line"></span><br><span class="line">	return newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-尾插"><a href="#4-尾插" class="headerlink" title="4. 尾插"></a>4. 尾插</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void ListPushBack(LTNode* phead,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">   assert(phead);</span><br><span class="line">   LTNode* tail = phead-&gt;prev;</span><br><span class="line">   LTNode* newnode =(LTNode*)malloc(sizeof(LTNode));</span><br><span class="line">   newnode-&gt;data = x;</span><br><span class="line"></span><br><span class="line">   tail-&gt;next = newnode;</span><br><span class="line">   newnode-&gt;prev = tail;</span><br><span class="line">   newnode-&gt;next = phead;</span><br><span class="line">   phead-&gt;prev = newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="5-头插"><a href="#5-头插" class="headerlink" title="5. 头插"></a>5. 头插</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPushFront(LTNode* phead,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(phead != NULL);</span><br><span class="line">    LTNode* newnode = BuyListNode(x);</span><br><span class="line">	LTNode* tail = phead-&gt;next;</span><br><span class="line">	phead-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = phead;</span><br><span class="line">	newnode-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="6-尾删"><a href="#6-尾删" class="headerlink" title="6. 尾删"></a>6. 尾删</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPopBack(LTNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">    assert(phead != NULL);</span><br><span class="line">	assert(phead-&gt;next != phead);</span><br><span class="line">	LTNode* tail = phead-&gt;prev;</span><br><span class="line">	LTNode* tailprev = tail-&gt;prev;</span><br><span class="line">	free(tail);</span><br><span class="line">	tailprev-&gt;next = phead;</span><br><span class="line">	phead-&gt;prev = tailprev;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="7-头删"><a href="#7-头删" class="headerlink" title="7. 头删"></a>7. 头删</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPopFront(LTNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(phead != NULL);</span><br><span class="line">	assert(phead-&gt;next != phead);</span><br><span class="line">	LTNode* tail = phead-&gt;next;</span><br><span class="line">	LTNode* next = tail-&gt;next;</span><br><span class="line">	free(tail);</span><br><span class="line">	phead-&gt;next = next;</span><br><span class="line">	next-&gt;prev = phead;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="8-pos位置删除"><a href="#8-pos位置删除" class="headerlink" title="8. pos位置删除"></a>8. pos位置删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void ListErase(LTNode* pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	LTNode* posPrev = pos-&gt;prev;</span><br><span class="line">	LTNode* posNext = pos-&gt;next;</span><br><span class="line">    free(pos);</span><br><span class="line">	posPrev-&gt;next = posNext;</span><br><span class="line">	posNext-&gt;prev = posPrev;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="9-查找"><a href="#9-查找" class="headerlink" title="9. 查找"></a>9. 查找</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LTNode* ListFind(LTNode* phead,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">    assert(phead);</span><br><span class="line">	LTNode* cur = phead-&gt;next;</span><br><span class="line">	while(cur != phead)</span><br><span class="line">	&#123;</span><br><span class="line">		if(cur-&gt;data == x)</span><br><span class="line">		&#123;</span><br><span class="line">		  return cur; </span><br><span class="line">		&#125;</span><br><span class="line">	    cur = cur-&gt;next; </span><br><span class="line">	&#125;</span><br><span class="line">	return NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="10-pos位置之前插入"><a href="#10-pos位置之前插入" class="headerlink" title="10. pos位置之前插入"></a>10. pos位置之前插入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListInsert(LTNode* pos,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	LTNode* posPrev = pos-&gt;prev;</span><br><span class="line">	LTNode* newnode = BuyListNode(x);</span><br><span class="line">	posPrev-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = posPrev;</span><br><span class="line">	newnode-&gt;next = pos;</span><br><span class="line">	pos-&gt;prev = newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="11-pos位置删除"><a href="#11-pos位置删除" class="headerlink" title="11. pos位置删除"></a>11. pos位置删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListErase(LTNode* pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	LTNode* posPrev = pos-&gt;prev;</span><br><span class="line">	LTNode* posNext = pos-&gt;next;</span><br><span class="line"></span><br><span class="line">	posPrev-&gt;next = posNext;</span><br><span class="line">	posNext-&gt;prev = posPrev;</span><br><span class="line">	free(pos);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="12-双向链表的销毁"><a href="#12-双向链表的销毁" class="headerlink" title="12.双向链表的销毁"></a>12.双向链表的销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void ListDestroy(LTNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(phead != NULL);</span><br><span class="line">	LTNode* cur = phead-&gt;next;</span><br><span class="line">	while(cur != phead)</span><br><span class="line">	&#123;</span><br><span class="line">		LTNode* next = cur-&gt;next;</span><br><span class="line">	    free(cur);</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line">	free(phead);      </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>用完Destroy后要将传过来的指针手动置空，这是因为要保证传参结构的一致性（都是传一级指针），如果要在Destroy内置空，要用二级指针实现。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/05/%E9%93%BE%E8%A1%A8/" class="article-date">
+      <time datetime="2023-04-05T09:47:01.000Z" itemprop="datePublished">2023-04-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/05/%E9%93%BE%E8%A1%A8/">链表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="1-链表的定义"><a href="#1-链表的定义" class="headerlink" title="1. 链表的定义"></a>1. 链表的定义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedef int SLTDateType;   //数据类型别名定义</span><br><span class="line"></span><br><span class="line">typedef struct SListNode</span><br><span class="line">&#123;</span><br><span class="line">  SLTDateType data;        //data用来储存数据</span><br><span class="line">  struct SListNode* next;  //定义next指针用来链接</span><br><span class="line">&#125;SLTNode;</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建节点"><a href="#2-创建节点" class="headerlink" title="2. 创建节点"></a>2. 创建节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">SLTNode* BuyListNode(SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SLTNode* newnode =(SLTNode*)malloc(sizeof(SLTNode));  </span><br><span class="line">	if(newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">	  printf(&quot;malloc fall\n&quot;);</span><br><span class="line">	  exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line"></span><br><span class="line">	return newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-打印链表"><a href="#3-打印链表" class="headerlink" title="3. 打印链表"></a>3. 打印链表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void SListPrint(SLTNode* phead)&#123;</span><br><span class="line">	SLTNode* cur = phead;</span><br><span class="line">	while (cur != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d&quot;,cur-&gt;data);</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-尾插"><a href="#4-尾插" class="headerlink" title="4. 尾插"></a>4. 尾插</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void SListPushBack (SLTNode** pphead,SLTDateType x)&#123;   //传二级指针，通过改变形参来改变实参</span><br><span class="line">    assert(*pphead != NULL);</span><br><span class="line">	SLTNode* newnode = BuyListNode(x);</span><br><span class="line">    if(*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">	  *pphead = newnode;             //如果头指针为空，直接让头指针指向新结点</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">	  SLTNode* tail = *pphead;</span><br><span class="line">	  while (tail-&gt;next != NULL)    //找尾 </span><br><span class="line">	  &#123;</span><br><span class="line">		  tail = tail-&gt;next;</span><br><span class="line">	  &#125;            </span><br><span class="line">	  tail-&gt;next = newnode;        //把尾结点接上新结点</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="5-头插"><a href="#5-头插" class="headerlink" title="5. 头插"></a>5. 头插</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void SListPushFront (SLTNode** pphead,SLTDateType x)&#123;</span><br><span class="line">	assert(*pphead != NULL);</span><br><span class="line">	SLTNode* newnode = BuyListNode(x);</span><br><span class="line">	newnode-&gt;next = *pphead;  //新结点的next指向之前的头</span><br><span class="line">	*pphead = newnode;        //再把头指针前移</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="6-尾删"><a href="#6-尾删" class="headerlink" title="6. 尾删"></a>6. 尾删</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void SListPopBack(SLTNode** pphead)&#123;</span><br><span class="line">	assert(*pphead != NULL);     //判断是否有数据可删</span><br><span class="line">	if((*pphead)-&gt;next == NULL)  //如果链表只有一个结点</span><br><span class="line">	&#123;</span><br><span class="line">	   free(*pphead);</span><br><span class="line">	   *pphead = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">	   SLTNode* prev = NULL;     //定义一个新的指针，来保存移动之前的地址</span><br><span class="line">	   SLTNode* tail = *pphead;  </span><br><span class="line">	   while (tail-&gt;next != NULL)//找尾，且保存尾之前的结点位置到prev</span><br><span class="line">	   &#123;</span><br><span class="line">	      prev = tail;</span><br><span class="line">		  tail = tail-&gt;next;</span><br><span class="line">	   &#125;	</span><br><span class="line">	   free(tail);              </span><br><span class="line">	   tail = NULL;</span><br><span class="line">	   prev-&gt;next = NULL;        //删除尾节点，并且给新的尾节点next指针赋上空</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="7-头删"><a href="#7-头删" class="headerlink" title="7. 头删"></a>7. 头删</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void SListPopFront(SLTNode** pphead)</span><br><span class="line">&#123;          </span><br><span class="line">	assert(*pphead != NULL);     </span><br><span class="line">    SLTNode* prev = (*pphead)-&gt;next;     //定义一个指针指向头节点后面那个节点</span><br><span class="line">	free(*pphead);              //删除头节点</span><br><span class="line">	*pphead = prev;             //将头指针指向新的头节点</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="8-查找"><a href="#8-查找" class="headerlink" title="8. 查找"></a>8. 查找</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">SLTNode* SListFind(SLTNode* phead,SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">   assert(phead != NULL);</span><br><span class="line">   SLTNode* cur = phead;</span><br><span class="line">   while (cur)</span><br><span class="line">   &#123;</span><br><span class="line">     if(cur-&gt;data == x)</span><br><span class="line">	 &#123;</span><br><span class="line">       return cur;</span><br><span class="line">	 &#125;</span><br><span class="line">	 else</span><br><span class="line">	 &#123;</span><br><span class="line">	   cur = cur-&gt;next;</span><br><span class="line">	 &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   return NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="9-在pos位置之前去插入一个节点"><a href="#9-在pos位置之前去插入一个节点" class="headerlink" title="9. 在pos位置之前去插入一个节点"></a>9. 在pos位置之前去插入一个节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void SListInsert(SLTNode** pphead,SLTNode* pos,SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(*pphead != NULL);</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	SLTNode* newnode =BuyListNode(x);</span><br><span class="line">	if (*pphead == pos)                 //如果pos位置为头节点位置</span><br><span class="line">	&#123;</span><br><span class="line">		newnode-&gt;next = *pphead;        </span><br><span class="line">	    *pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123; </span><br><span class="line">	    SLTNode* posPrev = *pphead;    </span><br><span class="line">		while (posPrev-&gt;next != pos)   //找到pos位置的前一个节点位置，储存到posPrev里面</span><br><span class="line">		&#123;</span><br><span class="line">			posPrev = posPrev-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		posPrev-&gt;next = newnode;      </span><br><span class="line">		newnode-&gt;next = pos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="10-在pos位置之后去插入一个节点"><a href="#10-在pos位置之后去插入一个节点" class="headerlink" title="10. 在pos位置之后去插入一个节点"></a>10. 在pos位置之后去插入一个节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void SListInsertAfter(SLTNode* pos,SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL); </span><br><span class="line">	SLTNode* newnode = BuyListNode(x);</span><br><span class="line">	newnode-&gt;next = pos-&gt;next;       //必须先让新节点的next先指向后面结点</span><br><span class="line">	pos-&gt;next = newnode;             //再让pos的next指向新结点</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="11-删除pos位置节点"><a href="#11-删除pos位置节点" class="headerlink" title="11. 删除pos位置节点"></a>11. 删除pos位置节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void SListErase(SLTNode** pphead,SLTNode* pos)</span><br><span class="line">&#123;   </span><br><span class="line">	assert(*pphead != NULL);</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	if(*pphead == pos)               //如果pos位置是头节点</span><br><span class="line">	&#123;</span><br><span class="line">	  *pphead = pos-&gt;next;</span><br><span class="line">	  free(pos);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">	  SLTNode *prev = *pphead;       //找到pos位置的前一个节点位置，储存到prev里面</span><br><span class="line">	  while (prev-&gt;next != pos)</span><br><span class="line">	  &#123;</span><br><span class="line">		  prev = prev-&gt;next;</span><br><span class="line">	  &#125;</span><br><span class="line">	  prev-&gt;next = pos-&gt;next;        //将pos位置前一个节点和pos位置后一个节点链接</span><br><span class="line">	  free(pos);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="12-删除pos位置的后面一个节点"><a href="#12-删除pos位置的后面一个节点" class="headerlink" title="12. 删除pos位置的后面一个节点"></a>12. 删除pos位置的后面一个节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void SListEraseAfter(SLTNode* pos)</span><br><span class="line">&#123;   </span><br><span class="line">	assert(pos !=NULL);</span><br><span class="line">	assert(pos-&gt;next != NULL);       //如果pos为尾节点</span><br><span class="line">	SLTNode* prev = pos-&gt;next;</span><br><span class="line">	pos-&gt;next = prev-&gt;next;</span><br><span class="line">	free(prev);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="13-链表的销毁"><a href="#13-链表的销毁" class="headerlink" title="13. 链表的销毁"></a>13. 链表的销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void SListDestory(SLTNode** pphead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(*pphead != NULL);</span><br><span class="line">	SLTNode* cur = *pphead;</span><br><span class="line">	while (cur)                     //依次释放节点</span><br><span class="line">	&#123;</span><br><span class="line">		SLTNode* prev = cur-&gt;next;</span><br><span class="line">	    free(cur);</span><br><span class="line">		cur = prev;</span><br><span class="line">	&#125;</span><br><span class="line">	*pphead = NULL;                 //头指针赋空</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="14-单链表的优缺点"><a href="#14-单链表的优缺点" class="headerlink" title="14. 单链表的优缺点"></a>14. 单链表的优缺点</h2><h3 id="1-优点"><a href="#1-优点" class="headerlink" title="1. 优点"></a>1. 优点</h3><pre><code>（1）存储空间动态分配，只要有内存空间，数据就不会溢出。
+（2）便于实现插入与删除操作。
+</code></pre>
+<h3 id="2-缺点"><a href="#2-缺点" class="headerlink" title="2. 缺点"></a>2. 缺点</h3><pre><code>（1）存储空间不一定连续，内容分散，有时会导致调试不便。
+（2）每一个结点（除头结点）都有数据域与指针域，增大存储空间的开销。
+（3）单链表查找结点时，需要从头开始查找，增加查找时间。
+</code></pre>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-python3语法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/" class="article-date">
+      <time datetime="2023-04-02T14:47:01.000Z" itemprop="datePublished">2023-04-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/">python3语法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Python3-基础语法"><a href="#Python3-基础语法" class="headerlink" title="Python3 基础语法"></a>Python3 基础语法</h1><h2 id="1-编码"><a href="#1-编码" class="headerlink" title="1. 编码"></a>1. 编码</h2><p>默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。</p>
+<h2 id="2-标识符"><a href="#2-标识符" class="headerlink" title="2. 标识符"></a>2. 标识符</h2><ol>
+<li>第一个字符必须是字母表中字母或下划线 _ 。</li>
+<li>标识符的其他的部分由字母、数字和下划线组成。</li>
+<li>标识符对大小写敏感。</li>
+<li>在Python 3 中，可以用中文作为变量名，非 ASCII 标识符也是允许的了。</li>
+</ol>
+<h2 id="3-注释"><a href="#3-注释" class="headerlink" title="3. 注释"></a>3. 注释</h2><ol>
+<li>Python中单行注释以 # 开头，实例如下：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 第一个注释</span><br><span class="line">print (&quot;Hello, Python!&quot;) # 第二个注释</span><br></pre></td></tr></table></figure>
+<p>执行以上代码，输出结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, Python!</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>多行注释可以用多个 # 号，还有 ‘’’ 和 “””：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 第一个注释</span><br><span class="line"># 第二个注释</span><br><span class="line"> </span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">第三注释</span><br><span class="line">第四注释</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"> </span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">第五注释</span><br><span class="line">第六注释</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">print (&quot;Hello, Python!&quot;)</span><br></pre></td></tr></table></figure>
+<p>执行以上代码，输出结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello, Python!</span><br></pre></td></tr></table></figure>
+<h2 id="4-行与缩进"><a href="#4-行与缩进" class="headerlink" title="4. 行与缩进"></a>4. 行与缩进</h2><p>python最具特色的就是使用缩进来表示代码块，不需要使用大括号 {} 。<br><br>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。实例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if True:</span><br><span class="line">    print (&quot;Answer&quot;)</span><br><span class="line">    print (&quot;True&quot;)</span><br><span class="line">else:</span><br><span class="line">    print (&quot;Answer&quot;)</span><br><span class="line">  print (&quot;False&quot;)    # 缩进不一致，会导致运行错误</span><br></pre></td></tr></table></figure>
+<p>以上程序由于缩进不一致，执行后会出现类似以下错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> File &quot;test.py&quot;, line 6</span><br><span class="line">    print (&quot;False&quot;)    # 缩进不一致，会导致运行错误</span><br><span class="line">                                      ^</span><br><span class="line">IndentationError: unindent does not match any outer indentation leve</span><br></pre></td></tr></table></figure>
+<h2 id="5-多行语句"><a href="#5-多行语句" class="headerlink" title="5. 多行语句"></a>5. 多行语句</h2><p>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠 \ 来实现多行语句，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">total = item_one + \</span><br><span class="line">        item_two + \</span><br><span class="line">        item_three</span><br></pre></td></tr></table></figure>
+<p>在 [], {}, 或 () 中的多行语句，不需要使用反斜杠 \，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total = [&#x27;item_one&#x27;, &#x27;item_two&#x27;, &#x27;item_three&#x27;,</span><br><span class="line">        &#x27;item_four&#x27;, &#x27;item_five&#x27;]</span><br></pre></td></tr></table></figure>
+<h2 id="6-数字-NUMBER-类型"><a href="#6-数字-NUMBER-类型" class="headerlink" title="6. 数字(NUMBER)类型"></a>6. 数字(NUMBER)类型</h2><p>python中数字有四种类型：整数、布尔型、浮点数和复数。<br><br></p>
+<ul>
+<li>int (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。<br></li>
+<li>bool (布尔), 如 True。<br></li>
+<li>float (浮点数), 如 1.23、3E-2<br></li>
+<li>complex (复数), 如 1 + 2j、 1.1 + 2.2j</li>
+</ul>
+<h2 id="7-字符串-String"><a href="#7-字符串-String" class="headerlink" title="7. 字符串(String)"></a>7. 字符串(String)</h2><h3 id="1-Python-中单引号-‘-和双引号-“-使用完全相同。"><a href="#1-Python-中单引号-‘-和双引号-“-使用完全相同。" class="headerlink" title="1.Python 中单引号 ‘ 和双引号 “ 使用完全相同。"></a>1.Python 中单引号 ‘ 和双引号 “ 使用完全相同。</h3><h3 id="2-使用三引号-‘’’-或-“””-可以指定一个多行字符串。"><a href="#2-使用三引号-‘’’-或-“””-可以指定一个多行字符串。" class="headerlink" title="2.使用三引号(‘’’ 或 “””)可以指定一个多行字符串。"></a>2.使用三引号(‘’’ 或 “””)可以指定一个多行字符串。</h3><br>
+实例：
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">word = &#x27;字符串&#x27;</span><br><span class="line">sentence = &quot;这是一个句子。&quot;</span><br><span class="line">paragraph = &quot;&quot;&quot;这是一个段落，</span><br><span class="line">可以由</span><br><span class="line">多行组成&quot;&quot;&quot;</span><br><span class="line">print(word)</span><br><span class="line">print(sentence)</span><br><span class="line">print(paragraph)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">字符串</span><br><span class="line">这是一个句子。</span><br><span class="line">这是一个段落，</span><br><span class="line">可以由</span><br><span class="line">多行组成</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-转义符-。"><a href="#3-转义符-。" class="headerlink" title="3. 转义符 \。"></a>3. 转义符 \。</h3><h3 id="4-反斜杠可以用来转义，使用-r-可以让反斜杠不发生转义。-如-r”this-is-a-line-with-n”-则-n-会显示，并不是换行。"><a href="#4-反斜杠可以用来转义，使用-r-可以让反斜杠不发生转义。-如-r”this-is-a-line-with-n”-则-n-会显示，并不是换行。" class="headerlink" title="4. 反斜杠可以用来转义，使用 r 可以让反斜杠不发生转义。 如 r”this is a line with \n” 则 \n 会显示，并不是换行。"></a>4. 反斜杠可以用来转义，使用 r 可以让反斜杠不发生转义。 如 r”this is a line with \n” 则 \n 会显示，并不是换行。</h3><h3 id="5-按字面意义级联字符串，如-“this-“-“is-“-“string”-会被自动转换为-this-is-string。"><a href="#5-按字面意义级联字符串，如-“this-“-“is-“-“string”-会被自动转换为-this-is-string。" class="headerlink" title="5.按字面意义级联字符串，如 “this “ “is “ “string” 会被自动转换为 this is string。"></a>5.按字面意义级联字符串，如 “this “ “is “ “string” 会被自动转换为 this is string。</h3><h3 id="6-字符串可以用-运算符连接在一起，用-运算符重复。"><a href="#6-字符串可以用-运算符连接在一起，用-运算符重复。" class="headerlink" title="6.字符串可以用 + 运算符连接在一起，用 * 运算符重复。"></a>6.字符串可以用 + 运算符连接在一起，用 * 运算符重复。</h3><h3 id="7-Python-中的字符串有两种索引方式，从左往右以-0-开始，从右往左以-1-开始。"><a href="#7-Python-中的字符串有两种索引方式，从左往右以-0-开始，从右往左以-1-开始。" class="headerlink" title="7.Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。"></a>7.Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</h3><h3 id="8-Python-中的字符串不能改变。"><a href="#8-Python-中的字符串不能改变。" class="headerlink" title="8.Python 中的字符串不能改变。"></a>8.Python 中的字符串不能改变。</h3><h3 id="9-Python-没有单独的字符类型，一个字符就是长度为-1-的字符串。"><a href="#9-Python-没有单独的字符类型，一个字符就是长度为-1-的字符串。" class="headerlink" title="9.Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。"></a>9.Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</h3><h3 id="10-字符串的截取的语法格式如下：变量-头下标-尾下标-步长"><a href="#10-字符串的截取的语法格式如下：变量-头下标-尾下标-步长" class="headerlink" title="10.字符串的截取的语法格式如下：变量[头下标:尾下标:步长]"></a>10.字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</h3><p>实例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">str = &#x27;123456789&#x27;</span><br><span class="line"></span><br><span class="line">print(str)  # 输出字符串</span><br><span class="line">print(str[0:-1])  # 输出第一个到倒数第二个的所有字符</span><br><span class="line">print(str[0:4])  # 输出第一个到第五个的所有字符（不包括第五个）</span><br><span class="line">print(str[3:])   # 如果后者不填默认为最后一个</span><br><span class="line">print(str[-3:-4])  # 如果前者大于等于后者，输出空</span><br><span class="line">print(str[0])  # 输出字符串第一个字符</span><br><span class="line">print(str[1:7:2])  # 输出从第二个开始到第八个且每隔一个的字符（步长为2）</span><br><span class="line">print(str[1:7:])  # 如果步长不填，默认为1</span><br><span class="line">print(str[1:7:100])  # 如果步长超出字符串长度，默认输出第一个</span><br><span class="line">print(str * 2)  # 输出字符串两次</span><br><span class="line">print(str + &#x27;你好&#x27;)  # 连接字符串</span><br><span class="line"></span><br><span class="line">print(&#x27;------------------------------&#x27;)</span><br><span class="line"></span><br><span class="line">print(&#x27;hello\nrunoob&#x27;)  # 使用反斜杠(\)+n转义特殊字符</span><br><span class="line">print(r&#x27;hello\nrunoob&#x27;)  # 在字符串前面添加一个 r，表示原始字符串，不会发生转义不会发生转义</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">123456789</span><br><span class="line">12345678</span><br><span class="line">1234</span><br><span class="line">456789</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">246</span><br><span class="line">234567</span><br><span class="line">2</span><br><span class="line">123456789123456789</span><br><span class="line">123456789你好</span><br><span class="line">------------------------------</span><br><span class="line">hello</span><br><span class="line">runoob</span><br><span class="line">hello\nrunoob</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="8-输入和输出"><a href="#8-输入和输出" class="headerlink" title="8. 输入和输出"></a>8. 输入和输出</h2><h3 id="1-输出"><a href="#1-输出" class="headerlink" title="1.输出"></a>1.输出</h3><p>在python中使用print()函数进行输出。<br><br><br>输出字符串时可用单引号或双引号括起来。<br><br><br>输出变量时，可不加引号。<br><br><br>变量与字符串同时输出或多个变量同时输出时，需用“,”隔开各项。</p>
+<h3 id="2-输入"><a href="#2-输入" class="headerlink" title="2.输入"></a>2.输入</h3><p>Python提供了input()函数用于获取用户键盘输入的字符。<br><br><br>input()函数让程序暂停运行，等待用户输入数据，当获取用户输入后，Python将以<strong>字符串</strong>的形式存储在一个变量中，方便后面使用。<br><br><br>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = input(&quot;请输入第一个整数:&quot;) #输入变量a的值</span><br><span class="line">b = input(&quot;请输入第二个整数:&quot;) #输入变量b的值</span><br><span class="line">a = int(a)               #将变量a转换为整数型</span><br><span class="line">b = int(b)               #将变量b转换为整数型</span><br><span class="line">c = a + b                #两数相加赋给c</span><br><span class="line">print(&quot;两数之和为:&quot;,c)    #输出c的值</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请输入第一个整数:2</span><br><span class="line">请输入第二个整数:3</span><br><span class="line">两数之和为: 5</span><br></pre></td></tr></table></figure>
+<p>如果去掉上述第3，4行代码，也就是不用int()函数转换变量类型，那么变量c就是变量a和b的简单拼接。<br><br><br>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input(&quot;请输入第一个整数:&quot;) #输入变量a的值</span><br><span class="line">b = input(&quot;请输入第二个整数:&quot;) #输入变量b的值</span><br><span class="line">c = a + b                #两数相加赋给c</span><br><span class="line">print(&quot;两数之和为:&quot;,c)    #输出c的值</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请输入第一个整数:2</span><br><span class="line">请输入第二个整数:3</span><br><span class="line">两数之和为: 23</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-判断语句"><a href="#9-判断语句" class="headerlink" title="9. 判断语句"></a>9. 判断语句</h2><p>构造1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件:</span><br><span class="line">    语句块</span><br></pre></td></tr></table></figure>
+<p>构造2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件1:</span><br><span class="line">    语句块1</span><br><span class="line">else:</span><br><span class="line">    语句块2</span><br></pre></td></tr></table></figure>
+<p>构造3:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件1:</span><br><span class="line">    语句块1</span><br><span class="line">elif 判断条件2:</span><br><span class="line">    语句块2</span><br><span class="line">...</span><br><span class="line">elif 判断条件n:</span><br><span class="line">    语句块n</span><br><span class="line">else:</span><br><span class="line">    语句块n+1</span><br></pre></td></tr></table></figure>
+<h2 id="10-循环语句"><a href="#10-循环语句" class="headerlink" title="10. 循环语句"></a>10. 循环语句</h2><h3 id="1-while语句"><a href="#1-while语句" class="headerlink" title="(1).while语句"></a>(1).while语句</h3><p>构造:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while 判断条件:</span><br><span class="line">    语句块</span><br></pre></td></tr></table></figure>
+<h3 id="2-while-else语句"><a href="#2-while-else语句" class="headerlink" title="(2).while-else语句"></a>(2).while-else语句</h3><p>构造</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while 判断条件:</span><br><span class="line">    语句块</span><br><span class="line">else:</span><br><span class="line">    语句块</span><br></pre></td></tr></table></figure>
+<p>如果 while 后面的条件语句为 false 时，则执行 else 的语句块。<br>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">count = 0</span><br><span class="line">while count &lt; 5:</span><br><span class="line">   print (count, &quot; 小于 5&quot;)</span><br><span class="line">   count = count + 1</span><br><span class="line">else:</span><br><span class="line">   print (count, &quot; 大于或等于 5&quot;)</span><br></pre></td></tr></table></figure>
+<p>执行结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0  小于 5</span><br><span class="line">1  小于 5</span><br><span class="line">2  小于 5</span><br><span class="line">3  小于 5</span><br><span class="line">4  小于 5</span><br><span class="line">5  大于或等于 5</span><br></pre></td></tr></table></figure>
+<h3 id="3-for语句"><a href="#3-for语句" class="headerlink" title="(3).for语句"></a>(3).for语句</h3><p>构造:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for 变量 in 序列:</span><br><span class="line">    语句块</span><br></pre></td></tr></table></figure>
+<p>for循环语句经常与range()函数一起使用，range()函数是Python的内置函数，可创建一个整数列表。<br><br><br>range()函数的语法是:<br><br><br>range([start,]stop[,step])<br><br><br>start:计数从start开始，默认是从0开始。例如，range(5)等价于range(0,5)<br><br><br>stop:计数到stop结束，但不包括stop。例如，range(0,5)是[0,1,2,3,4]<br><br><br>step:步长，默认为1。例如，range(0,5)等价于range(0,5,1)<br><br></p>
+<h3 id="4-for-else语句"><a href="#4-for-else语句" class="headerlink" title="(4).for-else语句"></a>(4).for-else语句</h3><p>构造:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for 变量 in 序列:</span><br><span class="line">    语句块</span><br><span class="line">else:</span><br><span class="line">    语句块</span><br></pre></td></tr></table></figure>
+<p>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for x in range(6):</span><br><span class="line">  print(x)</span><br><span class="line">else:</span><br><span class="line">  print(&quot;Finally finished!&quot;)</span><br></pre></td></tr></table></figure>
+<p>输出结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">Finally finished!</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-Python基本数据类型-list-tuple-dict-set"><a href="#11-Python基本数据类型-list-tuple-dict-set" class="headerlink" title="11. Python基本数据类型-list-tuple-dict-set"></a>11. Python基本数据类型-list-tuple-dict-set</h2><p><img src="/2023/04/02/python3%E8%AF%AD%E6%B3%95/python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.png" alt="title"></p>
+<h3 id="1-列表list"><a href="#1-列表list" class="headerlink" title="(1).列表list"></a>(1).列表list</h3><p><img src="/2023/04/02/python3%E8%AF%AD%E6%B3%95/%E5%88%97%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.png" alt="title"></p>
+<h3 id="2-元组tuple"><a href="#2-元组tuple" class="headerlink" title="(2).元组tuple"></a>(2).元组tuple</h3><p>Python的元组与列表类似，不同之处在于元组的元素不能修改；<br><br><br>元组使用小括号()，列表使用方括号[]；<br><br><br>元组创建很简单，只需要在括号中添加元素，并使用逗号(,)隔开即可。</p>
+<h3 id="3-字典dict"><a href="#3-字典dict" class="headerlink" title="(3).字典dict"></a>(3).字典dict</h3><p><img src="/2023/04/02/python3%E8%AF%AD%E6%B3%95/%E5%AD%97%E5%85%B8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.png" alt="title"></p>
+<h3 id="4-集合set"><a href="#4-集合set" class="headerlink" title="(4).集合set"></a>(4).集合set</h3><p><img src="/2023/04/02/python3%E8%AF%AD%E6%B3%95/%E9%9B%86%E5%90%88%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.png" alt="title"></p>
+<h1 id="python3进阶语法"><a href="#python3进阶语法" class="headerlink" title="python3进阶语法"></a>python3进阶语法</h1><h2 id="1-推导式"><a href="#1-推导式" class="headerlink" title="1. 推导式"></a>1. 推导式</h2><p>Python 推导式是一种独特的数据处理方式，可以从一个数据序列构建另一个新的数据序列的结构体。<br><br><br>Python支持各种数据结构的推导式：</p>
+<h3 id="1-列表-list-推导式"><a href="#1-列表-list-推导式" class="headerlink" title="(1).列表(list)推导式"></a>(1).列表(list)推导式</h3><p>列表推导式格式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[表达式 for 变量 in 列表] </span><br><span class="line">[out_exp_res for out_exp in input_list]</span><br><span class="line"></span><br><span class="line">或者 </span><br><span class="line"></span><br><span class="line">[表达式 for 变量 in 列表 if 条件]</span><br><span class="line">[out_exp_res for out_exp in input_list if condition]</span><br></pre></td></tr></table></figure>
+<p>out_exp_res：列表生成元素表达式，可以是有返回值的函数。<br><br><br>for out_exp in input_list：迭代 input_list 将 out_exp 传入到 out_exp_res 表达式中。<br><br><br>if condition：条件语句，可以过滤列表中不符合条件的值。<br><br></p>
+<p>实例1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [&#x27;Bob&#x27;,&#x27;Tom&#x27;,&#x27;alice&#x27;,&#x27;Jerry&#x27;,&#x27;Wendy&#x27;,&#x27;Smith&#x27;]</span><br><span class="line">new_names = [name.upper() for name in names if len(name)&gt;3] # 过滤掉长度小于或等于3的字符串列表(if语句)，并将剩下的转换成大写字母返回(upper函数)到列表</span><br><span class="line">print(new_names) # 打印列表</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;ALICE&#x27;, &#x27;JERRY&#x27;, &#x27;WENDY&#x27;, &#x27;SMITH&#x27;]</span><br></pre></td></tr></table></figure>
+<p>实例2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [i.__float__() for i in range(0,20) if i % 3 == 0]  # 计算0到20间可以被3整除的数,然后以float类型返回到列表</span><br><span class="line">print(a) # 打印列表</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0]</span><br></pre></td></tr></table></figure>
+<h3 id="2-字典-dict-推导式"><a href="#2-字典-dict-推导式" class="headerlink" title="(2).字典(dict)推导式"></a>(2).字典(dict)推导式</h3><p>字典推导基本格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; key_expr: value_expr for value in collection &#125;</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">&#123; key_expr: value_expr for value in collection if condition &#125;</span><br></pre></td></tr></table></figure>
+<p>实例1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">listdemo = [&#x27;Google&#x27;,&#x27;baidu&#x27;, &#x27;tencent&#x27;]</span><br><span class="line"># 将列表中各字符串值为键，各字符串的长度为值，组成键值对 然后返回到newdict</span><br><span class="line">newdict = &#123;key:len(key) for key in listdemo&#125;</span><br><span class="line">print(newdict) # 打印该字典</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;Google&#x27;: 6, &#x27;baidu&#x27;: 5, &#x27;tencent&#x27;: 7&#125;</span><br></pre></td></tr></table></figure>
+<p>实例2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;x: x**2 for x in (2, 4, 6)&#125;</span><br><span class="line">print(dic)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;2: 4, 4: 16, 6: 36&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-集合-set-推导式"><a href="#3-集合-set-推导式" class="headerlink" title="(3).集合(set)推导式"></a>(3).集合(set)推导式</h3><p>集合推导式基本格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; expression for item in Sequence &#125;</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">&#123; expression for item in Sequence if conditional &#125;</span><br></pre></td></tr></table></figure>
+<p>实例1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setnew = &#123;i**2 for i in (1,2,3)&#125;  # 计算数字 1,2,3 的平方数</span><br><span class="line">print(setnew) </span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1, 4, 9&#125;</span><br></pre></td></tr></table></figure>
+<p>实例2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;x for x in &#x27;abracadabra&#x27; if x not in &#x27;abc&#x27;&#125; # 判断不是 abc 的字母并输出</span><br><span class="line">print(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1, 4, 9&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-元组-tuple-推导式"><a href="#4-元组-tuple-推导式" class="headerlink" title="(4).元组(tuple)推导式"></a>(4).元组(tuple)推导式</h3><p>元组推导式可以利用 range 区间、元组、列表、字典和集合等数据类型，快速生成一个满足指定需求的元组。<br><br><br>元组推导式基本格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(expression for item in Sequence )</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">(expression for item in Sequence if conditional )</span><br></pre></td></tr></table></figure>
+<p>元组推导式和列表推导式的用法也完全相同，只是元组推导式是用 () 圆括号将各部分括起来，而列表推导式用的是中括号 []，另外元组推导式返回的结果是一个生成器对象。<br>实例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = (x for x in range(1,10))</span><br><span class="line">print(a)</span><br><span class="line">b = tuple(a)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;generator object &lt;genexpr&gt; at 0x00000299CE178350&gt;</span><br><span class="line">(1, 2, 3, 4, 5, 6, 7, 8, 9)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-三元表达式"><a href="#2-三元表达式" class="headerlink" title="2. 三元表达式"></a>2. 三元表达式</h2><p>Python 中没有其它语言的三元表达式（三目运算符）相关说法，但是有类似的语法。<br><br>在 Python 中，三元表达式是一种语法结构，一般被 Python 开发者叫做条件表达式，它的结构如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">表达式（1）为 True 执行语句 if 条件表达式（1） else 表达式（1）为 False 执行语句</span><br></pre></td></tr></table></figure>
+<p>实例1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 20</span><br><span class="line">cn = &quot;成年&quot; if age &gt;= 18 else &quot;未成年&quot;</span><br><span class="line">print(cn)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">成年</span><br></pre></td></tr></table></figure>
+<h3 id="1-返回多个条语句"><a href="#1-返回多个条语句" class="headerlink" title="(1).返回多个条语句"></a>(1).返回多个条语句</h3><p>实例2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 20</span><br><span class="line">cn = &quot;成年&quot;,&quot;大于18&quot; if age &gt;= 18 else &quot;未成年&quot;</span><br><span class="line">print(cn)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&#x27;成年&#x27;, &#x27;大于18&#x27;)</span><br></pre></td></tr></table></figure>
+<p>代码返回一个元组，内容为 (‘成年’, ‘大于18’) ，这里一定注意不要使用分号 ; 否则只返回第一个语句的结果。<br>实例3:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 20</span><br><span class="line">cn = &quot;成年&quot;;&quot;大于18&quot; if age &gt;= 18 else &quot;未成年&quot;</span><br><span class="line">print(cn)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">成年</span><br></pre></td></tr></table></figure>
+<h3 id="2-三元表达式用于列表推导式"><a href="#2-三元表达式用于列表推导式" class="headerlink" title="(2).三元表达式用于列表推导式"></a>(2).三元表达式用于列表推导式</h3><p>实例4:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">li = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span><br><span class="line">ret = [i for i in li if i % 2 == 0]</span><br><span class="line">print(ret)</span><br><span class="line">ret = [i if i % 2 == 0 else None for i in li]</span><br><span class="line">print(ret)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[2, 4, 6, 8, 10]</span><br><span class="line">[None, 2, None, 4, None, 6, None, 8, None, 10]</span><br></pre></td></tr></table></figure>
+<h3 id="3-在函数内部使用三元表达式"><a href="#3-在函数内部使用三元表达式" class="headerlink" title="(3).在函数内部使用三元表达式"></a>(3).在函数内部使用三元表达式</h3><p>有些简单的判定逻辑，可以直接使用三元表达式简化，例如判断传入参数是否为偶数。<br>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def even_num(num):</span><br><span class="line">    return True if num % 2 == 0 else False</span><br></pre></td></tr></table></figure>
+<h3 id="4-三元表达式与-lambda匿名函数"><a href="#4-三元表达式与-lambda匿名函数" class="headerlink" title="(4).三元表达式与 lambda匿名函数"></a>(4).三元表达式与 lambda匿名函数</h3><p>有时候可以将三元表达式与 lambda 进行结合，让代码变得更加简洁。<br>实例5:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">max = lambda a, b: a if a &gt; b else b  # 与下面的代码意思相同</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">def max(a, b):       </span><br><span class="line">    if a &gt; b:</span><br><span class="line">        ret = a</span><br><span class="line">    else:</span><br><span class="line">        ret = b</span><br><span class="line">    return ret</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">r = max(10, 15)</span><br><span class="line">print(r)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure>
+<h3 id="5-三元表达式的嵌套"><a href="#5-三元表达式的嵌套" class="headerlink" title="(5).三元表达式的嵌套"></a>(5).三元表达式的嵌套</h3><p>实例6:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 编写一个三元表达式，首先判断其值大于20，然后在判断是奇数</span><br><span class="line">num = 21</span><br><span class="line">ret = &quot;小于20&quot; if num &lt; 20 else (&quot;奇数&quot; if num % 2 == 1 else &quot;偶数&quot;)</span><br><span class="line">print(ret)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">奇数</span><br></pre></td></tr></table></figure>
+<h3 id="6-三元表达式的扩展使用"><a href="#6-三元表达式的扩展使用" class="headerlink" title="(6).三元表达式的扩展使用"></a>(6).三元表达式的扩展使用</h3><p>元组条件表达式</p>
+<p>实例7:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 20</span><br><span class="line">cn = (&quot;未成年&quot;, &quot;成年&quot;)[age &gt;= 18]</span><br><span class="line">print(cn)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">成年</span><br></pre></td></tr></table></figure>
+<p>语法格式如下所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(当后面的表达式为假时返回，当后面的表达式为真时返回)[条件表达式]</span><br></pre></td></tr></table></figure>
+<p>字典条件表达式</p>
+<p>实例8:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 20</span><br><span class="line">cn = &#123;False: &quot;未成年&quot;, True: &quot;成年&quot;&#125;[age &gt;= 18]</span><br><span class="line">print(cn)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">成年</span><br></pre></td></tr></table></figure>
+<p>上述两种写法都有一些<strong>故弄玄虚</strong>，而且<strong>代码非常不易阅读</strong>，<strong>所以不建议实战编码时使用</strong>。</p>
+<h2 id="3-Python-断言"><a href="#3-Python-断言" class="headerlink" title="3.Python 断言"></a>3.Python 断言</h2><h3 id="1-python断言定义"><a href="#1-python断言定义" class="headerlink" title="(1).python断言定义"></a>(1).python断言定义</h3><p>Python断言用于判断某个表达式的值，结果为 True，程序运行，否则，程序停止运行，抛出 AssertionError 错误。<br>实例1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def overage18(age):</span><br><span class="line">    assert age &gt;= 18, &quot;对不起未满18岁，无法进行游戏&quot;</span><br><span class="line">    print(&quot;享受欢乐游戏时光&quot;)</span><br><span class="line"></span><br><span class="line">overage18(15)</span><br></pre></td></tr></table></figure>
+<p>输出结果为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AssertionError: 对不起未满18岁，无法进行游戏</span><br></pre></td></tr></table></figure>
+<p>断言主要为调试辅助而生，为的是程序自检，并不是为了处理错误，程序 BUG 还是要依赖 try… except 解决。</p>
+<h3 id="2-常用断言函数"><a href="#2-常用断言函数" class="headerlink" title="(2).常用断言函数"></a>(2).常用断言函数</h3><p>assertEqual(a,b,msg&#x3D;msg)：判断两个值是否相等；<br><br><br>assertNotEqual(a,b,msg&#x3D;msg)：上一函数的反义；<br><br><br>self.assertTrue(a,msg&#x3D;none)：判断变量是否为 True；<br><br><br>assertFalse(a,msg&#x3D;none)：同上反义；<br><br><br>assertIsNone(obj&#x3D;‘’)：判断 obj 是否为空；<br><br><br>assertIsNotNone(obj&#x3D;‘’)：同上反义；</p>
+<h2 id="4-with-as"><a href="#4-with-as" class="headerlink" title="4.with-as"></a>4.with-as</h2><h3 id="1-Python-with…as…是什么"><a href="#1-Python-with…as…是什么" class="headerlink" title="(1).Python with…as…是什么"></a>(1).Python with…as…是什么</h3><p>在 Python 中，文件操作，数据库操作，都需要在程序执行完毕进行清理工作，很多时候我们经常忘记手动关闭，因此 Python 集成了一种自动操作，例如文件使用自后，自动释放资源。<br><br><br>上述场景的描述，转换成 Python 语法就是 with…as 语句，即上下文管理器，它在 Python 中实现了自动分配并释放资源。</p>
+<h3 id="2-with-as-语句的语法格式"><a href="#2-with-as-语句的语法格式" class="headerlink" title="(2).with-as 语句的语法格式"></a>(2).with-as 语句的语法格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with 表达式 [as 指定一个变量名]:</span><br><span class="line">	代码块</span><br><span class="line">	代码块</span><br></pre></td></tr></table></figure>
+<p>其中 [ ] 中的内容可以省略，如果使用表示将前文表达式的结果保存到一个变量中。</p>
+<h3 id="3-with-as如何使用"><a href="#3-with-as如何使用" class="headerlink" title="(3).with-as如何使用"></a>(3).with-as如何使用</h3><p>用于文件操作<br><br><br>with…as… 语句初次接触一般是在文件操作中，如果不使用上下文管理器，对一个文件进行操作的代码如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file = open(&quot;./demo.txt&quot;) # 手动打开</span><br><span class="line">data = file.read()</span><br><span class="line">file.close() # 手动关闭</span><br></pre></td></tr></table></figure>
+<p>下面是 with…as… 版本的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(&quot;./demo.txt&quot;) as file:</span><br><span class="line">    data = file.read() </span><br></pre></td></tr></table></figure>
+<p>如果不使用上述语句，想要完成一个完善的代码段，需要使用 try…except… 语句进行操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file = open(&quot;./demo.txt&quot;)</span><br><span class="line">try:</span><br><span class="line">    data = file.read()</span><br><span class="line">finally:</span><br><span class="line">    file.close()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-顺序表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" class="article-date">
+      <time datetime="2023-03-24T15:59:05.000Z" itemprop="datePublished">2023-03-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="顺序表（数据从第一个位置开始放，且连续存储）"><a href="#顺序表（数据从第一个位置开始放，且连续存储）" class="headerlink" title="顺序表（数据从第一个位置开始放，且连续存储）"></a>顺序表（数据从第一个位置开始放，且连续存储）</h1><h2 id="一-接口实现"><a href="#一-接口实现" class="headerlink" title="一. 接口实现"></a>一. 接口实现</h2><h3 id="头文件（-h）写定义-源文件（-c）-写具体实现"><a href="#头文件（-h）写定义-源文件（-c）-写具体实现" class="headerlink" title="头文件（.h）写定义   源文件（.c） 写具体实现"></a>头文件（.h）写定义   源文件（.c） 写具体实现</h3><h2 id="二-顺序表的结构"><a href="#二-顺序表的结构" class="headerlink" title="二. 顺序表的结构"></a>二. 顺序表的结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef int SLDataType; //这里使用别名是为了方便修改数据表储存数据的类型</span><br><span class="line"></span><br><span class="line">typedef struct SeqList</span><br><span class="line">&#123;</span><br><span class="line">	SLDataType *a;//指向动态开辟的数组</span><br><span class="line">	int size;     //目前有效存储数据个数</span><br><span class="line">	int capacity; //开辟空间总容量</span><br><span class="line">&#125;SL;</span><br></pre></td></tr></table></figure>
+<h2 id="三-顺序表各种接口函数实现（初始化-增容-销毁-打印-增-删-改-查-）"><a href="#三-顺序表各种接口函数实现（初始化-增容-销毁-打印-增-删-改-查-）" class="headerlink" title="三.顺序表各种接口函数实现（初始化 增容 销毁 打印 增 删 改 查 ）"></a>三.顺序表各种接口函数实现（初始化 增容 销毁 打印 增 删 改 查 ）</h2><h3 id="1-顺序表的初始化"><a href="#1-顺序表的初始化" class="headerlink" title="1.顺序表的初始化"></a>1.顺序表的初始化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInit (SL *ps)&#123;</span><br><span class="line">	ps-&gt;a = NULL;//开辟内存之前给指针赋值为空，可以避免野指针出现（野指针是指指向未知地址或未分配内存空间的指针，如果程序试图访问该地址，就会导致程序崩溃或出现不可预知的后果）//</span><br><span class="line">  ps-&gt;a = (SLDataType)malloc(sizeof(SLDataType)* 4);//初始开辟四个空间，不够再扩容;</span><br><span class="line">	if(ps-&gt;a == NULL)  //开辟失败</span><br><span class="line">	&#123; </span><br><span class="line">	  printf(&quot;申请内存失败&quot;);</span><br><span class="line">	  exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;size = 0;</span><br><span class="line">	ps-&gt;capacity = 4;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2-顺序表的增容（检查容量，不够则增容）"><a href="#2-顺序表的增容（检查容量，不够则增容）" class="headerlink" title="2.顺序表的增容（检查容量，不够则增容）"></a>2.顺序表的增容（检查容量，不够则增容）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void SLCheckCapacity (SL *ps)&#123;</span><br><span class="line">	if (ps-&gt;size &gt;= ps-&gt;capacity)</span><br><span class="line">	&#123;</span><br><span class="line">		ps-&gt;capacity *= 2;</span><br><span class="line">		ps-&gt;a = (SLDataType)realloc(ps-&gt;a, sizeof(SLDataType)*ps-&gt;capacity);</span><br><span class="line">		if (ps-&gt;a == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;增容失败\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="3-顺序表的销毁"><a href="#3-顺序表的销毁" class="headerlink" title="3.顺序表的销毁"></a>3.顺序表的销毁</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void SeqListDestory(SL *ps)&#123;</span><br><span class="line">	assert(ps != NULL)                    //判断是否为空</span><br><span class="line">	free(ps-&gt;a);                          //先释放指针a指向的空间</span><br><span class="line">	ps-&gt;a = NULL;                         //再将指针a赋空</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">	ps-&gt;size = 0;                         //最后将容量和数据个数赋0</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="4-顺序表的打印"><a href="#4-顺序表的打印" class="headerlink" title="4.顺序表的打印"></a>4.顺序表的打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPrint (SL *ps)&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	for (; i &lt; ps-&gt;size; i++)             //size控制打印次数</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;, ps-&gt;a[i]);          //根据具体类型改输出格式</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="5-顺序表的头插"><a href="#5-顺序表的头插" class="headerlink" title="5.顺序表的头插"></a>5.顺序表的头插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPushFront (SL *ps,SLDataType x)&#123;</span><br><span class="line">	SLCheckCapacity(ps);                 //检查容量，不足则增容</span><br><span class="line">	int end = ps-&gt;size;                  //控制挪动数据</span><br><span class="line">	for(; end &gt; 0; end--)&#123;</span><br><span class="line">		ps-&gt;a[end] = ps-&gt;a[end-1];</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;a[0] = x;</span><br><span class="line">	ps-&gt;size++;                          //插入后size记得加1</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="6-顺序表的尾插"><a href="#6-顺序表的尾插" class="headerlink" title="6.顺序表的尾插"></a>6.顺序表的尾插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPushBack (SL *ps,SLDataType x)&#123;</span><br><span class="line">	SLCheckCapacity(ps);</span><br><span class="line">	ps-&gt;a[ps-&gt;size] = x;</span><br><span class="line">	ps-&gt;size++;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="7-顺序表的任意位置（pos位置）插入"><a href="#7-顺序表的任意位置（pos位置）插入" class="headerlink" title="7.顺序表的任意位置（pos位置）插入"></a>7.顺序表的任意位置（pos位置）插入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInsert (SL *ps, int pos, SLDataType x)&#123;</span><br><span class="line">	assert(pos &gt;= 0 &amp;&amp; pos &lt;= ps-&gt;size); //判断pos的合法性</span><br><span class="line">	SLCheckCapacity(ps);                 //检查容量，不足则增容</span><br><span class="line">	int end = ps-&gt;size - 1;</span><br><span class="line">	while(end &gt;= pos)</span><br><span class="line">	&#123; </span><br><span class="line">		ps-&gt;a[end+1] = ps-&gt;a[end];</span><br><span class="line">		end--;</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;a[pos] = x;</span><br><span class="line">	ps-&gt;size++;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="8-顺序表的头删"><a href="#8-顺序表的头删" class="headerlink" title="8.顺序表的头删"></a>8.顺序表的头删</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopFront (SL *ps)&#123;</span><br><span class="line">	assert(ps-&gt;size &gt; 0);               //保证有数据可删</span><br><span class="line">	int begin = 1;</span><br><span class="line">	while (begin &lt; ps-&gt;size)            //begin小于size时挪动数据</span><br><span class="line">	&#123;</span><br><span class="line">		ps-&gt;a[begin - 1] = ps-&gt;a[begin];</span><br><span class="line">		begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;size--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="9-顺序表的尾删"><a href="#9-顺序表的尾删" class="headerlink" title="9.顺序表的尾删"></a>9.顺序表的尾删</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopBack (SL *ps)&#123;</span><br><span class="line">	assert(ps-&gt;size &gt; 0);               //保证有数据可删</span><br><span class="line">	ps-&gt;size--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="10-顺序表的任意位置（pos位置）删除"><a href="#10-顺序表的任意位置（pos位置）删除" class="headerlink" title="10.顺序表的任意位置（pos位置）删除"></a>10.顺序表的任意位置（pos位置）删除</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void SeqListErase (SL *ps, int pos)&#123;</span><br><span class="line">	assert(pos &gt;= 0 &amp;&amp; pos &lt; ps-&gt;size);//保证pos的合法性</span><br><span class="line">	int begin = pos + 1;</span><br><span class="line">	while(begin &lt; ps-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">	 ps-&gt;a[begin-1] = ps-&gt;a[begin];</span><br><span class="line">	 begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	 ps-&gt;size--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="11-顺序表的元素查找"><a href="#11-顺序表的元素查找" class="headerlink" title="11.顺序表的元素查找"></a>11.顺序表的元素查找</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int SeqListFind(SL *ps, SLDataType x)&#123;</span><br><span class="line">  for (int i = 0; i &lt; ps-&gt;size; i++)&#123; //遍历顺序表</span><br><span class="line">		if (ps-&gt;a[i] == x)&#123;           //找到数据返回下标</span><br><span class="line">		    return i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;                       //找不到返回-1</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="12-顺序表修改任意位置（pos位置）的数据"><a href="#12-顺序表修改任意位置（pos位置）的数据" class="headerlink" title="12.顺序表修改任意位置（pos位置）的数据"></a>12.顺序表修改任意位置（pos位置）的数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void SeqListAlter(SL *ps, int pos, SLDataType x)&#123;</span><br><span class="line">    assert(pos &gt;=0 &amp;&amp; pos &lt; ps-&gt;size);</span><br><span class="line">    ps-&gt;a[pos] = x;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="四-顺序表知识小结"><a href="#四-顺序表知识小结" class="headerlink" title="四.顺序表知识小结"></a>四.顺序表知识小结</h2><h3 id="1-写代码时的注意点"><a href="#1-写代码时的注意点" class="headerlink" title="(1)写代码时的注意点"></a>(1)写代码时的注意点</h3><ol>
+<li>插入数据之前需要确保是否容量足够，插入完size+1  <br></li>
+<li>删除数据之前需要确保是否有数据可删，删除完size-1  <br></li>
+<li>在任意位置插入或者删除时要判断该位置是否合理  <br></li>
+<li>空间开辟先给指针赋空，再用分配内存函数开辟空间  <br></li>
+<li>为了方便检查报错，用到哪个指针，就用assert函数去判断该指针是否为空</li>
+</ol>
+<h3 id="2-顺序表的优点和缺点"><a href="#2-顺序表的优点和缺点" class="headerlink" title="(2)顺序表的优点和缺点"></a>(2)顺序表的优点和缺点</h3><ol>
+<li>顺序表的优点：<br>
+顺序表可以通过索引（下标）快速地存、取表中元素。</li>
+<li>顺序表的缺点:<br>
+① 顺序表的插入和删除操作，会使得表中的大量元素进行移动，效率较低。
+<br>
+② 顺序表在面对扩容问题的时候，比较繁琐。当顺序表放满的时候，我们需要进行扩容。而扩容的大小需要面对不同的情况，若扩容的容量较大，那么会使得空间利用率较低；若扩容的容量较小，在后续的代码执行过程中，又需要不断地扩容操作，这使得代码变得更加繁琐。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-helloworld" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/21/helloworld/" class="article-date">
+      <time datetime="2023-03-20T17:23:31.000Z" itemprop="datePublished">2023-03-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/21/helloworld/">hello</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="hello-world！"><a href="#hello-world！" class="headerlink" title="hello world！"></a>hello world！</h1><h2 id="Welcome-to-isyang-’s-blog"><a href="#Welcome-to-isyang-’s-blog" class="headerlink" title="Welcome to isyang_’s blog !"></a>Welcome to isyang_’s blog !</h2><p><img src="/2023/03/21/helloworld/touxiang.jpg" alt="title"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
   
 </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2023 isyang_
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
 
 
-  
 
-  <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
-  </noscript>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>
