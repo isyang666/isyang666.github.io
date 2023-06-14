@@ -269,6 +269,89 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-顺序表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/" class="article-date">
+      <time datetime="2023-03-24T15:59:05.000Z" itemprop="datePublished">2023-03-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="顺序表（数据从第一个位置开始放，且连续存储）"><a href="#顺序表（数据从第一个位置开始放，且连续存储）" class="headerlink" title="顺序表（数据从第一个位置开始放，且连续存储）"></a>顺序表（数据从第一个位置开始放，且连续存储）</h1><h2 id="一-接口实现"><a href="#一-接口实现" class="headerlink" title="一. 接口实现"></a>一. 接口实现</h2><h3 id="头文件（-h）写定义-源文件（-c）-写具体实现"><a href="#头文件（-h）写定义-源文件（-c）-写具体实现" class="headerlink" title="头文件（.h）写定义   源文件（.c） 写具体实现"></a>头文件（.h）写定义   源文件（.c） 写具体实现</h3><h2 id="二-顺序表的结构"><a href="#二-顺序表的结构" class="headerlink" title="二. 顺序表的结构"></a>二. 顺序表的结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef int SLDataType; //这里使用别名是为了方便修改数据表储存数据的类型</span><br><span class="line"></span><br><span class="line">typedef struct SeqList</span><br><span class="line">&#123;</span><br><span class="line">	SLDataType *a;//指向动态开辟的数组</span><br><span class="line">	int size;     //目前有效存储数据个数</span><br><span class="line">	int capacity; //开辟空间总容量</span><br><span class="line">&#125;SL;</span><br></pre></td></tr></table></figure>
+<h2 id="三-顺序表各种接口函数实现（初始化-增容-销毁-打印-增-删-改-查-）"><a href="#三-顺序表各种接口函数实现（初始化-增容-销毁-打印-增-删-改-查-）" class="headerlink" title="三.顺序表各种接口函数实现（初始化 增容 销毁 打印 增 删 改 查 ）"></a>三.顺序表各种接口函数实现（初始化 增容 销毁 打印 增 删 改 查 ）</h2><h3 id="1-顺序表的初始化"><a href="#1-顺序表的初始化" class="headerlink" title="1.顺序表的初始化"></a>1.顺序表的初始化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInit (SL *ps)&#123;</span><br><span class="line">	ps-&gt;a = NULL;//开辟内存之前给指针赋值为空，可以避免野指针出现（野指针是指指向未知地址或未分配内存空间的指针，如果程序试图访问该地址，就会导致程序崩溃或出现不可预知的后果）//</span><br><span class="line">  ps-&gt;a = (SLDataType)malloc(sizeof(SLDataType)* 4);//初始开辟四个空间，不够再扩容;</span><br><span class="line">	if(ps-&gt;a == NULL)  //开辟失败</span><br><span class="line">	&#123; </span><br><span class="line">	  printf(&quot;申请内存失败&quot;);</span><br><span class="line">	  exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;size = 0;</span><br><span class="line">	ps-&gt;capacity = 4;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2-顺序表的增容（检查容量，不够则增容）"><a href="#2-顺序表的增容（检查容量，不够则增容）" class="headerlink" title="2.顺序表的增容（检查容量，不够则增容）"></a>2.顺序表的增容（检查容量，不够则增容）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void SLCheckCapacity (SL *ps)&#123;</span><br><span class="line">	if (ps-&gt;size &gt;= ps-&gt;capacity)</span><br><span class="line">	&#123;</span><br><span class="line">		ps-&gt;capacity *= 2;</span><br><span class="line">		ps-&gt;a = (SLDataType)realloc(ps-&gt;a, sizeof(SLDataType)*ps-&gt;capacity);</span><br><span class="line">		if (ps-&gt;a == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;增容失败\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="3-顺序表的销毁"><a href="#3-顺序表的销毁" class="headerlink" title="3.顺序表的销毁"></a>3.顺序表的销毁</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void SeqListDestory(SL *ps)&#123;</span><br><span class="line">	assert(ps != NULL)                    //判断是否为空</span><br><span class="line">	free(ps-&gt;a);                          //先释放指针a指向的空间</span><br><span class="line">	ps-&gt;a = NULL;                         //再将指针a赋空</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">	ps-&gt;size = 0;                         //最后将容量和数据个数赋0</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="4-顺序表的打印"><a href="#4-顺序表的打印" class="headerlink" title="4.顺序表的打印"></a>4.顺序表的打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPrint (SL *ps)&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	for (; i &lt; ps-&gt;size; i++)             //size控制打印次数</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;, ps-&gt;a[i]);          //根据具体类型改输出格式</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="5-顺序表的头插"><a href="#5-顺序表的头插" class="headerlink" title="5.顺序表的头插"></a>5.顺序表的头插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPushFront (SL *ps,SLDataType x)&#123;</span><br><span class="line">	SLCheckCapacity(ps);                 //检查容量，不足则增容</span><br><span class="line">	int end = ps-&gt;size;                  //控制挪动数据</span><br><span class="line">	for(; end &gt; 0; end--)&#123;</span><br><span class="line">		ps-&gt;a[end] = ps-&gt;a[end-1];</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;a[0] = x;</span><br><span class="line">	ps-&gt;size++;                          //插入后size记得加1</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="6-顺序表的尾插"><a href="#6-顺序表的尾插" class="headerlink" title="6.顺序表的尾插"></a>6.顺序表的尾插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPushBack (SL *ps,SLDataType x)&#123;</span><br><span class="line">	SLCheckCapacity(ps);</span><br><span class="line">	ps-&gt;a[ps-&gt;size] = x;</span><br><span class="line">	ps-&gt;size++;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="7-顺序表的任意位置（pos位置）插入"><a href="#7-顺序表的任意位置（pos位置）插入" class="headerlink" title="7.顺序表的任意位置（pos位置）插入"></a>7.顺序表的任意位置（pos位置）插入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInsert (SL *ps, int pos, SLDataType x)&#123;</span><br><span class="line">	assert(pos &gt;= 0 &amp;&amp; pos &lt;= ps-&gt;size); //判断pos的合法性</span><br><span class="line">	SLCheckCapacity(ps);                 //检查容量，不足则增容</span><br><span class="line">	int end = ps-&gt;size - 1;</span><br><span class="line">	while(end &gt;= pos)</span><br><span class="line">	&#123; </span><br><span class="line">		ps-&gt;a[end+1] = ps-&gt;a[end];</span><br><span class="line">		end--;</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;a[pos] = x;</span><br><span class="line">	ps-&gt;size++;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="8-顺序表的头删"><a href="#8-顺序表的头删" class="headerlink" title="8.顺序表的头删"></a>8.顺序表的头删</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopFront (SL *ps)&#123;</span><br><span class="line">	assert(ps-&gt;size &gt; 0);               //保证有数据可删</span><br><span class="line">	int begin = 1;</span><br><span class="line">	while (begin &lt; ps-&gt;size)            //begin小于size时挪动数据</span><br><span class="line">	&#123;</span><br><span class="line">		ps-&gt;a[begin - 1] = ps-&gt;a[begin];</span><br><span class="line">		begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;size--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="9-顺序表的尾删"><a href="#9-顺序表的尾删" class="headerlink" title="9.顺序表的尾删"></a>9.顺序表的尾删</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopBack (SL *ps)&#123;</span><br><span class="line">	assert(ps-&gt;size &gt; 0);               //保证有数据可删</span><br><span class="line">	ps-&gt;size--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="10-顺序表的任意位置（pos位置）删除"><a href="#10-顺序表的任意位置（pos位置）删除" class="headerlink" title="10.顺序表的任意位置（pos位置）删除"></a>10.顺序表的任意位置（pos位置）删除</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void SeqListErase (SL *ps, int pos)&#123;</span><br><span class="line">	assert(pos &gt;= 0 &amp;&amp; pos &lt; ps-&gt;size);//保证pos的合法性</span><br><span class="line">	int begin = pos + 1;</span><br><span class="line">	while(begin &lt; ps-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">	 ps-&gt;a[begin-1] = ps-&gt;a[begin];</span><br><span class="line">	 begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	 ps-&gt;size--;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="11-顺序表的元素查找"><a href="#11-顺序表的元素查找" class="headerlink" title="11.顺序表的元素查找"></a>11.顺序表的元素查找</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int SeqListFind(SL *ps, SLDataType x)&#123;</span><br><span class="line">  for (int i = 0; i &lt; ps-&gt;size; i++)&#123; //遍历顺序表</span><br><span class="line">		if (ps-&gt;a[i] == x)&#123;           //找到数据返回下标</span><br><span class="line">		    return i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;                       //找不到返回-1</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="12-顺序表修改任意位置（pos位置）的数据"><a href="#12-顺序表修改任意位置（pos位置）的数据" class="headerlink" title="12.顺序表修改任意位置（pos位置）的数据"></a>12.顺序表修改任意位置（pos位置）的数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void SeqListAlter(SL *ps, int pos, SLDataType x)&#123;</span><br><span class="line">    assert(pos &gt;=0 &amp;&amp; pos &lt; ps-&gt;size);</span><br><span class="line">    ps-&gt;a[pos] = x;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="四-顺序表知识小结"><a href="#四-顺序表知识小结" class="headerlink" title="四.顺序表知识小结"></a>四.顺序表知识小结</h2><h3 id="1-写代码时的注意点"><a href="#1-写代码时的注意点" class="headerlink" title="(1)写代码时的注意点"></a>(1)写代码时的注意点</h3><ol>
+<li>插入数据之前需要确保是否容量足够，插入完size+1  <br></li>
+<li>删除数据之前需要确保是否有数据可删，删除完size-1  <br></li>
+<li>在任意位置插入或者删除时要判断该位置是否合理  <br></li>
+<li>空间开辟先给指针赋空，再用分配内存函数开辟空间  <br></li>
+<li>为了方便检查报错，用到哪个指针，就用assert函数去判断该指针是否为空</li>
+</ol>
+<h3 id="2-顺序表的优点和缺点"><a href="#2-顺序表的优点和缺点" class="headerlink" title="(2)顺序表的优点和缺点"></a>(2)顺序表的优点和缺点</h3><ol>
+<li>顺序表的优点：<br>
+顺序表可以通过索引（下标）快速地存、取表中元素。</li>
+<li>顺序表的缺点:<br>
+① 顺序表的插入和删除操作，会使得表中的大量元素进行移动，效率较低。
+<br>
+② 顺序表在面对扩容问题的时候，比较繁琐。当顺序表放满的时候，我们需要进行扩容。而扩容的大小需要面对不同的情况，若扩容的容量较大，那么会使得空间利用率较低；若扩容的容量较小，在后续的代码执行过程中，又需要不断地扩容操作，这使得代码变得更加繁琐。</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-helloworld" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
