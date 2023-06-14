@@ -17,23 +17,23 @@
 
 <meta name="description" content="Vs2022 运行终端更改(编译器本地与windows terminal之间互相更改)进入正题 这是一个在我们实训做魔塔游戏运行时候出现的bug，每次输入数据都要点到windows terminal 进行输入，及其不方便运行程序; 点击运行框此处  得到以下界面   点击设置 再转到启动项，将右侧配置默认文件下拉  选择配置文件  一般更改为  或  点击保存，退出再次运行即可 注:有些电脑可能要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="isyang_&#39;s blog">
-<meta property="og:url" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/index.html">
+<meta property="og:title" content="Vs2022 运行终端更改">
+<meta property="og:url" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/index.html">
 <meta property="og:site_name" content="isyang_&#39;s blog">
 <meta property="og:description" content="Vs2022 运行终端更改(编译器本地与windows terminal之间互相更改)进入正题 这是一个在我们实训做魔塔游戏运行时候出现的bug，每次输入数据都要点到windows terminal 进行输入，及其不方便运行程序; 点击运行框此处  得到以下界面   点击设置 再转到启动项，将右侧配置默认文件下拉  选择配置文件  一般更改为  或  点击保存，退出再次运行即可 注:有些电脑可能要">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/1.png">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/2.png">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/3.png">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/4.png">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/5.png">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/6.png">
-<meta property="og:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/7.png">
-<meta property="article:published_time" content="2023-06-14T00:20:45.981Z">
-<meta property="article:modified_time" content="2023-06-09T01:36:43.098Z">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/1.png">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/2.png">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/3.png">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/4.png">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/5.png">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/6.png">
+<meta property="og:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/7.png">
+<meta property="article:published_time" content="2023-06-08T02:33:21.000Z">
+<meta property="article:modified_time" content="2023-06-14T00:24:05.308Z">
 <meta property="article:author" content="isyang_">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/1.png">
+<meta name="twitter:image" content="http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -67,7 +67,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>isyang_&#39;s blog</title>
+<title>Vs2022 运行终端更改 | isyang_&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -277,8 +277,8 @@
       <div class="body-wrap"><article id="post-Vs2022 运行终端更改(编译器本地与windows terminal之间互相更改)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/" class="article-date">
-      <time datetime="2023-06-14T00:20:45.981Z" itemprop="datePublished">2023-06-14</time>
+      <a href="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/" class="article-date">
+      <time datetime="2023-06-08T02:33:21.000Z" itemprop="datePublished">2023-06-08</time>
 </a>
 
 
@@ -289,23 +289,41 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vs2022 运行终端更改
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
         <h1 id="Vs2022-运行终端更改-编译器本地与windows-terminal之间互相更改"><a href="#Vs2022-运行终端更改-编译器本地与windows-terminal之间互相更改" class="headerlink" title="Vs2022 运行终端更改(编译器本地与windows terminal之间互相更改)"></a>Vs2022 运行终端更改(编译器本地与windows terminal之间互相更改)</h1><p>进入正题</p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/1.png" alt="title"><br>这是一个在我们实训做魔塔游戏运行时候出现的bug，每次输入数据都要点到windows terminal 进行输入，及其不方便运行程序;</p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/1.png" alt="title"><br>这是一个在我们实训做魔塔游戏运行时候出现的bug，每次输入数据都要点到windows terminal 进行输入，及其不方便运行程序;</p>
 <p>点击运行框此处</p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/2.png" alt="title"></p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/2.png" alt="title"></p>
 <p>得到以下界面</p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/3.png" alt="title"></p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/4.png" alt="title"></p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/3.png" alt="title"></p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/4.png" alt="title"></p>
 <p>点击设置 再转到启动项，将右侧配置默认文件下拉</p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/5.png" alt="title"></p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/5.png" alt="title"></p>
 <p>选择配置文件 </p>
 <p>一般更改为</p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/6.png" alt="title"></p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/6.png" alt="title"></p>
 <p>或</p>
-<p><img src="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/7.png" alt="title"></p>
+<p><img src="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/myblog/source/img/7.png" alt="title"></p>
 <p>点击保存，退出再次运行即可</p>
 <p><strong>注:有些电脑可能要更改为命令提示符（根据我在不同电脑实验可得，不同电脑更改的配置可能不一样，所以建议大家都试一下）</strong></p>
 
@@ -316,13 +334,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/"></a></p>
+        <p><span>Title:</span><a href="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/">Vs2022 运行终端更改</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
-        <p><span>Created:</span>2023-06-14, 08:20:45</p>
-        <p><span>Updated:</span>2023-06-09, 09:36:43</p>
+        <p><span>Created:</span>2023-06-08, 10:33:21</p>
+        <p><span>Updated:</span>2023-06-14, 08:24:05</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/" title="">http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/</a>
-            <span class="copy-path" data-clipboard-text="From http://example.com/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/" title="Vs2022 运行终端更改">http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -334,10 +352,16 @@
 
     <nav id="article-nav">
         
-        
-            <div id="article-nav-older" class="article-nav-title">
+            <div id="article-nav-newer" class="article-nav-title">
                 <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
                     排序算法
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2023/05/17/CSS/">
+                    CSS
                 </a>
             </div>
         
@@ -385,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Vs2022 运行终端更改　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -405,19 +429,21 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="Pre: 排序算法">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="Next: 排序算法">
+            <a href="/2023/05/17/CSS/" title="Next: CSS">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/06/14/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/">Vs2022 运行终端更改(编译器本地与windows terminal之间互相更改)</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/17/CSS/">CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/HTML/">HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/01/%E9%93%BE%E6%A0%88/">链栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/">顺序栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/05/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/">python3语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/21/helloworld/">hello</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/08/Vs2022%20%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9(%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows%20terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9)/">Vs2022 运行终端更改</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/17/CSS/">CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/HTML/">HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/01/%E9%93%BE%E6%A0%88/">链栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/20/%E9%A1%BA%E5%BA%8F%E6%A0%88/">顺序栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/05/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/">python3语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/21/helloworld/">hello</a></li></ul>
 
 
 
