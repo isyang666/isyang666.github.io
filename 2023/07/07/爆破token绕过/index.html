@@ -15,15 +15,15 @@
 
 
 
-<meta name="description" content="ARP攻击介绍123ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP&#x2F;IP协议栈中的底层协议，负责将某个IP地址解析成对应的MAC地址。而ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻">
+<meta name="description" content="token详解token是什么意思？作为计算机术语时，是“令牌”的意思。Token是服务端生成的一串字符串，以作客户端进行请求的一个令牌，当第一次登录后，服务器生成一个Token便将此Token返回给客户端，以后客户端只需带上这个Token前来请求数据即可，无需再次带上用户名和密码。 token其实说的更通俗点可以叫暗号，在一些数据传输之前，要先进行暗号的核对，不同的暗号被授权不同的数据操作。说白">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARP攻击">
-<meta property="og:url" content="http://example.com/2023/07/04/arp%E6%94%BB%E5%87%BB/index.html">
+<meta property="og:title" content="爆破之token绕过">
+<meta property="og:url" content="http://example.com/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/index.html">
 <meta property="og:site_name" content="isyang_&#39;s blog">
-<meta property="og:description" content="ARP攻击介绍123ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP&#x2F;IP协议栈中的底层协议，负责将某个IP地址解析成对应的MAC地址。而ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻">
+<meta property="og:description" content="token详解token是什么意思？作为计算机术语时，是“令牌”的意思。Token是服务端生成的一串字符串，以作客户端进行请求的一个令牌，当第一次登录后，服务器生成一个Token便将此Token返回给客户端，以后客户端只需带上这个Token前来请求数据即可，无需再次带上用户名和密码。 token其实说的更通俗点可以叫暗号，在一些数据传输之前，要先进行暗号的核对，不同的暗号被授权不同的数据操作。说白">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-07-04T08:48:00.000Z">
-<meta property="article:modified_time" content="2023-07-04T08:58:09.805Z">
+<meta property="article:published_time" content="2023-07-07T10:45:40.000Z">
+<meta property="article:modified_time" content="2023-07-07T07:06:35.242Z">
 <meta property="article:author" content="isyang_">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ARP攻击 | isyang_&#39;s blog</title>
+<title>爆破之token绕过 | isyang_&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -266,11 +266,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-arp攻击" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-爆破token绕过" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/" class="article-date">
-      <time datetime="2023-07-04T08:48:00.000Z" itemprop="datePublished">2023-07-04</time>
+      <a href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/" class="article-date">
+      <time datetime="2023-07-07T10:45:40.000Z" itemprop="datePublished">2023-07-07</time>
 </a>
 
 
@@ -285,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ARP攻击
+      爆破之token绕过
     </h1>
   
 
@@ -302,23 +302,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="ARP攻击介绍"><a href="#ARP攻击介绍" class="headerlink" title="ARP攻击介绍"></a>ARP攻击介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP/IP协议栈中的底层协议，负责将某个IP地址解析成对应的MAC地址。而ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻击。这是一种“中间人”（MAN-IN-MIDDLE）攻击技术。</span><br><span class="line">电脑遭受到典型的ARP攻击后会表现为：使用局域网时会突然掉线，过一段时间后又会恢复正常。比如客户端状态频频变红，用户频繁断网，IE浏览器频繁出错，以及一些常用软件出现故障等。如果局域网中是通过身份认证上网的，会突然出现可认证，但不能上网的现象（无法ping通网关），重启机器或在MS-DOS窗口下运行命令arp -d后，又可恢复上网。</span><br><span class="line">ARP欺骗木马只需成功感染一台电脑，就可能导致整个局域网都无法上网，严重的甚至可能带来整个网络的瘫痪。该木马发作时除了会导致同一局域网内的其他用户上网出现时断时续的现象外，还会窃取用户密码。如盗取QQ密码、盗取各种网络游戏密码和账号去做金钱交易，盗窃网上银行账号来做非法交易活动等</span><br></pre></td></tr></table></figure>
-<h2 id="ARP攻击实战"><a href="#ARP攻击实战" class="headerlink" title="ARP攻击实战"></a>ARP攻击实战</h2><p>工具:  kali 中 ettercap</p>
-<p>操作:</p>
-<pre><code>使用ettercap中的搜素获得局域网内的目标，选中目标主机和网关作为目标，选择arp欺骗攻击。开始攻击后，网卡能够读取到目标主机的全部流量，可以使用wireshark进行抓包分析目标行为。
-</code></pre>
-<p>我们也可以用 kali 中的 arpspoof命令来进行对目标机的断网攻击</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 目标IP地址 网关              </span><br></pre></td></tr></table></figure>
-<p>使用本命令解除攻击</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c &#x27;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&#x27;</span><br></pre></td></tr></table></figure>
-<h2 id="ARP的防护"><a href="#ARP的防护" class="headerlink" title="ARP的防护"></a>ARP的防护</h2><p>在我们真实环境下的ARP攻击主要有三种：</p>
-<p>1.攻击者的ip和MAC地址是真实的</p>
-<p>2.攻击者伪造ip地址，但是正确的MAC地址</p>
-<p>3.攻击者伪造ip地址和MAC地址</p>
-<p>对于前两种手段，想要找到攻击的源主机还是比较容易的，第三种就有些麻烦。</p>
-<p>日常防护:<br>1.在pc端上做ip和MAC地址的绑定</p>
-<p>2.在网络设备层面可以做ip mac 和端口的绑定，限制端口只能学习一个MAC地址，也可以做AAA认证，可以提前录入MAC地址，当终端连接时先判断合法性</p>
-<p>3.可以部署一些arp防御软件，有条件的可以部署些arp防护的设备</p>
+        <h1 id="token详解"><a href="#token详解" class="headerlink" title="token详解"></a>token详解</h1><h2 id="token是什么意思？"><a href="#token是什么意思？" class="headerlink" title="token是什么意思？"></a>token是什么意思？</h2><p>作为计算机术语时，是“令牌”的意思。Token是服务端生成的一串字符串，以作客户端进行请求的一个令牌，当第一次登录后，服务器生成一个Token便将此Token返回给客户端，以后客户端只需带上这个Token前来请求数据即可，无需再次带上用户名和密码。</p>
+<p>token其实说的更通俗点可以叫暗号，在一些数据传输之前，要先进行暗号的核对，不同的暗号被授权不同的数据操作。说白了token是一个身份卡，有权限的作用。例如在USB1.1协议中定义了4类数据包：token包、data包、handshake包和special包。主机和USB设备之间连续数据的交换可以分为三个阶段，第一个阶段由主机发送token包，不同的token包内容不一样（暗号不一样）可以告诉设备做不同的工作，第二个阶段发送data包，第三个阶段由设备返回一个handshake包。</p>
+<h2 id="token是用来干嘛的？"><a href="#token是用来干嘛的？" class="headerlink" title="token是用来干嘛的？"></a>token是用来干嘛的？</h2><p>使用token机制的身份验证方法，在服务器端不需要存储用户的登录记录。</p>
+<p>大概的流程：</p>
+<p>1️⃣ 客户端使用用户名和密码请求登录。</p>
+<p>2️⃣ 服务端收到请求，验证用户名和密码。</p>
+<p>3️⃣ 验证成功后，服务端会生成一个token，然后把这个token发送给客户端。</p>
+<p>4️⃣ 客户端收到token后把它存储起来，可以放在cookie或者Local Storage（本地存储）里。</p>
+<p>5️⃣ 客户端每次向服务端发送请求的时候都需要带上服务端发给的token。</p>
+<p>6️⃣ 服务端收到请求，然后去验证客户端请求里面带着token，如果验证成功，就向客户端返回请求的数据。</p>
+<h2 id="token的使用小结："><a href="#token的使用小结：" class="headerlink" title="token的使用小结："></a>token的使用小结：</h2><p>◾ 前端登陆的时候向服务器发送请求，服务器验证成功，会生成一个token</p>
+<p>◾ 前端会存储这个token，放在session或cookie中，用于之后的业务请求身份验证</p>
+<p>◾ 拿着这个token，可以在当前登录的账号下进行请求业务，发送请求时，token会放在请求头里，服务器收到这个业务请求，验证token，成功就允许这个请求获取数据</p>
+<p>◾ token可以设置失效期</p>
+<h2 id="token的加密"><a href="#token的加密" class="headerlink" title="token的加密"></a>token的加密</h2><p>token是很容易泄露的，如果不进行加密处理，很容易被恶意拷贝并用来登录。加密的方式一般有：</p>
+<p>在存储的时候把token进行对称加密存储，用到的时候再解密。</p>
+<p>文章最开始提到的签名sign：将请求URL、时间戳、token三者合并，通过算法进行加密处理。</p>
+<p>最好是两种方式结合使用。</p>
+<p>还有一点，在网络层面上token使用明文传输的话是非常危险的，所以一定要使用HTTPS协议。</p>
+<h1 id="爆破工具-burpsuite"><a href="#爆破工具-burpsuite" class="headerlink" title="爆破工具 burpsuite"></a>爆破工具 burpsuite</h1><h2 id="burp-Suite的暴力破解（intruder）的-四种爆破模式："><a href="#burp-Suite的暴力破解（intruder）的-四种爆破模式：" class="headerlink" title="burp Suite的暴力破解（intruder）的 四种爆破模式："></a>burp Suite的暴力破解（intruder）的 四种爆破模式：</h2><p>Sniper（狙击手模式）：单点爆破模式，跟狙击手一样，每次只会对一个点进行参数爆破，当存在多个参数时，会对每个参数使用一个字典进行多次爆破，其余参数不变</p>
+<p>Battering ram（攻城锤模式）：多点爆破模式，会同时对多个参数进行爆破，但是使用的时候用一个字典</p>
+<p>Pichfork（草叉模式）：类似于Battering ram模式，但是使用的是多个字典，并且多个点的字典内容一一匹配进行爆破</p>
+<p>Cluser bamb（集束炸弹模式）：多点爆破模式，会对不同点的内容采用多字典，进行笛卡尔乘积模式爆破</p>
+<h2 id="对于token的绕过思路"><a href="#对于token的绕过思路" class="headerlink" title="对于token的绕过思路"></a>对于token的绕过思路</h2><p>token只是用来防御csrf（跨站请求攻击），但无法防止暴力破解。因为当将随机产生的token参数加入到请求包中时。每次请求攻击者只能够盗取到被攻击这的cookice而不能伪造当次请求的token，这是因为token是由服务器随机生成的，只有匹配当次的token，服务器才会与客户端进行连接，否则拒绝连接。而token无法防止暴力破解的原因是因为token是随机生成的，攻击者只要能够想办法获取到前端的token值即可进行暴力破解</p>
+<h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><p>详细教程见<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45705626/article/details/127760165?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168871286716800197083329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=168871286716800197083329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all">https://blog.csdn.net/qq_45705626/article/details/127760165?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168871286716800197083329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=168871286716800197083329&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all</a>~</p>
 
       
     </div>
@@ -327,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">ARP攻击</a></p>
+        <p><span>Title:</span><a href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/">爆破之token绕过</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
-        <p><span>Created:</span>2023-07-04, 16:48:00</p>
-        <p><span>Updated:</span>2023-07-04, 16:58:09</p>
+        <p><span>Created:</span>2023-07-07, 18:45:40</p>
+        <p><span>Updated:</span>2023-07-07, 15:06:35</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2023/07/04/arp%E6%94%BB%E5%87%BB/" title="ARP攻击">http://example.com/2023/07/04/arp%E6%94%BB%E5%87%BB/</a>
-            <span class="copy-path" data-clipboard-text="From http://example.com/2023/07/04/arp%E6%94%BB%E5%87%BB/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/" title="爆破之token绕过">http://example.com/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -345,16 +353,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/">
-                    爆破之token绕过
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
-                    排序算法
+                <a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">
+                    ARP攻击
                 </a>
             </div>
         
@@ -366,7 +368,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">ARP攻击介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E5%AE%9E%E6%88%98"><span class="toc-number">2.</span> <span class="toc-text">ARP攻击实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E7%9A%84%E9%98%B2%E6%8A%A4"><span class="toc-number">3.</span> <span class="toc-text">ARP的防护</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#token%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">token详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#token%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">token是什么意思？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#token%E6%98%AF%E7%94%A8%E6%9D%A5%E5%B9%B2%E5%98%9B%E7%9A%84%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">token是用来干嘛的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#token%E7%9A%84%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">token的使用小结：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#token%E7%9A%84%E5%8A%A0%E5%AF%86"><span class="toc-number">1.4.</span> <span class="toc-text">token的加密</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%86%E7%A0%B4%E5%B7%A5%E5%85%B7-burpsuite"><span class="toc-number">2.</span> <span class="toc-text">爆破工具 burpsuite</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#burp-Suite%E7%9A%84%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%88intruder%EF%BC%89%E7%9A%84-%E5%9B%9B%E7%A7%8D%E7%88%86%E7%A0%B4%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">burp Suite的暴力破解（intruder）的 四种爆破模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8Etoken%E7%9A%84%E7%BB%95%E8%BF%87%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">对于token的绕过思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">实战</span></a></li></ol>
         
     </div>
     <style>
@@ -402,7 +404,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"ARP攻击　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"爆破之token绕过　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,15 +424,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/" title="Pre: 爆破之token绕过">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="Next: 排序算法">
+            <a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/" title="Next: ARP攻击">
                 <i class="fa fa-angle-right"></i>
             </a>
         
