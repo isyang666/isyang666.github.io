@@ -23,7 +23,7 @@
 <meta property="og:description" content="ARP攻击介绍123ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP&#x2F;IP协议栈中的底层协议，负责将某个IP地址解析成对应的MAC地址。而ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-07-04T08:48:00.000Z">
-<meta property="article:modified_time" content="2023-07-04T08:58:09.805Z">
+<meta property="article:modified_time" content="2023-07-08T05:21:54.023Z">
 <meta property="article:author" content="isyang_">
 <meta name="twitter:card" content="summary">
 
@@ -305,12 +305,18 @@
         <h2 id="ARP攻击介绍"><a href="#ARP攻击介绍" class="headerlink" title="ARP攻击介绍"></a>ARP攻击介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP/IP协议栈中的底层协议，负责将某个IP地址解析成对应的MAC地址。而ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻击。这是一种“中间人”（MAN-IN-MIDDLE）攻击技术。</span><br><span class="line">电脑遭受到典型的ARP攻击后会表现为：使用局域网时会突然掉线，过一段时间后又会恢复正常。比如客户端状态频频变红，用户频繁断网，IE浏览器频繁出错，以及一些常用软件出现故障等。如果局域网中是通过身份认证上网的，会突然出现可认证，但不能上网的现象（无法ping通网关），重启机器或在MS-DOS窗口下运行命令arp -d后，又可恢复上网。</span><br><span class="line">ARP欺骗木马只需成功感染一台电脑，就可能导致整个局域网都无法上网，严重的甚至可能带来整个网络的瘫痪。该木马发作时除了会导致同一局域网内的其他用户上网出现时断时续的现象外，还会窃取用户密码。如盗取QQ密码、盗取各种网络游戏密码和账号去做金钱交易，盗窃网上银行账号来做非法交易活动等</span><br></pre></td></tr></table></figure>
 <h2 id="ARP攻击实战"><a href="#ARP攻击实战" class="headerlink" title="ARP攻击实战"></a>ARP攻击实战</h2><p>工具:  kali 中 ettercap</p>
 <p>操作:</p>
-<pre><code>使用ettercap中的搜素获得局域网内的目标，选中目标主机和网关作为目标，选择arp欺骗攻击。开始攻击后，网卡能够读取到目标主机的全部流量，可以使用wireshark进行抓包分析目标行为。
+<pre><code>使用ettercap中的搜素获得局域网内的目标，选中目标主机和网关作为目标，选择arp欺骗攻击。
+开始攻击后，网卡能够读取到目标主机的全部流量，可以使用wireshark进行抓包分析目标行为。
 </code></pre>
 <p>我们也可以用 kali 中的 arpspoof命令来进行对目标机的断网攻击</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 目标IP地址 网关              </span><br></pre></td></tr></table></figure>
 <p>使用本命令解除攻击</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c &#x27;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="ARP攻击检测"><a href="#ARP攻击检测" class="headerlink" title="ARP攻击检测"></a>ARP攻击检测</h2><p>检测：</p>
+<p>1、网络频繁掉线</p>
+<p>2、网速突然变慢</p>
+<p>3、使用arp -a命令查看的网关mac地址与真实的网关mac地址不同</p>
+<p>4、使用嗅探软件发现局域网内存在大量arp应答包</p>
 <h2 id="ARP的防护"><a href="#ARP的防护" class="headerlink" title="ARP的防护"></a>ARP的防护</h2><p>在我们真实环境下的ARP攻击主要有三种：</p>
 <p>1.攻击者的ip和MAC地址是真实的</p>
 <p>2.攻击者伪造ip地址，但是正确的MAC地址</p>
@@ -319,6 +325,10 @@
 <p>日常防护:<br>1.在pc端上做ip和MAC地址的绑定</p>
 <p>2.在网络设备层面可以做ip mac 和端口的绑定，限制端口只能学习一个MAC地址，也可以做AAA认证，可以提前录入MAC地址，当终端连接时先判断合法性</p>
 <p>3.可以部署一些arp防御软件，有条件的可以部署些arp防护的设备</p>
+<h2 id="ARP欺骗的危害"><a href="#ARP欺骗的危害" class="headerlink" title="ARP欺骗的危害"></a>ARP欺骗的危害</h2><p>1、使同一网段内其他用户无法上网</p>
+<p>2、可以嗅探到交换式局域网中的所有数据包</p>
+<p>3、对信息进行篡改</p>
+<p>4、可以控制局域网内任何主机</p>
 
       
     </div>
@@ -330,7 +340,7 @@
         <p><span>Title:</span><a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">ARP攻击</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
         <p><span>Created:</span>2023-07-04, 16:48:00</p>
-        <p><span>Updated:</span>2023-07-04, 16:58:09</p>
+        <p><span>Updated:</span>2023-07-08, 13:21:54</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2023/07/04/arp%E6%94%BB%E5%87%BB/" title="ARP攻击">http://example.com/2023/07/04/arp%E6%94%BB%E5%87%BB/</a>
             <span class="copy-path" data-clipboard-text="From http://example.com/2023/07/04/arp%E6%94%BB%E5%87%BB/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -366,7 +376,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">ARP攻击介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E5%AE%9E%E6%88%98"><span class="toc-number">2.</span> <span class="toc-text">ARP攻击实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E7%9A%84%E9%98%B2%E6%8A%A4"><span class="toc-number">3.</span> <span class="toc-text">ARP的防护</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">ARP攻击介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E5%AE%9E%E6%88%98"><span class="toc-number">2.</span> <span class="toc-text">ARP攻击实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E6%A3%80%E6%B5%8B"><span class="toc-number">3.</span> <span class="toc-text">ARP攻击检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E7%9A%84%E9%98%B2%E6%8A%A4"><span class="toc-number">4.</span> <span class="toc-text">ARP的防护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%AC%BA%E9%AA%97%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="toc-number">5.</span> <span class="toc-text">ARP欺骗的危害</span></a></li></ol>
         
     </div>
     <style>
