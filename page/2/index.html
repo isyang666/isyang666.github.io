@@ -192,7 +192,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuite/" rel="tag">burpsuite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%86%E7%A0%B4/" rel="tag">爆破</a></li></ul>
                     </div>
                 </section>
                 
@@ -268,6 +268,75 @@
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-双链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/" class="article-date">
+      <time datetime="2023-04-16T12:34:48.000Z" itemprop="datePublished">2023-04-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h1><h2 id="1-双向链表的定义"><a href="#1-双向链表的定义" class="headerlink" title="1. 双向链表的定义"></a>1. 双向链表的定义</h2><p>双向带头循环链表<br><img src="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/List.png" alt="title"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef struct ListNode</span><br><span class="line">&#123;   </span><br><span class="line">	LTDataType data;</span><br><span class="line">	struct ListNode *prev;</span><br><span class="line">	struct ListNode *next;</span><br><span class="line">&#125;LTNode;</span><br></pre></td></tr></table></figure>
+<h2 id="2-链表初始化"><a href="#2-链表初始化" class="headerlink" title="2. 链表初始化"></a>2. 链表初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LTNode* ListInit()</span><br><span class="line">&#123;</span><br><span class="line">   LTNode* phead = (LTNode*)malloc(sizeof(LTNode));</span><br><span class="line">   phead-&gt;next = phead;</span><br><span class="line">   phead-&gt;prev = phead;</span><br><span class="line"></span><br><span class="line">   return phead;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-创建新的节点"><a href="#3-创建新的节点" class="headerlink" title="3. 创建新的节点"></a>3. 创建新的节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LTNode* BuyListNode(LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	LTNode* newnode = (LTNode*)malloc(sizeof(LTNode));</span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line">	newnode-&gt;prev = NULL;</span><br><span class="line"></span><br><span class="line">	return newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-尾插"><a href="#4-尾插" class="headerlink" title="4. 尾插"></a>4. 尾插</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void ListPushBack(LTNode* phead,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">   assert(phead);</span><br><span class="line">   LTNode* tail = phead-&gt;prev;</span><br><span class="line">   LTNode* newnode =(LTNode*)malloc(sizeof(LTNode));</span><br><span class="line">   newnode-&gt;data = x;</span><br><span class="line"></span><br><span class="line">   tail-&gt;next = newnode;</span><br><span class="line">   newnode-&gt;prev = tail;</span><br><span class="line">   newnode-&gt;next = phead;</span><br><span class="line">   phead-&gt;prev = newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="5-头插"><a href="#5-头插" class="headerlink" title="5. 头插"></a>5. 头插</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPushFront(LTNode* phead,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(phead != NULL);</span><br><span class="line">    LTNode* newnode = BuyListNode(x);</span><br><span class="line">	LTNode* tail = phead-&gt;next;</span><br><span class="line">	phead-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = phead;</span><br><span class="line">	newnode-&gt;next = tail;</span><br><span class="line">	tail-&gt;prev = newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="6-尾删"><a href="#6-尾删" class="headerlink" title="6. 尾删"></a>6. 尾删</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPopBack(LTNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">    assert(phead != NULL);</span><br><span class="line">	assert(phead-&gt;next != phead);</span><br><span class="line">	LTNode* tail = phead-&gt;prev;</span><br><span class="line">	LTNode* tailprev = tail-&gt;prev;</span><br><span class="line">	free(tail);</span><br><span class="line">	tailprev-&gt;next = phead;</span><br><span class="line">	phead-&gt;prev = tailprev;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="7-头删"><a href="#7-头删" class="headerlink" title="7. 头删"></a>7. 头删</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPopFront(LTNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(phead != NULL);</span><br><span class="line">	assert(phead-&gt;next != phead);</span><br><span class="line">	LTNode* tail = phead-&gt;next;</span><br><span class="line">	LTNode* next = tail-&gt;next;</span><br><span class="line">	free(tail);</span><br><span class="line">	phead-&gt;next = next;</span><br><span class="line">	next-&gt;prev = phead;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="8-pos位置删除"><a href="#8-pos位置删除" class="headerlink" title="8. pos位置删除"></a>8. pos位置删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void ListErase(LTNode* pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	LTNode* posPrev = pos-&gt;prev;</span><br><span class="line">	LTNode* posNext = pos-&gt;next;</span><br><span class="line">    free(pos);</span><br><span class="line">	posPrev-&gt;next = posNext;</span><br><span class="line">	posNext-&gt;prev = posPrev;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="9-查找"><a href="#9-查找" class="headerlink" title="9. 查找"></a>9. 查找</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LTNode* ListFind(LTNode* phead,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">    assert(phead);</span><br><span class="line">	LTNode* cur = phead-&gt;next;</span><br><span class="line">	while(cur != phead)</span><br><span class="line">	&#123;</span><br><span class="line">		if(cur-&gt;data == x)</span><br><span class="line">		&#123;</span><br><span class="line">		  return cur; </span><br><span class="line">		&#125;</span><br><span class="line">	    cur = cur-&gt;next; </span><br><span class="line">	&#125;</span><br><span class="line">	return NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="10-pos位置之前插入"><a href="#10-pos位置之前插入" class="headerlink" title="10. pos位置之前插入"></a>10. pos位置之前插入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListInsert(LTNode* pos,LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	LTNode* posPrev = pos-&gt;prev;</span><br><span class="line">	LTNode* newnode = BuyListNode(x);</span><br><span class="line">	posPrev-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = posPrev;</span><br><span class="line">	newnode-&gt;next = pos;</span><br><span class="line">	pos-&gt;prev = newnode;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="11-pos位置删除"><a href="#11-pos位置删除" class="headerlink" title="11. pos位置删除"></a>11. pos位置删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListErase(LTNode* pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos != NULL);</span><br><span class="line">	LTNode* posPrev = pos-&gt;prev;</span><br><span class="line">	LTNode* posNext = pos-&gt;next;</span><br><span class="line"></span><br><span class="line">	posPrev-&gt;next = posNext;</span><br><span class="line">	posNext-&gt;prev = posPrev;</span><br><span class="line">	free(pos);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="12-双向链表的销毁"><a href="#12-双向链表的销毁" class="headerlink" title="12.双向链表的销毁"></a>12.双向链表的销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void ListDestroy(LTNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(phead != NULL);</span><br><span class="line">	LTNode* cur = phead-&gt;next;</span><br><span class="line">	while(cur != phead)</span><br><span class="line">	&#123;</span><br><span class="line">		LTNode* next = cur-&gt;next;</span><br><span class="line">	    free(cur);</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line">	free(phead);      </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>用完Destroy后要将传过来的指针手动置空，这是因为要保证传参结构的一致性（都是传一级指针），如果要在Destroy内置空，要用二级指针实现。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-链表" class="article article-type-post" itemscope itemprop="blogPost">
   
