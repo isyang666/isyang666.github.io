@@ -15,19 +15,24 @@
 
 
 
-<meta name="description" content="队列介绍和其C语言实现">
+<meta name="description" content="python无法导库,IDE（vscode，pycharm）无法识别到python,cmd下py脚本无法运行,包括python -v 无回显">
 <meta property="og:type" content="article">
-<meta property="og:title" content="队列">
-<meta property="og:url" content="http://example.com/2023/05/10/%E9%98%9F%E5%88%97/index.html">
+<meta property="og:title" content="解决win11更新引起python一系列错误">
+<meta property="og:url" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/index.html">
 <meta property="og:site_name" content="isyang_&#39;s blog">
-<meta property="og:description" content="队列介绍和其C语言实现">
+<meta property="og:description" content="python无法导库,IDE（vscode，pycharm）无法识别到python,cmd下py脚本无法运行,包括python -v 无回显">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-10T10:42:00.000Z">
-<meta property="article:modified_time" content="2023-05-10T10:42:00.000Z">
+<meta property="og:image" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/4.jpg">
+<meta property="og:image" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/6.png">
+<meta property="og:image" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/1.png">
+<meta property="og:image" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/2.png">
+<meta property="og:image" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/3.png">
+<meta property="article:published_time" content="2023-07-14T09:07:28.000Z">
+<meta property="article:modified_time" content="2023-07-14T09:07:28.000Z">
 <meta property="article:author" content="isyang_">
-<meta property="article:tag" content="数据结构">
-<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/4.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -61,7 +66,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>队列 | isyang_&#39;s blog</title>
+<title>解决win11更新引起python一系列错误 | isyang_&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -276,11 +281,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-队列" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-解决win11更新引起python一系列错误" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/05/10/%E9%98%9F%E5%88%97/" class="article-date">
-      <time datetime="2023-05-10T10:42:00.000Z" itemprop="datePublished">2023-05-10</time>
+      <a href="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/" class="article-date">
+      <time datetime="2023-07-14T09:07:28.000Z" itemprop="datePublished">2023-07-14</time>
 </a>
 
 
@@ -295,7 +300,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      队列
+      解决win11更新引起python一系列错误
     </h1>
   
 
@@ -308,7 +313,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -318,17 +323,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（head）进行删除操作，而在表的后端（tail）进行插入操作，和栈一样，队列是一种操作受限制的线性表。进行插入操作的端称为队尾，进行删除操作的端称为队头。</p>
-<h2 id="1-队列结构定义"><a href="#1-队列结构定义" class="headerlink" title="1.队列结构定义"></a>1.队列结构定义</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">typedef int QDataType;</span><br><span class="line"></span><br><span class="line">//节点定义</span><br><span class="line">typedef struct QueueNode</span><br><span class="line">&#123;	</span><br><span class="line">	QDataType data;				//数据域</span><br><span class="line">	struct QueueNode* next;		//指针域</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">typedef struct Queue</span><br><span class="line">&#123;	</span><br><span class="line">	QueueNode* head;			//队列头指针</span><br><span class="line">	QueueNode* tail;			//队列尾指针</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="解决win11更新引起python一系列错误"><a href="#解决win11更新引起python一系列错误" class="headerlink" title="解决win11更新引起python一系列错误"></a>解决win11更新引起python一系列错误</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><h3 id="python-v无回显（包括跑python脚本也没回显）"><a href="#python-v无回显（包括跑python脚本也没回显）" class="headerlink" title="python -v无回显（包括跑python脚本也没回显）"></a>python -v无回显（包括跑python脚本也没回显）</h3><p><img src="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/解决win11更新引起python一系列错误/4.jpg" alt="title"></p>
+<h3 id="python-无法导库"><a href="#python-无法导库" class="headerlink" title="python 无法导库"></a>python 无法导库</h3><p>无论用pycharm自带的导库还是用pip install 导库都报错<br><img src="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/解决win11更新引起python一系列错误/6.png" alt="title"></p>
+<h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><p>原因:<br>windows11的某次更新中在WindowsApp文件夹中更新了python.exe文件(一个快捷方式)</p>
+<p>如图:<br><img src="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/解决win11更新引起python一系列错误/1.png" alt="title"></p>
+<p>双击打开为通过微软商店去安装python<br>如图:<br><img src="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/解决win11更新引起python一系列错误/2.png" alt="title"></p>
+<p>当cmd运行where python 时:</p>
+<p><img src="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/myblog/source/_posts/解决win11更新引起python一系列错误/3.png" alt="title"><br>会发现有两个python，因为上面那个快捷方式和你自己安装的python重名，导致系统识别了这个快捷方式，然后没有识别到你安装的python，从而导致了python使用时的一系列报错</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h2><p>进入到WindowsApp文件夹，将python.exe重命名或者删除（推荐python3那个文件也一起操作一遍）</p>
+<h2 id="尾言"><a href="#尾言" class="headerlink" title="尾言"></a>尾言</h2><p>本人在今年三四月份自己学爬虫安装python并且使用的时候就发现了这系列问题，当时搞了三天才解决，本来是不打算写博客的(比较麻烦，要用虚拟机复现一遍)，但是周围的同学啥的装python然后使用起来都发现有这些问题，就想着发篇博客来帮帮遇到同样问题的人。具体原因为win11的今年（2023）的某次更新,目前发现2022年安装好python的用户都没有此错误，系统和ide都可以正确识别python</p>
 
-<h2 id="2-队列初始化"><a href="#2-队列初始化" class="headerlink" title="2.队列初始化"></a>2.队列初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void QueueInit(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	pq-&gt;head = NULL;</span><br><span class="line">	pq-&gt;tail = NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-队列的销毁"><a href="#3-队列的销毁" class="headerlink" title="3.队列的销毁"></a>3.队列的销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void QueueDestroy(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	struct QueueNode* cur;</span><br><span class="line">	cur = pq-&gt;head;</span><br><span class="line">	while(cur != NULL)          //遍历节点</span><br><span class="line">	&#123;</span><br><span class="line">		QueueNode* next = cur-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line">	pq-&gt;head = NULL;</span><br><span class="line">	pq-&gt;tail = NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="4-入队（尾节点后插入）"><a href="#4-入队（尾节点后插入）" class="headerlink" title="4.入队（尾节点后插入）"></a>4.入队（尾节点后插入）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void QueuePush(Queue* pq, QDataType x)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line"></span><br><span class="line">	QueueNode* newnode = (QueueNode*)malloc(sizeof(QueueNode));</span><br><span class="line">	if(newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;malloc fault!&quot;);</span><br><span class="line">		exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line">	if(pq-&gt;tail == NULL)							//判断是否为空队列</span><br><span class="line">	&#123;</span><br><span class="line">		assert(pq-&gt;head == NULL);</span><br><span class="line">		pq-&gt;head = newnode;</span><br><span class="line">		pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		pq-&gt;tail-&gt;next = newnode;	</span><br><span class="line">		pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="5-出队（删除头结点）"><a href="#5-出队（删除头结点）" class="headerlink" title="5.出队（删除头结点）"></a>5.出队（删除头结点）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void QueuePop(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	assert(pq-&gt;head != NULL &amp;&amp; pq-&gt;tail != NULL);</span><br><span class="line"></span><br><span class="line">	if(pq-&gt;head-&gt;next == NULL)						//如果队列就一个元素</span><br><span class="line">	&#123;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = NULL;</span><br><span class="line">		pq-&gt;tail = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		QueueNode* next = pq-&gt;head-&gt;next;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="6-取出队首元素"><a href="#6-取出队首元素" class="headerlink" title="6.取出队首元素"></a>6.取出队首元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">QDataType QueueGetFront(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	assert(pq-&gt;head != NULL &amp;&amp; pq-&gt;tail != NULL);  //防止队列为空队列</span><br><span class="line"></span><br><span class="line">	return pq-&gt;head-&gt;data;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="7-判断队是否为空-如果为空返回1，不为空返回0"><a href="#7-判断队是否为空-如果为空返回1，不为空返回0" class="headerlink" title="7.判断队是否为空,如果为空返回1，不为空返回0"></a>7.判断队是否为空,如果为空返回1，不为空返回0</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int QueueIsempty(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line"></span><br><span class="line">	return pq-&gt;head == NULL;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="8-求队列的长度"><a href="#8-求队列的长度" class="headerlink" title="8.求队列的长度"></a>8.求队列的长度</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int QueueGetCount(Queue* pq)&#123;</span><br><span class="line">	assert(pq != NULL);</span><br><span class="line">	int count = 0;</span><br><span class="line">	QueueNode* cur = pq-&gt;head;</span><br><span class="line">	while(cur != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">		count++;</span><br><span class="line">	&#125;</span><br><span class="line">	return count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -336,13 +340,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a></p>
+        <p><span>Title:</span><a href="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/">解决win11更新引起python一系列错误</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
-        <p><span>Created:</span>2023-05-10, 18:42:00</p>
-        <p><span>Updated:</span>2023-05-10, 18:42:00</p>
+        <p><span>Created:</span>2023-07-14, 17:07:28</p>
+        <p><span>Updated:</span>2023-07-14, 17:07:28</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2023/05/10/%E9%98%9F%E5%88%97/" title="队列">http://example.com/2023/05/10/%E9%98%9F%E5%88%97/</a>
-            <span class="copy-path" data-clipboard-text="From http://example.com/2023/05/10/%E9%98%9F%E5%88%97/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/" title="解决win11更新引起python一系列错误">http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -354,16 +358,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2023/05/10/HTML/">
-                    HTML
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2023/05/01/%E9%93%BE%E6%A0%88/">
-                    链栈
+                <a href="/2023/07/10/win11%E5%85%89%E6%A0%87%E7%BE%8E%E5%8C%96/">
+                    win11光标美化
                 </a>
             </div>
         
@@ -375,7 +373,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-number">1.</span> <span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">1.队列结构定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%98%9F%E5%88%97%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.2.</span> <span class="toc-text">2.队列初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%98%9F%E5%88%97%E7%9A%84%E9%94%80%E6%AF%81"><span class="toc-number">1.3.</span> <span class="toc-text">3.队列的销毁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%A5%E9%98%9F%EF%BC%88%E5%B0%BE%E8%8A%82%E7%82%B9%E5%90%8E%E6%8F%92%E5%85%A5%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">4.入队（尾节点后插入）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%87%BA%E9%98%9F%EF%BC%88%E5%88%A0%E9%99%A4%E5%A4%B4%E7%BB%93%E7%82%B9%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">5.出队（删除头结点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%8F%96%E5%87%BA%E9%98%9F%E9%A6%96%E5%85%83%E7%B4%A0"><span class="toc-number">1.6.</span> <span class="toc-text">6.取出队首元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%88%A4%E6%96%AD%E9%98%9F%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA-%E5%A6%82%E6%9E%9C%E4%B8%BA%E7%A9%BA%E8%BF%94%E5%9B%9E1%EF%BC%8C%E4%B8%8D%E4%B8%BA%E7%A9%BA%E8%BF%94%E5%9B%9E0"><span class="toc-number">1.7.</span> <span class="toc-text">7.判断队是否为空,如果为空返回1，不为空返回0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%B1%82%E9%98%9F%E5%88%97%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.8.</span> <span class="toc-text">8.求队列的长度</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF"><span class="toc-number">1.</span> <span class="toc-text">解决win11更新引起python一系列错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python-v%E6%97%A0%E5%9B%9E%E6%98%BE%EF%BC%88%E5%8C%85%E6%8B%AC%E8%B7%91python%E8%84%9A%E6%9C%AC%E4%B9%9F%E6%B2%A1%E5%9B%9E%E6%98%BE%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">python -v无回显（包括跑python脚本也没回显）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-%E6%97%A0%E6%B3%95%E5%AF%BC%E5%BA%93"><span class="toc-number">1.1.2.</span> <span class="toc-text">python 无法导库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.2.</span> <span class="toc-text">报错原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">解决方法:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BE%E8%A8%80"><span class="toc-number">1.4.</span> <span class="toc-text">尾言</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -411,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"队列　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"解决win11更新引起python一系列错误　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -431,15 +429,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2023/05/10/HTML/" title="Pre: HTML">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2023/05/01/%E9%93%BE%E6%A0%88/" title="Next: 链栈">
+            <a href="/2023/07/10/win11%E5%85%89%E6%A0%87%E7%BE%8E%E5%8C%96/" title="Next: win11光标美化">
                 <i class="fa fa-angle-right"></i>
             </a>
         
