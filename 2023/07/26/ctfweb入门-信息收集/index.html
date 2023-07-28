@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="isyang_" />
+
+
+
+<meta name="description" content="ctfshow信息收集题题解及其知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctfweb入门--信息收集">
+<meta property="og:url" content="http://example.com/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html">
+<meta property="og:site_name" content="isyang_&#39;s blog">
+<meta property="og:description" content="ctfshow信息收集题题解及其知识点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web1.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web21.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web22.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web31.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web32.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web41.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web42.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web43.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web51.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web52.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web53.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web54.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web61.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web60.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web62.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web63.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web64.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web65.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web71.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web72.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web81.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web82.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web91.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web92.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web93.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web100.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web101.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web111.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web120.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web121.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web122.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web123.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web131.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web132.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web133.png">
+<meta property="og:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web134.png">
+<meta property="article:published_time" content="2023-07-26T03:14:17.000Z">
+<meta property="article:modified_time" content="2023-07-26T03:14:17.000Z">
+<meta property="article:author" content="isyang_">
+<meta property="article:tag" content="ctf">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="isyang_&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>ctfweb入门--信息收集 | isyang_&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/头像.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/1251220046@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="/isyang666" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa CSDN" href="/isyang_" title="CSDN"></a>
+                            
+                                <a class="fa QQ" href="/1251220046" title="QQ"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vs2022/" rel="tag">Vs2022</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arp/" rel="tag">arp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuite/" rel="tag">burpsuite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/" rel="tag">hello</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%8A%9F%E8%83%BD/" rel="tag">小功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%86%E7%A0%B4/" rel="tag">爆破</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一个刚刚入门安全领域的萌新</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/头像.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/1251220046@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/isyang666" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="/isyang_" title="CSDN"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/1251220046" title="QQ"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-ctfweb入门-信息收集" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
+      <time datetime="2023-07-26T03:14:17.000Z" itemprop="datePublished">2023-07-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ctfweb入门--信息收集
+    </h1>
+  
+
+        <!-- 开始添加字数统计-->
+        
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="web1"><a href="#web1" class="headerlink" title="web1"></a>web1</h2><p>F12查看源码<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web1.png" alt="title"><br>得到flag</p>
+<h2 id="web2"><a href="#web2" class="headerlink" title="web2"></a>web2</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web21.png" alt="title"><br>按F12和鼠标右键都不行，都被禁用了查看不了源码<br>快捷键<kbd>ctrl+U</kbd>查看源码<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web22.png" alt="title"><br>拿到flag</p>
+<h2 id="web3"><a href="#web3" class="headerlink" title="web3"></a>web3</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web31.png" alt="title"><br>查看源码没有效果，根据提示，抓包<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web32.png" alt="title"><br>flag在response包里面</p>
+<h2 id="web4"><a href="#web4" class="headerlink" title="web4"></a>web4</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web41.png" alt="title"><br>根据提示，与robots协议有关<br><strong>网站可能存在robots.txt文件导致目录信息泄露</strong><br>访问robots.txt<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web42.png" alt="title"><br>Disallow下有个&#x2F;flagishere.txt是禁止被爬虫访问的，访问一下试试<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web43.png" alt="title"><br>得到flag</p>
+<h2 id="robots协议"><a href="#robots协议" class="headerlink" title="robots协议:"></a>robots协议:</h2><p>Robots协议（Robots Exclusion Protocol）是一种标准的约定，用于指导网络爬虫（web crawler）在访问网站时应该遵守的规则。该协议通常以文件形式存在于网站的根目录下，文件名为”robots.txt”。</p>
+<p>Robots协议的目的是让网站管理员能够控制搜索引擎爬虫对其网站内容的访问和索引行为。通过在robots.txt文件中规定访问限制，网站管理员可以指示爬虫应该访问哪些页面，哪些页面应该被忽略，以及爬虫是否可以跟随链接等。</p>
+<p>具体来说，robots.txt文件可以包含一系列的指令，其中最常见的是”User-agent”和”Disallow”指令。”User-agent”指定了应用该指令的爬虫代理（如Googlebot、Bingbot等），”Disallow”则指定了该爬虫不被允许访问的路径或页面。</p>
+<p>例如，下面是一个简单的robots.txt文件示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: /private/</span><br><span class="line">Disallow: /secret-page.html</span><br></pre></td></tr></table></figure>
+<p>上述示例中，”User-agent: *“表示该指令适用于所有爬虫。而”Disallow”指令则说明爬虫不应该访问以”&#x2F;private&#x2F;“和”&#x2F;secret-page.html”开头的路径和页面。</p>
+<h2 id="web5"><a href="#web5" class="headerlink" title="web5"></a>web5</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web51.png" alt="title"><br>根据提示，与phps源码泄露有关<br>用御剑扫描后台php文件<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web52.png" alt="title"><br>发现index.php，把php改成phps进入<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web53.png" alt="title"><br>得到index.phps文件，打开<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web54.png" alt="title"><br>得到flag</p>
+<h2 id="phps"><a href="#phps" class="headerlink" title="phps"></a>phps</h2><p>phps即为 PHP Source。PHP Source 由 The PHP Group 发布，是最通用的关联应用程序<br>phps文件就是php的源代码文件，通常用于提供给用户（访问者）查看php代码，因为用户无法直接通过Web浏览器看到php文件的内容，所以需要用phps文件代替。其实，只要不用php等已经在服务器中注册过的MIME类型为文件即可，但为了国际通用，所以才用了phps文件类型。</p>
+<p>它的MIME类型为：text&#x2F;html, application&#x2F;x-httpd-php-source, application&#x2F;x-httpd-php3-source。</p>
+<h2 id="web6"><a href="#web6" class="headerlink" title="web6"></a>web6</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web61.png" alt="title"><br>根据题目提示，是网站备份文件压缩泄露<br>dirsearch扫一下，找一下文件<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web60.png" alt="title"><br>找到<a target="_blank" rel="noopener" href="http://www.zip在url的后面输入/www.zip%EF%BC%8C%E4%B8%8B%E8%BD%BD%E6%BA%90%E7%A0%81%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6">www.zip在url的后面输入/www.zip，下载源码压缩文件</a><br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web62.png" alt="title"><br>打开压缩文件<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web63.png" alt="title"><br>得到两个文件，打开txt文件<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web64.png" alt="title"><br>发现flag格式不对，根据文本内容，flag_here可以猜测，flag可能在网站的fl000g.txt下面<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web65.png" alt="title"><br>拿到flag</p>
+<h2 id="网站备份压缩文件泄露"><a href="#网站备份压缩文件泄露" class="headerlink" title="网站备份压缩文件泄露"></a>网站备份压缩文件泄露</h2><p>管理员将网站源代码备份在Web目录下，攻击者通过猜解文件路径，下载备份文件，导致源代码泄露。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">常见的备份文件后缀：</span><br><span class="line">.rar</span><br><span class="line">.zip</span><br><span class="line">.7z</span><br><span class="line">.tar</span><br><span class="line">.gz</span><br><span class="line">.bak bak是备份文件,为文件格式扩展名。</span><br><span class="line">.txt</span><br><span class="line">.old</span><br><span class="line">.temp</span><br><span class="line">.phps</span><br><span class="line">.sql</span><br></pre></td></tr></table></figure>
+
+<h2 id="web7"><a href="#web7" class="headerlink" title="web7"></a>web7</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web71.png" alt="title"><br>根据提示版本控制，与git或svn有关，猜测为git&#x2F;svn源码泄露<br>在Linux中.开头的文件是隐藏文件,网站管理员可能会存在在没有删除.git隐藏文件的情况下就将网站上线，这样就会造成源码泄露.<br>访问&#x2F;.git&#x2F;和&#x2F;.svn&#x2F;试试<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web72.png" alt="title"><br>得到flag</p>
+<h2 id="git源码泄露"><a href="#git源码泄露" class="headerlink" title="git源码泄露"></a>git源码泄露</h2><p>Git是一个开源的分布式版本控制系统，在执行git init初始化目录的时候，会在当前目录下自动创建一个.git目录，用来记录代码的变更记录等。发布代码的时候，如果没有把.git这个目录删除，就直接发布到了服务器上，攻击者就可以通过它来恢复源代码。</p>
+<h3 id="检测漏洞是否存在："><a href="#检测漏洞是否存在：" class="headerlink" title="检测漏洞是否存在："></a>检测漏洞是否存在：</h3><p>网站下面访问&#x2F;.git&#x2F;文件夹<br>如果文件夹存在或403 则存在 就可以使用githack.py进行下载</p>
+<h3 id="漏洞利用工具：GitHack"><a href="#漏洞利用工具：GitHack" class="headerlink" title="漏洞利用工具：GitHack"></a>漏洞利用工具：GitHack</h3><p>工具工作原理:</p>
+<ul>
+<li>解析.git&#x2F;index文件，找到工程中所有的： ( 文件名，文件sha1 )</li>
+<li>去.git&#x2F;objects&#x2F; 文件夹下下载对应的文件</li>
+<li>zlib解压文件，按原始的目录结构写入源代码<br>使用方法:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python GitHack.py URL/.git/</span><br></pre></td></tr></table></figure>
+修复建议：删除.git目录或者修改中间件配置进行对.git隐藏文件夹的访问。</li>
+</ul>
+<h2 id="web8"><a href="#web8" class="headerlink" title="web8"></a>web8</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web81.png" alt="title"><br>同上题，访问&#x2F;.git&#x2F;和&#x2F;.svn&#x2F;试试<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web82.png" alt="title"><br>得到flag</p>
+<h2 id="svn源码泄漏"><a href="#svn源码泄漏" class="headerlink" title="svn源码泄漏"></a>svn源码泄漏</h2><p>SVN是一个开放源代码的版本控制系统。在使用SVN管理本地代码过程中，会自动生成一个名为.svn的隐藏文件夹，其中包含重要的源代码信息。网站管理员在发布代码时，没有使用‘导出’功能，而是直接复制代码文件夹到WEB服务器上，这就使.svn隐藏文件夹被暴露于外网环境，可以利用.svn&#x2F;entries文件，获取到服务器源码。</p>
+<h3 id="检测漏洞是否存在：-1"><a href="#检测漏洞是否存在：-1" class="headerlink" title="检测漏洞是否存在："></a>检测漏洞是否存在：</h3><p>访问网站下&#x2F;.svn&#x2F;entries文件夹<br>如果存在 则可以使用工具进行下载</p>
+<h3 id="漏洞利用工具：SVNHack"><a href="#漏洞利用工具：SVNHack" class="headerlink" title="漏洞利用工具：SVNHack"></a>漏洞利用工具：SVNHack</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">列取目录:</span><br><span class="line">根目录</span><br><span class="line">python SvnHack.py -u http://x.x.x.x/.svn/entries  </span><br><span class="line">指定目录</span><br><span class="line">python SvnHack.py -u http://x.x.x.x/.svn/entries  -d scripts</span><br><span class="line">读源码:</span><br><span class="line">指定文件  </span><br><span class="line">python SvnHack.py -u http://x.x.x.x/.svn/entries  -d scripts -r  upd.js</span><br><span class="line">下载整站:</span><br><span class="line">python SvnHack.py -u http://x.x.x.x/.svn/entries  —download</span><br></pre></td></tr></table></figure>
+<h2 id="web9"><a href="#web9" class="headerlink" title="web9"></a>web9</h2><p>进行后台扫描<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web91.png" alt="title"><br>发现index.php，结合题目提示<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web92.png" alt="title"><br>发现与vim有关，猜测vim缓存信息泄露<br>访问index.php.swp<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web93.png" alt="title"><br>得到flag</p>
+<h2 id="vim缓存信息泄露"><a href="#vim缓存信息泄露" class="headerlink" title="vim缓存信息泄露"></a>vim缓存信息泄露</h2><p>vim缓存<br>临时文件是在vim编辑文本时就会创建的文件，如果程序正常退出，临时文件自动删除，如果意外退出就会保留，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容</p>
+<p>以 index.php 为例<br>第一次产生的缓存文件名为   <strong>.index.php.swp</strong><br>第二次意外退出后，文件名为 <strong>.index.php.swo</strong><br>第三次产生的缓存文件则为   <strong>.index.php.swn</strong><br><strong>注意：index前有 “ . “</strong></p>
+<h2 id="web10"><a href="#web10" class="headerlink" title="web10"></a>web10</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web100.png" alt="title"><br>根据提示，与cookie有关<br><kbd>F12</kbd>然后控制台输入document.cookie查看cookie信息<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web101.png" alt="title"><br>得到flag</p>
+<h2 id="web11"><a href="#web11" class="headerlink" title="web11"></a>web11</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web111.png" alt="title"><br>根据提示，可能flag藏在域名里面<br>用nslookup 查看域名信息试试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup flag.ctfshow.com</span><br></pre></td></tr></table></figure>
+<p>得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">服务器:  dns.ccsu.edu.cn</span><br><span class="line">Address:  218.196.40.9</span><br><span class="line"></span><br><span class="line">名称:    flag.ctfshow.com</span><br></pre></td></tr></table></figure>
+<p>没有flag，可能需要额外参数<br>这里以TXT类型查询TXT记录（TXT 记录通常用于存储文本信息，如域名的验证信息、SPF（发件人策略框架）记录等）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup -type=txt flag.ctfshow.com</span><br></pre></td></tr></table></figure>
+<p>得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">服务器:  dnstest.ccsu.cn</span><br><span class="line">Address:  218.196.40.9</span><br><span class="line"></span><br><span class="line">非权威应答:</span><br><span class="line">flag.ctfshow.com        text =</span><br><span class="line"></span><br><span class="line">        &quot;flag&#123;just_seesee&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p>得到flag</p>
+<h2 id="常用的-nslookup-参数："><a href="#常用的-nslookup-参数：" class="headerlink" title="常用的 nslookup 参数："></a>常用的 nslookup 参数：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-type=&lt;记录类型&gt;：指定查询的记录类型。例如，-type=A 查询 A 记录（IPv4 地址），-type=MX 查询邮件交换记录，-type=NS 查询域名服务器记录等。</span><br><span class="line">-querytype=&lt;记录类型&gt;:与 -type=&lt;记录类型&gt; 参数相同，用于指定查询的记录类型。</span><br><span class="line">-server=&lt;DNS 服务器&gt;:指定要查询的特定 DNS 服务器的 IP 地址或主机名。例如，-server=8.8.8.8 将查询 Google 的公共 DNS 服务器。</span><br><span class="line">-debug:启用调试模式，显示更详细的查询和响应信息。</span><br><span class="line">-timeout=&lt;超时时间&gt;:指定查询超时时间（以秒为单位）。</span><br><span class="line">-class=&lt;查询类别&gt;:指定查询类别。通常使用默认值 IN（Internet）。</span><br></pre></td></tr></table></figure>
+<h2 id="web12"><a href="#web12" class="headerlink" title="web12"></a>web12</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web120.png" alt="title"><br>dirsearch扫一下，发现有后台<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web121.png" alt="title"><br>根据提示，后台密码在公开信息里面<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web122.png" alt="title"><br>猜测密码为电话:372619038<br>登录后台<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web123.png" alt="title"><br>拿到flag</p>
+<h2 id="web13"><a href="#web13" class="headerlink" title="web13"></a>web13</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web131.png" alt="title"><br>根据提示，与技术文档有关<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web132.png" alt="title"><br>发现页面里面有个document，可以打开<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web133.png" alt="title"><br>打开后发现后台地址和用户名，密码，登录得到flag<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web134.png" alt="title"></p>
+<h2 id="web14"><a href="#web14" class="headerlink" title="web14"></a>web14</h2><h2 id="web15"><a href="#web15" class="headerlink" title="web15"></a>web15</h2><h2 id="web16"><a href="#web16" class="headerlink" title="web16"></a>web16</h2><h2 id="web17"><a href="#web17" class="headerlink" title="web17"></a>web17</h2><h2 id="web18"><a href="#web18" class="headerlink" title="web18"></a>web18</h2><h2 id="web19"><a href="#web19" class="headerlink" title="web19"></a>web19</h2><h2 id="web20"><a href="#web20" class="headerlink" title="web20"></a>web20</h2>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">ctfweb入门--信息收集</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2023-07-26, 11:14:17</p>
+        <p><span>Updated:</span>2023-07-26, 11:14:17</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" title="ctfweb入门--信息收集">http://example.com/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E7%88%86%E7%A0%B4/">
+                    ctfweb入门-爆破
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2023/07/15/ctfd%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">
+                    ctfd平台搭建
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web1"><span class="toc-number">1.1.</span> <span class="toc-text">web1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web2"><span class="toc-number">1.2.</span> <span class="toc-text">web2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web3"><span class="toc-number">1.3.</span> <span class="toc-text">web3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web4"><span class="toc-number">1.4.</span> <span class="toc-text">web4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#robots%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">robots协议:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web5"><span class="toc-number">1.6.</span> <span class="toc-text">web5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phps"><span class="toc-number">1.7.</span> <span class="toc-text">phps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web6"><span class="toc-number">1.8.</span> <span class="toc-text">web6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%A4%87%E4%BB%BD%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E6%B3%84%E9%9C%B2"><span class="toc-number">1.9.</span> <span class="toc-text">网站备份压缩文件泄露</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web7"><span class="toc-number">1.10.</span> <span class="toc-text">web7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-number">1.11.</span> <span class="toc-text">git源码泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E6%BC%8F%E6%B4%9E%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%9A"><span class="toc-number">1.11.1.</span> <span class="toc-text">检测漏洞是否存在：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7%EF%BC%9AGitHack"><span class="toc-number">1.11.2.</span> <span class="toc-text">漏洞利用工具：GitHack</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web8"><span class="toc-number">1.12.</span> <span class="toc-text">web8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#svn%E6%BA%90%E7%A0%81%E6%B3%84%E6%BC%8F"><span class="toc-number">1.13.</span> <span class="toc-text">svn源码泄漏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E6%BC%8F%E6%B4%9E%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%9A-1"><span class="toc-number">1.13.1.</span> <span class="toc-text">检测漏洞是否存在：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7%EF%BC%9ASVNHack"><span class="toc-number">1.13.2.</span> <span class="toc-text">漏洞利用工具：SVNHack</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web9"><span class="toc-number">1.14.</span> <span class="toc-text">web9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E7%BC%93%E5%AD%98%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2"><span class="toc-number">1.15.</span> <span class="toc-text">vim缓存信息泄露</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web10"><span class="toc-number">1.16.</span> <span class="toc-text">web10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web11"><span class="toc-number">1.17.</span> <span class="toc-text">web11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-nslookup-%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">1.18.</span> <span class="toc-text">常用的 nslookup 参数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web12"><span class="toc-number">1.19.</span> <span class="toc-text">web12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web13"><span class="toc-number">1.20.</span> <span class="toc-text">web13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web14"><span class="toc-number">1.21.</span> <span class="toc-text">web14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web15"><span class="toc-number">1.22.</span> <span class="toc-text">web15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web16"><span class="toc-number">1.23.</span> <span class="toc-text">web16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web17"><span class="toc-number">1.24.</span> <span class="toc-text">web17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web18"><span class="toc-number">1.25.</span> <span class="toc-text">web18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web19"><span class="toc-number">1.26.</span> <span class="toc-text">web19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web20"><span class="toc-number">1.27.</span> <span class="toc-text">web20</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"ctfweb入门--信息收集　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E7%88%86%E7%A0%B4/" title="Pre: ctfweb入门-爆破">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2023/07/15/ctfd%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" title="Next: ctfd平台搭建">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E7%88%86%E7%A0%B4/">ctfweb入门-爆破</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/26/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">ctfweb入门--信息收集</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/15/ctfd%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">ctfd平台搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/">解决win11更新引起python一系列错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/10/win11%E5%85%89%E6%A0%87%E7%BE%8E%E5%8C%96/">win11光标美化</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/">爆破之token绕过</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">ARP攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/08/Vs2022-%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9-%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows-terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9/">Vs2022 运行终端更改</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/17/CSS/">CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/HTML/">HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/01/%E9%93%BE%E6%A0%88/">链栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/29/%E9%A1%BA%E5%BA%8F%E6%A0%88/">顺序栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/05/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/">python3语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/21/helloworld/">hello</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2022-2023 isyang_
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
