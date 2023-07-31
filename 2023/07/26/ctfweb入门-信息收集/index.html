@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="isyang_&#39;s blog">
 <meta property="og:description" content="ctfshow信息收集题题解及其知识点">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://isyang666.github.io/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web1.png">
+<meta property="og:image" content="https://isyang666.github.io/img/web1.png">
 <meta property="og:image" content="https://isyang666.github.io/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web21.png">
 <meta property="og:image" content="https://isyang666.github.io/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web22.png">
 <meta property="og:image" content="https://isyang666.github.io/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web31.png">
@@ -75,7 +75,7 @@
 <meta property="article:author" content="isyang_">
 <meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://isyang666.github.io/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web1.png">
+<meta name="twitter:image" content="https://isyang666.github.io/img/web1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -366,7 +366,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="web1"><a href="#web1" class="headerlink" title="web1"></a>web1</h2><p>F12查看源码<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web1.png" alt="title"><br>得到flag</p>
+        <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="web1"><a href="#web1" class="headerlink" title="web1"></a>web1</h2><p>F12查看源码<br><img src="/img/web1.png" alt="title"><br>得到flag</p>
 <h2 id="web2"><a href="#web2" class="headerlink" title="web2"></a>web2</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web21.png" alt="title"><br>按F12和鼠标右键都不行，都被禁用了查看不了源码<br>快捷键<kbd>ctrl+U</kbd>查看源码<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web22.png" alt="title"><br>拿到flag</p>
 <h2 id="web3"><a href="#web3" class="headerlink" title="web3"></a>web3</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web31.png" alt="title"><br>查看源码没有效果，根据提示，抓包<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web32.png" alt="title"><br>flag在response包里面</p>
 <h2 id="web4"><a href="#web4" class="headerlink" title="web4"></a>web4</h2><p><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web41.png" alt="title"><br>根据提示，与robots协议有关<br><strong>网站可能存在robots.txt文件导致目录信息泄露</strong><br>访问robots.txt<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web42.png" alt="title"><br>Disallow下有个&#x2F;flagishere.txt是禁止被爬虫访问的，访问一下试试<br><img src="/ctfweb%E5%85%A5%E9%97%A8-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/web43.png" alt="title"><br>得到flag</p>
