@@ -459,10 +459,19 @@ html = etree.HTML(html_str)
 result = html.xpath('//li/a/@href')
 print(result)
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出结果为:</span><br></pre></td></tr></table></figure>
-['www.python.com', 'www.java.com', 'www.baidu.com', 'www.jd.com']
+[·www.python.com', 'www.java.com', 'www.baidu.com', 'www.jd.com']
 ```
-
-
+## 对编写爬虫程序的一些个人见解
+- 一般编写爬虫程序分为四步:
+  - 第一步:初始化参数
+    url的构造,headers,cookies等的伪造 
+  - 第二步:请求
+    用requests方法去请求url,获得网页的响应
+  - 第三步:解析
+    对网页的响应进行解析,将其中需要爬取的数据提取出来（re,xpath,bs4）
+  - 第四步:保存
+    将提取出来的数据进行保存,用数据库或者文件的操作来实现
+- 爬虫实战中一般有许多网站有反爬虫的一些策略,需要更多的深度学习来进行绕过
       
     </div>
     
