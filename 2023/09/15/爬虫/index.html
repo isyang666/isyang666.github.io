@@ -22,13 +22,13 @@
 <meta property="og:site_name" content="isyang_&#39;s blog">
 <meta property="og:description" content="有关python爬虫的入门学习">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="d:/myblog/source/img/%E7%88%AC%E8%99%AB/HttpResponse%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7.png">
+<meta property="og:image" content="https://isyang666.github.io/img/%E7%88%AC%E8%99%AB/HttpResponse%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7.png">
 <meta property="article:published_time" content="2023-09-15T10:03:40.000Z">
 <meta property="article:modified_time" content="2023-09-15T10:03:40.000Z">
 <meta property="article:author" content="isyang_">
 <meta property="article:tag" content="python3">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:/myblog/source/img/%E7%88%AC%E8%99%AB/HttpResponse%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7.png">
+<meta name="twitter:image" content="https://isyang666.github.io/img/%E7%88%AC%E8%99%AB/HttpResponse%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -317,7 +317,7 @@
 <p>得到</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Response [200]&gt;</span><br></pre></td></tr></table></figure>
 <p>该HttpResponse 响应对象具有以下常用属性：</p>
-<p><img src="D:/myblog/source/img/爬虫/HttpResponse响应对象的属性.png" alt="title"></p>
+<p><img src="/img/%E7%88%AC%E8%99%AB/HttpResponse%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7.png" alt="title"></p>
 <h3 id="response-的几种方法"><a href="#response-的几种方法" class="headerlink" title="response 的几种方法"></a>response 的几种方法</h3><ol>
 <li>print(response.encoding)     # 打印编码格式</li>
 <li>response.encoding&#x3D;”utf-8”    # 更改为utf-8编码（一般网页为utf-8编码格式）</li>
@@ -386,8 +386,7 @@
 </tr>
 </tbody></table>
 <p>综上所述 json.load() 与 json.dump() 操作的是文件流对象，实现了 json 文件的读写操作，而 json.loads() 与 json.dumps() 操作的是 Python 对象或者 JOSN 字符串。</p>
-<h2 id="xpath-语言和lxml-模块"><a href="#xpath-语言和lxml-模块" class="headerlink" title="xpath 语言和lxml 模块"></a>xpath 语言和lxml 模块</h2><pre><code>XPath（全称：XML Path Language）即 XML 路径语言，它是一门在 XML 文档中查找信息的语言，最初被用来搜寻 XML 文档，同时它也适用于搜索 HTML 文档。因此，在爬虫过程中可以使用 XPath 来提取相应的数据。
-</code></pre>
+<h2 id="xpath-语言和lxml-模块"><a href="#xpath-语言和lxml-模块" class="headerlink" title="xpath 语言和lxml 模块"></a>xpath 语言和lxml 模块</h2><p>XPath（全称：XML Path Language）即 XML 路径语言，它是一门在 XML 文档中查找信息的语言，最初被用来搜寻 XML 文档，同时它也适用于搜索 HTML 文档。因此，在爬虫过程中可以使用 XPath 来提取相应的数据。</p>
 <h3 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h3><ul>
 <li>xpath helper插件：帮助我们从elements中定位数据<ol>
 <li>选择节点(标签):<br>&#x2F;html&#x2F;head&#x2F;meta:能够选中htm下的head下的所有的meta标签</li>
@@ -417,61 +416,41 @@
 </li>
 </ul>
 <h3 id="lxml-模块"><a href="#lxml-模块" class="headerlink" title="lxml 模块"></a>lxml 模块</h3><ol>
-<li>导入模块：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import lxml</span><br><span class="line">```   </span><br><span class="line">2. lxml模块的使用</span><br><span class="line">lxml 库提供了一个 etree 模块，该模块专门用来解析 HTML/XML 文档,使用该模块来解析html/xml文档的流程如下</span><br><span class="line">- 导入</span><br></pre></td></tr></table></figure>
-from lxml import etree<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 创建解析对象</span><br><span class="line">调用 etree 模块的 HTML() 方法来创建 HTML 解析对象。如下所示:</span><br></pre></td></tr></table></figure>
-parse_html &#x3D; etree.HTML(html)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTML() 方法能够将 HTML 标签字符串解析为 HTML 文件，该方法可以自动修正 HTML 文本。</span><br><span class="line">示例如下：(注:以下代码由于渲染问题，博客不能正常显示,其网址中的 &#x27; 都被替换为了 ` )</span><br></pre></td></tr></table></figure>
-from lxml import etree<br>html_str &#x3D; ‘’’<div>
- <ul>
-      <li class="item1"><a href=`www.python.com`>Python</a></li>
-      <li class="item2"><a href=`www.java.com`>Java</a></li>
-      <li class="site2"><a href=`www.baidu.com`>百度</a>
-      <li class="site3"><a href=`www.jd.com`>京东</a></li>
-  </ul>
-</div>
-'''
-html = etree.HTML(html_str)</li>
+<li>导入模块: <strong>import lxml</strong></li>
+<li>lxml模块的使用:<br>lxml 库提供了一个 etree 模块，该模块专门用来解析 HTML&#x2F;XML 文档,使用该模块来解析html&#x2F;xml文档的流程如下</li>
 </ol>
-<h1 id="tostring-将标签元素转换为字符串输出，注意：result为字节类型"><a href="#tostring-将标签元素转换为字符串输出，注意：result为字节类型" class="headerlink" title="tostring()将标签元素转换为字符串输出，注意：result为字节类型"></a>tostring()将标签元素转换为字符串输出，注意：result为字节类型</h1><p>result &#x3D; etree.tostring(html)<br>print(result.decode(‘utf-8’))</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出结果如下:</span><br></pre></td></tr></table></figure>
-<html><body><div>
-    <ul>
-         <li class="item1"><a href=`www.python.com`>Python</a></li>
-         <li class="item2"><a href=`www.java.com`>Java</a></li>
-         <li class="site2"><a href=`www.baidu.com`>&#30334;&#24230;</a></li>
-         <li class="site3"><a href=`www.jd.com`>&#20140;&#19996;</a></li>
-     </ul>
-</div></body></html>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 调用xpath表达式</span><br><span class="line">最后使用第二步创建的解析对象调用 xpath() 方法，完成数据的提取，如下所示：</span><br></pre></td></tr></table></figure>
-from lxml import etree
-html_str = '''
-<div>
-    <ul>
-         <li class="item1"><a href=`www.python.com`>Python</a></li>
-         <li class="item2"><a href=`www.java.com`>Java</a></li>
-         <li class="site2"><a href=`www.baidu.com`>百度</a>
-         <li class="site3"><a href=`www.jd.com`>京东</a></li>
-     </ul>
-</div>
-'''
-html = etree.HTML(html_str)
-# 提取文本数据，以列表形式输出 
-# 注:xpath只能根据当前url对应的响应的来写(一般情况下element和响应的html不一样)
-result = html.xpath('//li/a/@href')
-print(result)
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出结果为:</span><br></pre></td></tr></table></figure>
-[`www.python.com`, `www.java.com`, `www.baidu.com`, `www.jd.com`]
-```
-## 对编写爬虫程序的一些个人见解
-- 一般编写爬虫程序分为四步:
-  - 第一步:初始化参数
-    url的构造,headers,cookies等的伪造 
-  - 第二步:请求
-    用requests方法去请求url,获得网页的响应
-  - 第三步:解析
-    对网页的响应进行解析,将其中需要爬取的数据提取出来（re,xpath,bs4）
-  - 第四步:保存
-    将提取出来的数据进行保存,用数据库或者文件的操作来实现
-- 爬虫实战中一般有许多网站有反爬虫的一些策略,需要更多的深度学习来进行绕过
+<ul>
+<li>导入<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br></pre></td></tr></table></figure></li>
+<li>创建解析对象<br>调用 etree 模块的 HTML() 方法来创建 HTML 解析对象。如下所示:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parse_html = etree.HTML(html)</span><br></pre></td></tr></table></figure>
+HTML() 方法能够将 HTML 标签字符串解析为 HTML 文件，该方法可以自动修正 HTML 文本。示例如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line">html_str = &#x27;&#x27;&#x27;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">         &lt;li class=&quot;item1&quot;&gt;&lt;a href=&quot;www.python.com&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;item2&quot;&gt;&lt;a href=&quot;www.java.com&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;site2&quot;&gt;&lt;a href=&quot;www.baidu.com&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">         &lt;li class=&quot;site3&quot;&gt;&lt;a href=&quot;www.jd.com&quot;&gt;京东&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">     &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">html = etree.HTML(html_str)</span><br><span class="line"># tostring()将标签元素转换为字符串输出，注意：result为字节类型</span><br><span class="line">result = etree.tostring(html)</span><br><span class="line">print(result.decode(&#x27;utf-8&#x27;))</span><br></pre></td></tr></table></figure>
+输出结果如下:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;&lt;body&gt;&lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">         &lt;li class=&quot;item1&quot;&gt;&lt;a href=&quot;www.python.com&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;item2&quot;&gt;&lt;a href=&quot;www.java.com&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;site2&quot;&gt;&lt;a href=&quot;www.baidu.com&quot;&gt;&amp;#30334;&amp;#24230;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;site3&quot;&gt;&lt;a href=&quot;www.jd.com&quot;&gt;&amp;#20140;&amp;#19996;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">     &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li>调用xpath表达式<br>最后使用第二步创建的解析对象调用 xpath() 方法，完成数据的提取，如下所示：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from lxml import etree</span><br><span class="line">html_str = &#x27;&#x27;&#x27;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">         &lt;li class=&quot;item1&quot;&gt;&lt;a href=&quot;www.python.com&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;item2&quot;&gt;&lt;a href=&quot;www.java.com&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">         &lt;li class=&quot;site2&quot;&gt;&lt;a href=&quot;www.baidu.com&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">         &lt;li class=&quot;site3&quot;&gt;&lt;a href=&quot;www.jd.com&quot;&gt;京东&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">     &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">html = etree.HTML(html_str)</span><br><span class="line"># 提取文本数据，以列表形式输出 </span><br><span class="line"># 注:xpath只能根据当前url对应的响应的来写(一般情况下element和响应的html不一样)</span><br><span class="line">result = html.xpath(&#x27;//li/a/@href&#x27;)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+输出结果为:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;www.python.com&#x27;, &#x27;www.java.com&#x27;, &#x27;www.baidu.com&#x27;, &#x27;www.jd.com&#x27;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="对编写爬虫程序的一些个人见解"><a href="#对编写爬虫程序的一些个人见解" class="headerlink" title="对编写爬虫程序的一些个人见解"></a>对编写爬虫程序的一些个人见解</h2><ul>
+<li>一般编写爬虫程序分为四步:<ul>
+<li>第一步:初始化参数<br>url的构造,headers,cookies等的伪造 </li>
+<li>第二步:请求<br>用requests方法去请求url,获得网页的响应</li>
+<li>第三步:解析<br>对网页的响应进行解析,将其中需要爬取的数据提取出来（re,xpath,bs4）</li>
+<li>第四步:保存<br>将提取出来的数据进行保存,用数据库或者文件的操作来实现</li>
+</ul>
+</li>
+</ul>
+<h2 id="关于反爬和绕过"><a href="#关于反爬和绕过" class="headerlink" title="关于反爬和绕过"></a>关于反爬和绕过</h2><p>爬虫实战中一般有许多网站有反爬虫的一些策略,需要更多的深度学习来进行绕过</p>
+<ol>
+<li>网站反爬虫策略主要有以下几种：</li>
+</ol>
+<p>基于IP的反爬虫：通过人为或部分策略来识别出爬虫的IP并进行屏蔽、阻止、封禁等操作。</p>
+<p>基于爬行的反爬虫：在爬虫的爬行中设置爬行障碍，让其陷入死循环；或者用一些无意义的URL来填充其爬行队列，从而阻止其对正常URL进行后续的漏洞审计。</p>
+<p>封User-Agent：User-Agent是请求头域之一，服务器从User-Agent对应的值中是被客户端的使用信息。User-Agent的角色就是客户端的身份标识。很多的爬虫请求头就是默认的一些很明显的爬虫头python-requests&#x2F;2.18.4，诸如此类，当发现携带有这类headers的数据包，直接拒绝访问，返回403错误。</p>
+<p>封Cookie：服务器通过校验请求头中的Cookie值来区分正常用户和爬虫程序。</p>
+<p>JavaScript渲染：由JavaScript改变HTML DOM导致页面内容发生变化的现象称为动态渲染。由于编程语言没有像浏览器一样内置JavaScript解释器和渲染引擎，所以动态渲染是天然的反爬虫手段。</p>
+<p>验证码验证：当某一用户访问次数过多后，就自动让请求跳转到一个验证码页面，只有在输入正确的验证码之后才能继续访问网站。</p>
+<p>Ajax异步传输：访问网页的时候服务器将网页框架返回给客户端，在与客户端交互的过程中通过异步ajax技术传输数据包到客户端，呈现在网页上，爬虫直接抓取的话信息为空。</p>
+<p>图片伪装：将带有文字的图片与正常文字混合在一起，以达到“鱼目混珠”的效果。</p>
+<p>CSS偏移：利用CSS样式将乱序的文字排版为人类正常阅读顺序1。</p>
+<p>SVG映射：SVG是用于描述二维矢量图形的一种图形格式。它基于XML描述图形，对图形进行放大或缩小操作都不会影响图形质量。由于SVG中的图形代表的也是一个个文字，所以在使用时必须在后端或前端将真实的文字与对应的SVG图形进行映射和替换<br>2. 一些常见的绕过思路<br>cookie中一些参数的绕过(如:uuid)<br>用session方法</p>
+
       
     </div>
     
@@ -512,7 +491,7 @@ print(result)
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%AC%E8%99%AB"><span class="toc-number">1.</span> <span class="toc-text">爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#request%E6%A8%A1%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">request模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8request%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81get%EF%BC%8Cpost%E8%AF%B7%E6%B1%82"><span class="toc-number">1.1.1.</span> <span class="toc-text">使用request模块发送get，post请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#response-%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">response 的几种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E9%9C%80%E8%A6%81%E6%90%BA%E5%B8%A6cookie%E7%9A%84%E8%AF%B7%E6%B1%82"><span class="toc-number">1.1.3.</span> <span class="toc-text">处理需要携带cookie的请求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#retrying%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">retrying模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8fake-useragent%E6%A8%A1%E5%9D%97%E6%9D%A5%E4%BC%AA%E9%80%A0User-Agent"><span class="toc-number">1.3.</span> <span class="toc-text">使用fake-useragent模块来伪造User-Agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.4.</span> <span class="toc-text">json 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">json类型数据的格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.2.</span> <span class="toc-text">json模块的方法总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xpath-%E8%AF%AD%E8%A8%80%E5%92%8Clxml-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.5.</span> <span class="toc-text">xpath 语言和lxml 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xpath%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">xpath语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lxml-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.5.2.</span> <span class="toc-text">lxml 模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tostring-%E5%B0%86%E6%A0%87%E7%AD%BE%E5%85%83%E7%B4%A0%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BE%93%E5%87%BA%EF%BC%8C%E6%B3%A8%E6%84%8F%EF%BC%9Aresult%E4%B8%BA%E5%AD%97%E8%8A%82%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">tostring()将标签元素转换为字符串输出，注意：result为字节类型</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%AC%E8%99%AB"><span class="toc-number">1.</span> <span class="toc-text">爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#request%E6%A8%A1%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">request模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8request%E6%A8%A1%E5%9D%97%E5%8F%91%E9%80%81get%EF%BC%8Cpost%E8%AF%B7%E6%B1%82"><span class="toc-number">1.1.1.</span> <span class="toc-text">使用request模块发送get，post请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#response-%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">response 的几种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E9%9C%80%E8%A6%81%E6%90%BA%E5%B8%A6cookie%E7%9A%84%E8%AF%B7%E6%B1%82"><span class="toc-number">1.1.3.</span> <span class="toc-text">处理需要携带cookie的请求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#retrying%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.</span> <span class="toc-text">retrying模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8fake-useragent%E6%A8%A1%E5%9D%97%E6%9D%A5%E4%BC%AA%E9%80%A0User-Agent"><span class="toc-number">1.3.</span> <span class="toc-text">使用fake-useragent模块来伪造User-Agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.4.</span> <span class="toc-text">json 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.1.</span> <span class="toc-text">json类型数据的格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E6%A8%A1%E5%9D%97%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.2.</span> <span class="toc-text">json模块的方法总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xpath-%E8%AF%AD%E8%A8%80%E5%92%8Clxml-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.5.</span> <span class="toc-text">xpath 语言和lxml 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xpath%E8%AF%AD%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">xpath语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lxml-%E6%A8%A1%E5%9D%97"><span class="toc-number">1.5.2.</span> <span class="toc-text">lxml 模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%BC%96%E5%86%99%E7%88%AC%E8%99%AB%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E8%A7%81%E8%A7%A3"><span class="toc-number">1.6.</span> <span class="toc-text">对编写爬虫程序的一些个人见解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%8D%E7%88%AC%E5%92%8C%E7%BB%95%E8%BF%87"><span class="toc-number">1.7.</span> <span class="toc-text">关于反爬和绕过</span></a></li></ol></li></ol>
         
     </div>
     <style>
