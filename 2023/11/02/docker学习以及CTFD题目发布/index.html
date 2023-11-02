@@ -26,10 +26,10 @@
 <meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/2.png">
 <meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/3.png">
 <meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/4.png">
-<meta property="og:image" content="https://isyang666.github.io/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/5.png">
-<meta property="og:image" content="https://isyang666.github.io/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/6.png">
-<meta property="og:image" content="https://isyang666.github.io/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/8.png">
-<meta property="og:image" content="https://isyang666.github.io/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/7.png">
+<meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/5.png">
+<meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/6.png">
+<meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/8.png">
+<meta property="og:image" content="https://isyang666.github.io/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/7.png">
 <meta property="article:published_time" content="2023-11-02T09:54:21.000Z">
 <meta property="article:modified_time" content="2023-11-02T09:54:21.000Z">
 <meta property="article:author" content="isyang_">
@@ -329,9 +329,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在正在运行的容器(bcf9d8fa6461)中启动一个交互式的sh shell</span><br><span class="line">docker exec -it bcf9d8fa6461 /bin/sh</span><br></pre></td></tr></table></figure>
 <p><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/2.png" alt="title"><br>找到flag相关的文件,用vi 打开进行编辑<br><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/3.png" alt="title"><br>写入我们想要改成的flag<br><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/4.png" alt="title"><br>wq保存退出,exit 退出shell</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit bcf9d8fa6461 isyang666/mcmcxs2u11:ez_JsGame # 保存修改后的容器为一个新的镜像</span><br></pre></td></tr></table></figure>
-<p><img src="/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/5.png" alt="title"><br>创建成功了<br>直接push到docker仓库</p>
+<p><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/5.png" alt="title"><br>创建成功了<br>直接push到docker仓库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push isyang666/mcmcxs2u11:ez_JsGame</span><br></pre></td></tr></table></figure>
-<p><img src="/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/6.png" alt="title"><br>然后用CTFD的题目发布功能将该镜像拉取下来构建题目<br><img src="/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/8.png" alt="title"><br><img src="/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/7.png" alt="title"><br>发布成功</p>
+<p><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/6.png" alt="title"><br>然后用CTFD的题目发布功能将该镜像拉取下来构建题目<br><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/8.png" alt="title"><br><img src="/img/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/7.png" alt="title"><br>发布成功</p>
 
       
     </div>
