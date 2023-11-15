@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="ARP 攻击介绍 实战 以及 检测和防护">
+<meta name="description" content="emmm,作业不想写,写了个py">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARP攻击">
-<meta property="og:url" content="https://isyang666.github.io/2023/07/04/arp%E6%94%BB%E5%87%BB/index.html">
+<meta property="og:title" content="某问卷自动化脚本">
+<meta property="og:url" content="https://isyang666.github.io/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="isyang_&#39;s blog">
-<meta property="og:description" content="ARP 攻击介绍 实战 以及 检测和防护">
+<meta property="og:description" content="emmm,作业不想写,写了个py">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-07-04T08:48:00.000Z">
-<meta property="article:modified_time" content="2023-07-04T08:48:00.000Z">
+<meta property="article:published_time" content="2023-11-15T01:31:06.000Z">
+<meta property="article:modified_time" content="2023-11-15T01:31:06.000Z">
 <meta property="article:author" content="isyang_">
-<meta property="article:tag" content="arp">
-<meta property="article:tag" content="kali">
+<meta property="article:tag" content="python3">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -61,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ARP攻击 | isyang_&#39;s blog</title>
+<title>某问卷自动化脚本 | isyang_&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -260,11 +259,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-arp攻击" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-某问卷自动化脚本" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/" class="article-date">
-      <time datetime="2023-07-04T08:48:00.000Z" itemprop="datePublished">2023-07-04</time>
+      <a href="/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/" class="article-date">
+      <time datetime="2023-11-15T01:31:06.000Z" itemprop="datePublished">2023-11-15</time>
 </a>
 
 
@@ -279,7 +278,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ARP攻击
+      某问卷自动化脚本
     </h1>
   
 
@@ -292,7 +291,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arp/" rel="tag">arp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kali/" rel="tag">kali</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/" rel="tag">python3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,34 +301,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="ARP攻击介绍"><a href="#ARP攻击介绍" class="headerlink" title="ARP攻击介绍"></a>ARP攻击介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ARP（Address Resolution Protocol，地址解析协议）是一个位于TCP/IP协议栈中的底层协议，负责将某个IP地址解析成对应的MAC地址。而ARP攻击就是通过伪造IP地址和MAC地址实现ARP欺骗，能够在网络中产生大量的ARP通信量使网络阻塞，攻击者只要持续不断的发出伪造的ARP响应包就能更改目标主机ARP缓存中的IP-MAC条目，造成网络中断或中间人攻击。这是一种“中间人”（MAN-IN-MIDDLE）攻击技术。</span><br><span class="line">电脑遭受到典型的ARP攻击后会表现为：使用局域网时会突然掉线，过一段时间后又会恢复正常。比如客户端状态频频变红，用户频繁断网，IE浏览器频繁出错，以及一些常用软件出现故障等。如果局域网中是通过身份认证上网的，会突然出现可认证，但不能上网的现象（无法ping通网关），重启机器或在MS-DOS窗口下运行命令arp -d后，又可恢复上网。</span><br><span class="line">ARP欺骗木马只需成功感染一台电脑，就可能导致整个局域网都无法上网，严重的甚至可能带来整个网络的瘫痪。该木马发作时除了会导致同一局域网内的其他用户上网出现时断时续的现象外，还会窃取用户密码。如盗取QQ密码、盗取各种网络游戏密码和账号去做金钱交易，盗窃网上银行账号来做非法交易活动等</span><br></pre></td></tr></table></figure>
-<h2 id="ARP攻击实战"><a href="#ARP攻击实战" class="headerlink" title="ARP攻击实战"></a>ARP攻击实战</h2><p>工具:  kali 中 ettercap</p>
-<p>操作:</p>
-<pre><code>使用ettercap中的搜素获得局域网内的目标，选中目标主机和网关作为目标，选择arp欺骗攻击。
-开始攻击后，网卡能够读取到目标主机的全部流量，可以使用wireshark进行抓包分析目标行为。
-</code></pre>
-<p>我们也可以用 kali 中的 arpspoof命令来进行对目标机的断网攻击</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i eth0 -t 目标IP地址 网关              </span><br></pre></td></tr></table></figure>
-<p>使用本命令解除攻击</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c &#x27;echo 1 &gt; /proc/sys/net/ipv4/ip_forward&#x27;</span><br></pre></td></tr></table></figure>
-<h2 id="ARP攻击检测"><a href="#ARP攻击检测" class="headerlink" title="ARP攻击检测"></a>ARP攻击检测</h2><p>检测：</p>
-<p>1、网络频繁掉线</p>
-<p>2、网速突然变慢</p>
-<p>3、使用arp -a命令查看的网关mac地址与真实的网关mac地址不同</p>
-<p>4、使用嗅探软件发现局域网内存在大量arp应答包</p>
-<h2 id="ARP的防护"><a href="#ARP的防护" class="headerlink" title="ARP的防护"></a>ARP的防护</h2><p>在我们真实环境下的ARP攻击主要有三种：</p>
-<p>1.攻击者的ip和MAC地址是真实的</p>
-<p>2.攻击者伪造ip地址，但是正确的MAC地址</p>
-<p>3.攻击者伪造ip地址和MAC地址</p>
-<p>对于前两种手段，想要找到攻击的源主机还是比较容易的，第三种就有些麻烦。</p>
-<p>日常防护:<br>1.在pc端上做ip和MAC地址的绑定</p>
-<p>2.在网络设备层面可以做ip mac 和端口的绑定，限制端口只能学习一个MAC地址，也可以做AAA认证，可以提前录入MAC地址，当终端连接时先判断合法性</p>
-<p>3.可以部署一些arp防御软件，有条件的可以部署些arp防护的设备</p>
-<h2 id="ARP欺骗的危害"><a href="#ARP欺骗的危害" class="headerlink" title="ARP欺骗的危害"></a>ARP欺骗的危害</h2><p>1、使同一网段内其他用户无法上网</p>
-<p>2、可以嗅探到交换式局域网中的所有数据包</p>
-<p>3、对信息进行篡改</p>
-<p>4、可以控制局域网内任何主机</p>
-
+        <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p><strong>本脚本仅供学习交流，请勿用于商业用途，使用本脚本造成的任何后果与本人无关。</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"># 某问卷全自动化填写问卷 思政作业想偷懒写的emmm...</span><br><span class="line"># Author:isyang_</span><br><span class="line"># 声明:</span><br><span class="line"># 本脚本不得用于售卖和非法用途,仅用于学习</span><br><span class="line"># 脚本使用了selenium和pyautogui进行模拟登录和鼠标宏全自动化答卷</span><br><span class="line"># 使用本脚本需要安装最新的chrome浏览器</span><br><span class="line"># 不同问卷需要根据代码进行重构,比如改题目数量,题目选项结构,题目xpath,以及提交按钮的坐标,具体见代码注释</span><br><span class="line">import time</span><br><span class="line">import random</span><br><span class="line">import pyautogui</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def spider(num, url):</span><br><span class="line">    for i in range(num):</span><br><span class="line">        option = webdriver.ChromeOptions() # 创建一个chrome浏览器选项对象</span><br><span class="line">        option.add_experimental_option(&#x27;excludeSwitches&#x27;, [&#x27;enable-automation&#x27;]) # 禁用参数,防止脚本被检测</span><br><span class="line">        option.add_experimental_option(&#x27;useAutomationExtension&#x27;, False) # 禁用浏览器扩展(提高脚本稳定性)</span><br><span class="line"></span><br><span class="line">        browser = webdriver.Chrome(options=option) # 创建一个Chrome对象</span><br><span class="line"></span><br><span class="line">        # 向浏览器发送一个控制命令，将 &quot;webdriver&quot; 属性设置为 undefined。这可以防止浏览器检测到自动化脚本，从而提高脚本在浏览器中的稳定性</span><br><span class="line">        browser.execute_cdp_cmd(&#x27;Page.addScriptToEvaluateOnNewDocument&#x27;,</span><br><span class="line">                                &#123;&#x27;source&#x27;: &#x27;Object.defineProperty(navigator, &quot;webdriver&quot;, &#123;get: () =&gt; undefined&#125;)&#x27;&#125;)</span><br><span class="line">        </span><br><span class="line">        browser.maximize_window()  # 窗口最大化</span><br><span class="line"></span><br><span class="line">        # 再次将 &quot;webdriver&quot; 属性设置为 undefined。</span><br><span class="line">        browser.execute_cdp_cmd(&#x27;Page.addScriptToEvaluateOnNewDocument&#x27;,</span><br><span class="line">                                &#123;&#x27;source&#x27;: &#x27;Object.defineProperty(navigator, &quot;webdriver&quot;, &#123;get: () =&gt; undefined&#125;)&#x27;</span><br><span class="line">                                 &#125;)</span><br><span class="line"></span><br><span class="line">        browser.get(url) # 使用浏览器对象访问指定url</span><br><span class="line">        time.sleep(2)</span><br><span class="line"></span><br><span class="line">        # 设置自动答题的配置 </span><br><span class="line">        # range中的范围是你的总题目数</span><br><span class="line">        for question_num in range(1, 12):</span><br><span class="line">            if question_num &lt;= 3:               # 设置多选题的配置,这里为1-3题,选项为A-E,这里我设置的是A-C中随机选一个,D-E中随机选一个</span><br><span class="line">                num1 = random.randint(1, 3)</span><br><span class="line">                num2 = random.randint(4, 5)</span><br><span class="line">            elif question_num &lt;= 8:             # 设置单选题,这里为4-8题,选项为A-D </span><br><span class="line">                num1 = random.randint(1, 4)</span><br><span class="line">                num2 = None</span><br><span class="line">            else:                               # 设置判断题(双选题),这里为9-12题</span><br><span class="line">                num1 = random.randint(1, 2)</span><br><span class="line">                num2 = None </span><br><span class="line"></span><br><span class="line">            # 拼接xpath路径 让浏览器找到对应的元素并且模拟鼠标点击 </span><br><span class="line">            if num2 is not None:                </span><br><span class="line">                if browser.find_element(by=By.XPATH, value=f&quot;//div[@for=&#x27;q&#123;question_num&#125;_&#123;num1&#125;&#x27;]&quot;):</span><br><span class="line">                    browser.find_element(by=By.XPATH, value=f&quot;//div[@for=&#x27;q&#123;question_num&#125;_&#123;num1&#125;&#x27;]&quot;).click()</span><br><span class="line">                    browser.find_element(by=By.XPATH, value=f&quot;//div[@for=&#x27;q&#123;question_num&#125;_&#123;num2&#125;&#x27;]&quot;).click()</span><br><span class="line">            else:</span><br><span class="line">                if browser.find_element(by=By.XPATH, value=f&quot;//div[@for=&#x27;q&#123;question_num&#125;_&#123;num1&#125;&#x27;]&quot;):</span><br><span class="line">                    browser.find_element(by=By.XPATH, value=f&quot;//div[@for=&#x27;q&#123;question_num&#125;_&#123;num1&#125;&#x27;]&quot;).click()</span><br><span class="line">            time.sleep(0.5)</span><br><span class="line"></span><br><span class="line">        pyautogui.scroll(-500) # 移动鼠标滚轮到最下面</span><br><span class="line">        time.sleep(1)</span><br><span class="line">        pyautogui.moveTo(1274, 1364) # 将鼠标移动到指定位置(提交按钮)</span><br><span class="line">        time.sleep(3)</span><br><span class="line">        pyautogui.click() # 点击鼠标</span><br><span class="line">        time.sleep(5)</span><br><span class="line">        browser.close() # 关闭浏览器</span><br><span class="line">        print(f&quot;第&#123;i + 1&#125;份已经完成&quot;)</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    num = 1000  # 填的份数</span><br><span class="line">    url = &#x27;https://www.xxxxx.com&#x27; # 问卷链接</span><br><span class="line">    spider(num, url)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -337,13 +310,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">ARP攻击</a></p>
+        <p><span>Title:</span><a href="/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/">某问卷自动化脚本</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
-        <p><span>Created:</span>2023-07-04, 16:48:00</p>
-        <p><span>Updated:</span>2023-07-04, 16:48:00</p>
+        <p><span>Created:</span>2023-11-15, 09:31:06</p>
+        <p><span>Updated:</span>2023-11-15, 09:31:06</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2023/07/04/arp%E6%94%BB%E5%87%BB/" title="ARP攻击">https://isyang666.github.io/2023/07/04/arp%E6%94%BB%E5%87%BB/</a>
-            <span class="copy-path" data-clipboard-text="From https://isyang666.github.io/2023/07/04/arp%E6%94%BB%E5%87%BB/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/" title="某问卷自动化脚本">https://isyang666.github.io/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</a>
+            <span class="copy-path" data-clipboard-text="From https://isyang666.github.io/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -355,16 +328,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/">
-                    爆破之token绕过
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
-                    排序算法
+                <a href="/2023/11/09/mysql%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%92%8Csql%E6%B3%A8%E5%85%A5/">
+                    mysql基础使用和sql注入
                 </a>
             </div>
         
@@ -376,7 +343,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">ARP攻击介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E5%AE%9E%E6%88%98"><span class="toc-number">2.</span> <span class="toc-text">ARP攻击实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%94%BB%E5%87%BB%E6%A3%80%E6%B5%8B"><span class="toc-number">3.</span> <span class="toc-text">ARP攻击检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E7%9A%84%E9%98%B2%E6%8A%A4"><span class="toc-number">4.</span> <span class="toc-text">ARP的防护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP%E6%AC%BA%E9%AA%97%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="toc-number">5.</span> <span class="toc-text">ARP欺骗的危害</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
         
     </div>
     <style>
@@ -412,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"ARP攻击　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"某问卷自动化脚本　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -432,15 +399,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/" title="Pre: 爆破之token绕过">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="Next: 排序算法">
+            <a href="/2023/11/09/mysql%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%92%8Csql%E6%B3%A8%E5%85%A5/" title="Next: mysql基础使用和sql注入">
                 <i class="fa fa-angle-right"></i>
             </a>
         
