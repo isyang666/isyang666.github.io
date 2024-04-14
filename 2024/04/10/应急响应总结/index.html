@@ -323,10 +323,10 @@
 <p>  <code>/etc/httpd/logs/access_log</code><br>  或<br>  <code>/var/log/httpd/access_log</code></p>
 </li>
 <li>Tomcat日志:<ul>
-<li>windows<br>  Tomcat的日志文件默认存放在Tomcat安装目录下的logs子目录中Tomcat安装在D:\apache-tomcat-9.0.0.M1，那么日志文件的路径就是<code>D:\apache-tomcat-9.0.0.M1\logs</code><br>  一般看<code>localhost_access_log.YYYY-MM-DD.txt</code>文件</li>
+<li>windows<br>  Tomcat的日志文件默认存放在Tomcat安装目录下的logs子目录中Tomcat安装在D:\apache-tomcat-9.0.0.M1，那么日志文件的路径就是<code>D:\apache-tomcat-9.0.0.M1\logs </code><br>  一般看<code>localhost_access_log.YYYY-MM-DD.txt</code>文件</li>
 <li>Linux</li>
 </ul>
-<p>  &#96;&#96;&#96;&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;logs&#96;&#96;</p>
+<p>  <code>/usr/local/tomcat/logs</code></p>
 </li>
 </ul>
 <h3 id="日志分析方式"><a href="#日志分析方式" class="headerlink" title="日志分析方式"></a>日志分析方式</h3><ol>
@@ -442,7 +442,7 @@
 </tr>
 </tbody></table>
 <p><code>rpm -V -f /bin/ls</code> 确认ls命令是否被替换过，没有任何输出代表没有被替换过（ls可以换成别的命令 如：&#x2F;bin&#x2F;ps）</p>
-<h3 id="导出历史命令"><a href="#导出历史命令" class="headerlink" title="导出历史命令"></a>导出历史命令</h3><p>进入用户目录<br><code>cat .bash_history &gt;&gt; history.txt</code></p>
+<h3 id="导出历史命令"><a href="#导出历史命令" class="headerlink" title="导出历史命令"></a>导出历史命令</h3><p>进入用户目录<br><code>cat .bash_history &gt;&gt; history.txt </code></p>
 <h3 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h3><p>用命令查看<code>/var/log/</code>的指定日志即可，如</p>
 <ul>
 <li>查看账户ssh登录日志<br>  <code>grep &quot;Accepted &quot; /var/log/secure* | awk &#39;&#123;print $1,$2,$3,$9,$11&#125;&#39;</code></li>
