@@ -401,18 +401,46 @@
 </li>
 </ul>
 <p><code>rpm -V -a</code> 查看所有被修改过的rpm包</p>
-<pre><code>|标志|介绍 |
-|:---|:---|
-|S   |文件大小是否改变 |
-|M   |文件的类型或文件的权限(rwx)是否被改变 |
-|5   |文件MD5校验是否改变(可以看成文件内容是否改变) |
-|D   |设备中，从代码是否改变 |
-|L   |文件路径是否改变 |
-|U   |文件的属主(所有者)是否改变|
-|G   |文件的属组是否改变 |
-|T   |文件的修改时间是否改变 |
-    
-</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">标志</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">S</td>
+<td align="left">文件大小是否改变</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">文件的类型或文件的权限(rwx)是否被改变</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">文件MD5校验是否改变(可以看成文件内容是否改变)</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">设备中，从代码是否改变</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">文件路径是否改变</td>
+</tr>
+<tr>
+<td align="left">U</td>
+<td align="left">文件的属主(所有者)是否改变</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">文件的属组是否改变</td>
+</tr>
+<tr>
+<td align="left">T</td>
+<td align="left">文件的修改时间是否改变</td>
+</tr>
+</tbody></table>
 <p><code>rpm -V -f /bin/ls</code> 确认ls命令是否被替换过，没有任何输出代表没有被替换过（ls可以换成别的命令 如：&#x2F;bin&#x2F;ps）</p>
 <h3 id="导出历史命令"><a href="#导出历史命令" class="headerlink" title="导出历史命令"></a>导出历史命令</h3><p>进入用户目录<br><code>cat .bash_history &gt;&gt; history.txt</code></p>
 <h3 id="日志查看"><a href="#日志查看" class="headerlink" title="日志查看"></a>日志查看</h3><p>用命令查看<code>/var/log/</code>的指定日志即可，如</p>
