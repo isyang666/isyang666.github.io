@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="isyang_" />
+
+
+
+<meta name="description" content="本地ChatGLM3-6B结合LangChain,虚拟引擎以及语音识别API，实现本地知识问答数字人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LangChain-ChatGLM-Fay-Ue实现本地数字人">
+<meta property="og:url" content="https://isyang666.github.io/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/index.html">
+<meta property="og:site_name" content="isyang_&#39;s blog">
+<meta property="og:description" content="本地ChatGLM3-6B结合LangChain,虚拟引擎以及语音识别API，实现本地知识问答数字人">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://isyang666.github.io/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/1.png">
+<meta property="og:image" content="https://isyang666.github.io/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/4.png">
+<meta property="og:image" content="https://isyang666.github.io/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/5.png">
+<meta property="og:image" content="https://isyang666.github.io/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/6.png">
+<meta property="og:image" content="https://isyang666.github.io/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/7.png">
+<meta property="article:published_time" content="2024-04-25T08:41:56.000Z">
+<meta property="article:modified_time" content="2024-04-25T08:41:56.000Z">
+<meta property="article:author" content="isyang_">
+<meta property="article:tag" content="Ai">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://isyang666.github.io/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="isyang_&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>LangChain-ChatGLM-Fay-Ue实现本地数字人 | isyang_&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/头像.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa CSDN" target="_blank" rel="noopener" href="https://blog.csdn.net/weiyang6" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ai/" rel="tag">Ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSRF/" rel="tag">CSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTFD/" rel="tag">CTFD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSRF/" rel="tag">SSRF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vs2022/" rel="tag">Vs2022</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XSS/" rel="tag">XSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arp/" rel="tag">arp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/burpsuite/" rel="tag">burpsuite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/" rel="tag">hello</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/" rel="tag">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/upload/" rel="tag">upload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" rel="tag">信息搜集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E5%8A%9F%E8%83%BD/" rel="tag">小功能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" rel="tag">应急响应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%86%E7%A0%B4/" rel="tag">爆破</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一个刚刚入门安全领域的萌新</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/头像.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/weiyang6" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-LangChain-ChatGLM-Fay-Ue实现本地数字人" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/" class="article-date">
+      <time datetime="2024-04-25T08:41:56.000Z" itemprop="datePublished">2024-04-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LangChain-ChatGLM-Fay-Ue实现本地数字人
+    </h1>
+  
+
+        <!-- 开始添加字数统计-->
+        
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ai/" rel="tag">Ai</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="LangChain-ChatGLM-基于本地知识库的问答"><a href="#LangChain-ChatGLM-基于本地知识库的问答" class="headerlink" title="LangChain-ChatGLM 基于本地知识库的问答"></a>LangChain-ChatGLM 基于本地知识库的问答</h1><h2 id="ChatGLM-6B简介"><a href="#ChatGLM-6B简介" class="headerlink" title="ChatGLM-6B简介"></a>ChatGLM-6B简介</h2><p>它是一个开源的，支持中英双语的对话语言模型，基于General Language Model(GLM)架构，具有62亿参数</p>
+<h3 id="ChatGLM-6B应用"><a href="#ChatGLM-6B应用" class="headerlink" title="ChatGLM-6B应用"></a>ChatGLM-6B应用</h3><p>大语言模型通常基于通识知识进行训练，因此在面向如下场景时，常常需要借助模型微调或提示词工程提升语言模型应用效果</p>
+<ul>
+<li>垂直领域知识</li>
+<li>基于私有数据的问答</li>
+</ul>
+<h3 id="微调和提示词工程"><a href="#微调和提示词工程" class="headerlink" title="微调和提示词工程"></a>微调和提示词工程</h3><table>
+<thead>
+<tr>
+<th align="left">名词</th>
+<th align="left">是什么</th>
+<th align="left">适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">微调</td>
+<td align="left">针对预先训练的语言模型在特定任务的少量数据集上对其进行进一步训练</td>
+<td align="left">当任务或域定义明确，并有足够的标记数据可供训练时，通常使用微调过程</td>
+</tr>
+<tr>
+<td align="left">提示词工程</td>
+<td align="left">涉及设计自然语言提示或指令，可以指导语言模型执行特定任务。</td>
+<td align="left">最适合需要高精度和明确输出的任务。提示工程可用于制作引发所需输出的查询</td>
+</tr>
+</tbody></table>
+<h2 id="LangChain介绍-提示词工程框架"><a href="#LangChain介绍-提示词工程框架" class="headerlink" title="LangChain介绍(提示词工程框架)"></a>LangChain介绍(提示词工程框架)</h2><h3 id="LangChain简介"><a href="#LangChain简介" class="headerlink" title="LangChain简介"></a>LangChain简介</h3><p>Langchain是一个用于开发由语言模型驱动的应用程序的框架<br>主要功能：</p>
+<ul>
+<li>调用语言模型</li>
+<li>将不同数据源接入到语言模型的交互中</li>
+<li>允许语言模型与运行环境交互</li>
+</ul>
+<h3 id="LangChain中提供的模块"><a href="#LangChain中提供的模块" class="headerlink" title="LangChain中提供的模块"></a>LangChain中提供的模块</h3><ul>
+<li>Modules：支持的模型类型和集成</li>
+<li>Prompt：提示词管理、优化和序列化。</li>
+<li>Memory：内存是指在链&#x2F;代理调用之间持续存在的状态</li>
+<li>Indexes：当语言模型与特定于应用程序的数据相结合时，会变得更加强大-此模块包含用于加载、查询和更新外部数据的接口和集成。</li>
+<li>Chain：链是结构化的调用序列（对LLM或其他实用程序）</li>
+<li>Agents：代理是一个链，其中LLM在给定高级指令和一组工具的情况下，反复决定操作，执行操作并观察结果，直到高级指令完成。</li>
+<li>Calbacks：回调允许您记录和流式传输任何链的中间步骤，从而轻松观察、调试和评估应用程序的内部。</li>
+</ul>
+<h3 id="LangChain应用场景"><a href="#LangChain应用场景" class="headerlink" title="LangChain应用场景"></a>LangChain应用场景</h3><ul>
+<li>文档问答：在特定文档上回答问题，仅利用这些文档中的信息来构建答案</li>
+<li>个人助理：个人助理需要采取行动，记住互动，并了解您的数据。</li>
+<li>查询表格数据：使用语言模型查询库表类型结构化<br>数据（CSV、SQL、DataFrame）等</li>
+<li>与API交互：使语言模型与API交互非常强大。它允许他们访问最新信息，并允许他们采取行动</li>
+<li>信息提取：从文本中提取结构化信息</li>
+<li>文档总结：压缩较长文档，一种数据增强生成</li>
+</ul>
+<h3 id="基于单一文档问答的实现原理"><a href="#基于单一文档问答的实现原理" class="headerlink" title="基于单一文档问答的实现原理"></a>基于单一文档问答的实现原理</h3><ol>
+<li>加载本地文档：读取本地文档加载为文本</li>
+<li>文本拆分：将文本按照字符，长度或语义进行拆分</li>
+<li>根据提问匹配文本：根据用户提问对文本进行字符匹配或语义检索(需要向量化)</li>
+<li>构建Prompt：将匹配文本，用户提问，加入Prompt模板</li>
+<li>LLM生成回答：将Prompt发送给LLM获得基于文档内容的回答</li>
+</ol>
+<h3 id="基于本地知识库的问答实现原理"><a href="#基于本地知识库的问答实现原理" class="headerlink" title="基于本地知识库的问答实现原理"></a>基于本地知识库的问答实现原理</h3><p><img src="/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/1.png" alt="title"></p>
+<ul>
+<li>1，2 文本加载</li>
+<li>3，4 文本拆分</li>
+<li>5，6文本向量化形成Vectorstore向量数据库</li>
+<li>8 将查询的文本向量化</li>
+<li>9，10 到向量数据库里面进行已有文段的匹配</li>
+<li>11 形成相关文段</li>
+<li>12 转化为Prompt Template（引导LLM模型生成特定类型响应的一种格式输入方式）的形式</li>
+<li>13 填充到Prompt当中</li>
+<li>14 发送至LLM(大语言模型)</li>
+<li>15 LLM回复</li>
+</ul>
+<h3 id="基于本地知识库的问答的代码实现（简易版）"><a href="#基于本地知识库的问答的代码实现（简易版）" class="headerlink" title="基于本地知识库的问答的代码实现（简易版）"></a>基于本地知识库的问答的代码实现（简易版）</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动模型</span></span><br><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoTokenizer，AutoModel</span><br><span class="line">tokenizer = AutoTokenizer.from_pretrained(<span class="string">&quot;THUDM/chatglm-6b&quot;</span>，trust_remote_code=<span class="literal">True</span>)</span><br><span class="line">model = AutoModelfrom_pretrained(<span class="string">&quot;THUDM/chatglm-6b&quot;</span>，trust_remote_code=<span class="literal">True</span>).half().cuda()chatglm = model.<span class="built_in">eval</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> langchain.document_loaders <span class="keyword">import</span> UnstructuredFileLoader</span><br><span class="line"><span class="keyword">from</span> langchain.text_splitter <span class="keyword">import</span> CharacterTextSplitter</span><br><span class="line"><span class="keyword">from</span> langchain.embeddings.openai <span class="keyword">import</span>：OpehAIEmbeddings</span><br><span class="line"><span class="keyword">from</span> langchain.vectorstores <span class="keyword">import</span> FAISS</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义文件路径</span></span><br><span class="line">filepath = <span class="string">&quot;test.txt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载文件</span></span><br><span class="line">Loader = UnstructuredFileLoader(filepath)</span><br><span class="line">docs = Loader.load()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文本分割</span></span><br><span class="line">text_splitter = CharacterTextSplitter(chunk_size = <span class="number">500</span>，chunk_overlap = <span class="number">200</span>)</span><br><span class="line">docs = text_splitter.split_text(docs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建向量库</span></span><br><span class="line">embeddings = OpenAIEmbeddings()</span><br><span class="line">vector_store = FAISS.from_documents(docs，embeddings)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据提问匹配上下文</span></span><br><span class="line">query = <span class="string">&quot;LangChain 能够接入哪些数据类型?&quot;</span></span><br><span class="line">docs = vector_store.similarity_search(query)</span><br><span class="line"></span><br><span class="line">context = [doc.page_content <span class="keyword">for</span> doc <span class="keyword">in</span> docs]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建prompt</span></span><br><span class="line">prompt = <span class="string">f&quot;已知信息：\n<span class="subst">&#123;context&#125;</span>\n根据已知信息回答问题：\n<span class="subst">&#123;query&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># LLM 生成回答</span></span><br><span class="line">chatglm.chat(tokenizer，prompt，history=[])</span><br></pre></td></tr></table></figure>
+
+<h2 id="LangChain-ChatGLM项目简介"><a href="#LangChain-ChatGLM项目简介" class="headerlink" title="LangChain-ChatGLM项目简介"></a>LangChain-ChatGLM项目简介</h2><p>Langchain-ChatGLM是一个基于ChatGLM等大语言模型的本地知识库问答实现</p>
+<p>项目特点：</p>
+<ul>
+<li>依托ChatGLM等开源模型实现，可离线部署</li>
+<li>基于langchain实现，可快速实现接入多种数据源</li>
+<li>在分句、文档读取等方面，针对中文使用场景优化</li>
+<li>支持pdf、txt、md、docx等文件类型接入，具备命令行demo、webui和vue前端<br>项目结构：</li>
+<li>models：LLM的接口类与实现类，针对开源模型提供流式输出支持</li>
+<li>loader：文档加载器的实现类</li>
+<li>textsplitter：文本切分的实现类</li>
+<li>chains：工作链路实现，如chains&#x2F;local_doc_qa实现了基于本地文档的问答实现</li>
+<li>content：用于存储上传的原始文件</li>
+<li>vector_store：用于存储向量库文件，即本地知识库本体</li>
+<li>configs：配置文件存储</li>
+</ul>
+<h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><h3 id="ChatGLM环境部署"><a href="#ChatGLM环境部署" class="headerlink" title="ChatGLM环境部署"></a>ChatGLM环境部署</h3><h4 id="项目下载"><a href="#项目下载" class="headerlink" title="项目下载"></a>项目下载</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/THUDM/ChatGLM-6B.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h4><p>用conda创建python3.10环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --name ChatGLM-6B python=3.10 </span><br></pre></td></tr></table></figure>
+<p>启动该环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate ChatGLM-6B</span><br></pre></td></tr></table></figure>
+<p>安装相关依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="ChatGLM3-6B模型下载"><a href="#ChatGLM3-6B模型下载" class="headerlink" title="ChatGLM3-6B模型下载"></a>ChatGLM3-6B模型下载</h4><p>已经下载git LFS 的情况下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 有代理就用huggingface</span><br><span class="line">git clone https://huggingface.co/THUDM/chatglm-6b</span><br><span class="line"></span><br><span class="line">// 无代理用modelscope</span><br><span class="line">git clone https://www.modelscope.cn/ZhipuAI/chatglm3-6b.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="本地代码调用模型（测试）"><a href="#本地代码调用模型（测试）" class="headerlink" title="本地代码调用模型（测试）"></a>本地代码调用模型（测试）</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoTokenizer, AutoModel</span><br><span class="line">tokenizer = AutoTokenizer.from_pretrained(<span class="string">&quot;E:\ChatGLM3-6b-model&quot;</span>, trust_remote_code=<span class="literal">True</span>)</span><br><span class="line">model = AutoModel.from_pretrained(<span class="string">&quot;E:\ChatGLM3-6b-model&quot;</span>, trust_remote_code=<span class="literal">True</span>).half().cuda()</span><br><span class="line">model = model.<span class="built_in">eval</span>()</span><br><span class="line">response, history = model.chat(tokenizer, <span class="string">&quot;你好&quot;</span>, history=[])</span><br><span class="line"><span class="built_in">print</span>(response)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><figcaption><span>改成相对应的模型文件夹绝对路径</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tips：在编译器里面运行时一定要选择conda创建的那个python解释器，或者直接命令行运行也行，如下</span><br></pre></td></tr></table></figure>
+<p>conda activate &lt;环境名称&gt;<br>python &lt;文件名&gt;.py</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![title](/img/LangChain-ChatGLM-Fay-Ue实现本地数字人/2.png)</span><br><span class="line"></span><br><span class="line">如果出现报错，扔给gpt，结合gpt的分析去解决，不要无脑跟着输入命令</span><br><span class="line"></span><br><span class="line">#### ChatGLM项目调用模型</span><br><span class="line">##### 本地API开放</span><br><span class="line">只需要将所有```THUDM/chatglm-6b``` 替换为相对应的模型文件夹绝对路径</span><br><span class="line">然后用 ```python api.py ``` 开放API即可</span><br><span class="line"></span><br><span class="line">![title](/img/LangChain-ChatGLM-Fay-Ue实现本地数字人/3.png)</span><br><span class="line">##### 本地API调用测试</span><br><span class="line"></span><br><span class="line">直接request发post包即可</span><br><span class="line">示例代码：</span><br><span class="line">```py</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">def Chat(prompt,history):</span><br><span class="line">    url = &quot;http://127.0.0.1:8000&quot;</span><br><span class="line">    json = &#123;&quot;prompt&quot;: prompt, &quot;history&quot;: history&#125;</span><br><span class="line">    headers = &#123;&quot;Content-Type&quot;: &quot;application/json;charset=UTF-8&quot;&#125;</span><br><span class="line"></span><br><span class="line">    response = requests.post(url=url,json=json,headers=headers)</span><br><span class="line"></span><br><span class="line">    return response.json()[&#x27;response&#x27;], response.json()[&#x27;history&#x27;]</span><br><span class="line"></span><br><span class="line">history = []</span><br><span class="line">while True:</span><br><span class="line">    response, history = Chat(input(&quot;问题:&quot;),history)</span><br><span class="line">    print(&quot;回答:&quot;,response)</span><br></pre></td></tr></table></figure>
+<p>测试结果：<br><img src="/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/4.png" alt="title"></p>
+<h3 id="langchain加载ChatGLM"><a href="#langchain加载ChatGLM" class="headerlink" title="langchain加载ChatGLM"></a>langchain加载ChatGLM</h3><h4 id="langchain依赖安装"><a href="#langchain依赖安装" class="headerlink" title="langchain依赖安装"></a>langchain依赖安装</h4><p>在你的python项目下面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain</span><br></pre></td></tr></table></figure>
+
+<h3 id="加载ChatGLM模型"><a href="#加载ChatGLM模型" class="headerlink" title="加载ChatGLM模型"></a>加载ChatGLM模型</h3><p>创建一个langChainLoadChatGLM.py文件用来加载ChatGLM</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain.llms <span class="keyword">import</span> ChatGLM</span><br><span class="line"></span><br><span class="line">endpoint_url = <span class="string">&quot;http://127.0.0.1:8000&quot;</span> <span class="comment"># ChatGLM Api接口</span></span><br><span class="line"></span><br><span class="line">llm = ChatGLM(</span><br><span class="line">    endpoint_url = endpoint_url,</span><br><span class="line">    max_token = <span class="number">80000</span>,</span><br><span class="line">    top_p = <span class="number">0.9</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>后续完善文档分割和向量化，写prompt模板即可</p>
+<h1 id="Fay部署-联动UE数组人"><a href="#Fay部署-联动UE数组人" class="headerlink" title="Fay部署+联动UE数组人"></a>Fay部署+联动UE数组人</h1><h2 id="Fay部署"><a href="#Fay部署" class="headerlink" title="Fay部署"></a>Fay部署</h2><h3 id="Fay环境安装"><a href="#Fay环境安装" class="headerlink" title="Fay环境安装"></a>Fay环境安装</h3><p>使用conda创建虚拟环境(推荐)或者直接下载python3.10</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create --name Fay python=3.10</span><br><span class="line">conda activate Fay</span><br></pre></td></tr></table></figure>
+
+<h3 id="Fay项目拉取，依赖下载"><a href="#Fay项目拉取，依赖下载" class="headerlink" title="Fay项目拉取，依赖下载"></a>Fay项目拉取，依赖下载</h3><p>项目拉取：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/TheRamU/Fay.git</span><br></pre></td></tr></table></figure>
+<p>cd到Fay项目的主目录下，安装依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置Fay的key"><a href="#配置Fay的key" class="headerlink" title="配置Fay的key"></a>配置Fay的key</h3><p>配置Fay项目下的system.conf文件，把需要的Apikey配置好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">[key]</span><br><span class="line">#funasr / ali</span><br><span class="line">ASR_mode = ali</span><br><span class="line">#ASR二选一（需要运行fay/test/funasr服务）集成达摩院asr项目、感谢中科大脑算法工程师张聪聪提供集成代码</span><br><span class="line">local_asr_ip=127.0.0.1</span><br><span class="line">local_asr_port=10197</span><br><span class="line"> </span><br><span class="line"># ASR二选一（第1次运行建议用这个，免费3个月）， 阿里云 实时语音识别 服务密钥（必须）https://ai.aliyun.com/nls/trans</span><br><span class="line">ali_nls_key_id=</span><br><span class="line">ali_nls_key_secret=</span><br><span class="line">ali_nls_app_key=</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"># 微软 文字转语音 服务密钥（非必须，使用可产生不同情绪的音频）https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/</span><br><span class="line">ms_tts_key=</span><br><span class="line">ms_tts_region=</span><br><span class="line"> </span><br><span class="line"># 讯飞 情绪分析 服务密钥 https://www.xfyun.cn/service/emotion-analysis/</span><br><span class="line">xf_ltp_app_id=</span><br><span class="line">xf_ltp_api_key=</span><br><span class="line"> </span><br><span class="line">#NLP多选一:xfaiui、yuan、chatgpt、rasa(需启动chatglm及rasa，https://m.bilibili.com/video/BV1D14y1f7pr)、VisualGLM</span><br><span class="line">chat_module=xfaiui</span><br><span class="line"> </span><br><span class="line"># 讯飞 自然语言处理 服务密钥(NLP3选1) https://aiui.xfyun.cn/solution/webapi/</span><br><span class="line">xf_aiui_app_id=</span><br><span class="line">xf_aiui_api_key=</span><br><span class="line"> </span><br><span class="line">#浪.潮源大模型 服务密钥(NLP3选1) https://air.inspur.com/</span><br><span class="line">yuan_1_0_account=  </span><br><span class="line">yuan_1_0_phone=</span><br><span class="line"> </span><br><span class="line">#gpt 服务密钥(NLP3选1) https://openai.com/</span><br><span class="line">chatgpt_api_key=</span><br><span class="line"> </span><br><span class="line">#ngrok内网穿透id，远程设备可以通过互联网连接Fay（非必须）http://ngrok.cc</span><br><span class="line">ngrok_cc_id=</span><br><span class="line"> </span><br><span class="line">#revChatGPT对接（非必须，https://chat.openai.com登录后访问https://chat.openai.com/api/auth/session获取）</span><br><span class="line">gpt_access_token=</span><br><span class="line">gpt_conversation_id=</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>conda的虚拟环境，下面然后启动main.py即可<br><code>python main.py</code></p>
+<h2 id="UE数字人下载"><a href="#UE数字人下载" class="headerlink" title="UE数字人下载"></a>UE数字人下载</h2><h3 id="下载开源数字人项目"><a href="#下载开源数字人项目" class="headerlink" title="下载开源数字人项目"></a>下载开源数字人项目</h3><p><a target="_blank" rel="noopener" href="https://github.com/xszyou/fay-ue5">https://github.com/xszyou/fay-ue5</a></p>
+<p>下载好想要的项目即可，注意需要的ue版本</p>
+<h3 id="下载Epic"><a href="#下载Epic" class="headerlink" title="下载Epic"></a>下载Epic</h3><p>官网: <a target="_blank" rel="noopener" href="https://www.unrealengine.com/en-US/unreal-engine-5">https://www.unrealengine.com/en-US/unreal-engine-5</a></p>
+<h3 id="下载虚拟引擎UE以及需要的插件"><a href="#下载虚拟引擎UE以及需要的插件" class="headerlink" title="下载虚拟引擎UE以及需要的插件"></a>下载虚拟引擎UE以及需要的插件</h3><p>本文下载的是ue5.0.3，根据你下载的数字人项目去下载对应版本的引擎</p>
+<p><img src="/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/5.png" alt="title"><br>下载插件</p>
+<p><img src="/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/6.png" alt="title"><br>下载好以下插件</p>
+<p><img src="/img/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/7.png" alt="title"></p>
+<p>然后直接打开数字人项目文件夹下面的.uproject文件，运行即可</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/">LangChain-ChatGLM-Fay-Ue实现本地数字人</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2024-04-25, 16:41:56</p>
+        <p><span>Updated:</span>2024-04-25, 16:41:56</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/" title="LangChain-ChatGLM-Fay-Ue实现本地数字人">https://isyang666.github.io/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/</a>
+            <span class="copy-path" data-clipboard-text="From https://isyang666.github.io/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2024/04/14/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/">
+                    应急响应靶场练习
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LangChain-ChatGLM-%E5%9F%BA%E4%BA%8E%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E9%97%AE%E7%AD%94"><span class="toc-number">1.</span> <span class="toc-text">LangChain-ChatGLM 基于本地知识库的问答</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGLM-6B%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">ChatGLM-6B简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ChatGLM-6B%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">ChatGLM-6B应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E8%B0%83%E5%92%8C%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">微调和提示词工程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LangChain%E4%BB%8B%E7%BB%8D-%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.</span> <span class="toc-text">LangChain介绍(提示词工程框架)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LangChain%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">LangChain简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LangChain%E4%B8%AD%E6%8F%90%E4%BE%9B%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-number">1.2.2.</span> <span class="toc-text">LangChain中提供的模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LangChain%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.2.3.</span> <span class="toc-text">LangChain应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8D%95%E4%B8%80%E6%96%87%E6%A1%A3%E9%97%AE%E7%AD%94%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.4.</span> <span class="toc-text">基于单一文档问答的实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E9%97%AE%E7%AD%94%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.5.</span> <span class="toc-text">基于本地知识库的问答实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9A%84%E9%97%AE%E7%AD%94%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89"><span class="toc-number">1.2.6.</span> <span class="toc-text">基于本地知识库的问答的代码实现（简易版）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LangChain-ChatGLM%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">LangChain-ChatGLM项目简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">1.4.</span> <span class="toc-text">项目部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ChatGLM%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2"><span class="toc-number">1.4.1.</span> <span class="toc-text">ChatGLM环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">项目下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ChatGLM3-6B%E6%A8%A1%E5%9E%8B%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">ChatGLM3-6B模型下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E8%B0%83%E7%94%A8%E6%A8%A1%E5%9E%8B%EF%BC%88%E6%B5%8B%E8%AF%95%EF%BC%89"><span class="toc-number">1.4.1.4.</span> <span class="toc-text">本地代码调用模型（测试）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#langchain%E5%8A%A0%E8%BD%BDChatGLM"><span class="toc-number">1.4.2.</span> <span class="toc-text">langchain加载ChatGLM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#langchain%E4%BE%9D%E8%B5%96%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">langchain依赖安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BDChatGLM%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.3.</span> <span class="toc-text">加载ChatGLM模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fay%E9%83%A8%E7%BD%B2-%E8%81%94%E5%8A%A8UE%E6%95%B0%E7%BB%84%E4%BA%BA"><span class="toc-number">2.</span> <span class="toc-text">Fay部署+联动UE数组人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fay%E9%83%A8%E7%BD%B2"><span class="toc-number">2.1.</span> <span class="toc-text">Fay部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fay%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.1.</span> <span class="toc-text">Fay环境安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fay%E9%A1%B9%E7%9B%AE%E6%8B%89%E5%8F%96%EF%BC%8C%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.1.2.</span> <span class="toc-text">Fay项目拉取，依赖下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEFay%E7%9A%84key"><span class="toc-number">2.1.3.</span> <span class="toc-text">配置Fay的key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">2.1.4.</span> <span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UE%E6%95%B0%E5%AD%97%E4%BA%BA%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.2.</span> <span class="toc-text">UE数字人下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%BC%80%E6%BA%90%E6%95%B0%E5%AD%97%E4%BA%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.2.1.</span> <span class="toc-text">下载开源数字人项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDEpic"><span class="toc-number">2.2.2.</span> <span class="toc-text">下载Epic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%99%9A%E6%8B%9F%E5%BC%95%E6%93%8EUE%E4%BB%A5%E5%8F%8A%E9%9C%80%E8%A6%81%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="toc-number">2.2.3.</span> <span class="toc-text">下载虚拟引擎UE以及需要的插件</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"LangChain-ChatGLM-Fay-Ue实现本地数字人　| isyang_'s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2024/04/14/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/" title="Next: 应急响应靶场练习">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/04/25/LangChain-ChatGLM-Fay-Ue%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E6%95%B0%E5%AD%97%E4%BA%BA/">LangChain-ChatGLM-Fay-Ue实现本地数字人</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/14/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/">应急响应靶场练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/04/10/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E6%80%BB%E7%BB%93/">应急响应总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/03/21/%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%99%BB%E5%BD%95Js%E9%80%86%E5%90%91/">学习通登录JS逆向</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/03/11/XSS%E8%B7%A8%E7%AB%99%E6%80%BB%E7%BB%93/">XSS跨站总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/03/07/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/">文件上传总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/03/01/CSRF-SSRF%E6%80%BB%E7%BB%93/">CSRF&SSRF总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/04/%E5%88%9D%E6%8E%A2go/">初探go</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/12/28/%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%8BVue/">浅浅学习一下Vue</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/12/25/%E5%88%9D%E8%AF%86Spring-boot/">初识Spring boot</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/15/%E6%9F%90%E9%97%AE%E5%8D%B7%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/">某问卷自动化脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/09/mysql%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%92%8Csql%E6%B3%A8%E5%85%A5/">mysql基础使用和sql注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/02/docker%E5%AD%A6%E4%B9%A0%E4%BB%A5%E5%8F%8ACTFD%E9%A2%98%E7%9B%AE%E5%8F%91%E5%B8%83/">docker学习以及CTFD题目发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/01/2023FSCTFwebWP/">2023FSCTFwebWP</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/10/18/CDN%E6%8A%80%E6%9C%AF%E5%8F%8A%E7%BB%95%E8%BF%87/">CDN技术及绕过</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/15/%E7%88%AC%E8%99%AB/">python爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/15/ctfd%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">ctfd平台搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/14/%E8%A7%A3%E5%86%B3win11%E6%9B%B4%E6%96%B0%E5%BC%95%E8%B5%B7python%E4%B8%80%E7%B3%BB%E5%88%97%E9%94%99%E8%AF%AF/">解决win11更新引起python一系列错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/10/win11%E5%85%89%E6%A0%87%E7%BE%8E%E5%8C%96/">win11光标美化</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/07/%E7%88%86%E7%A0%B4token%E7%BB%95%E8%BF%87/">爆破之token绕过</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/04/arp%E6%94%BB%E5%87%BB/">ARP攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/08/Vs2022-%E8%BF%90%E8%A1%8C%E7%BB%88%E7%AB%AF%E6%9B%B4%E6%94%B9-%E7%BC%96%E8%AF%91%E5%99%A8%E6%9C%AC%E5%9C%B0%E4%B8%8Ewindows-terminal%E4%B9%8B%E9%97%B4%E4%BA%92%E7%9B%B8%E6%9B%B4%E6%94%B9/">Vs2022 运行终端更改</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/17/CSS/">CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/HTML/">HTML</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/10/%E9%98%9F%E5%88%97/">队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/01/%E9%93%BE%E6%A0%88/">链栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/29/%E9%A1%BA%E5%BA%8F%E6%A0%88/">顺序栈</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/16/%E5%8F%8C%E9%93%BE%E8%A1%A8/">双链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/05/%E9%93%BE%E8%A1%A8/">链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/02/python3%E8%AF%AD%E6%B3%95/">python3语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/24/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/21/helloworld/">hello</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2022-2024 isyang_
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
